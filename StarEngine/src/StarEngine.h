@@ -1,5 +1,6 @@
 #pragma once
 
+#include "StarEngine/Common/EngineLoop.h"
 #include "StarEngine/Interface/IRuntimeModule.h"
 #include "StarEngine/Interface/IApplication.h"
 #include "StarEngine/Platform/Windows/WindowsApplication.h"

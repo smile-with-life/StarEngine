@@ -1,19 +1,19 @@
 #pragma once
 
-#ifdef STAR_PLATFORM_WINDOWS
-
 namespace Star {
-IApplication* createApplication()
-{
-    return new WindowsApplication();
-}
-}// namespace Star 
+    extern StarEngineLoop EngineLoop;
+}// namespace Star
 
+#ifdef STAR_PLATFORM_WINDOWS
 int main(int argc, char** argv)
 {
-    auto app = Star::createApplication();
-    int ret = app->run();
-    delete app;
-    return ret;
+    Star::EngineLoop.PreInit();
+    Star::EngineLoop.Init();
+    while (!Star::EngineLoop.isRequestingExit())
+    {
+        Star::EngineLoop.Tick();
+    }
+    Star::EngineLoop.Exit();
+    return 0;
 }
 #endif // STAR_PLATFORM_WINDOWS
