@@ -212,7 +212,6 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\Launch\EngineLoop.cpp" />
     <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp" />
-    <ClCompile Include="Source\Runtime\OpenGL\Shader.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp" />
     <ClCompile Include="Source\Runtime\Test\Test.cpp" />
     <ClCompile Include="Source\starpch.cpp">

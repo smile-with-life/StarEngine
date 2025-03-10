@@ -184,9 +184,6 @@
     <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp">
       <Filter>Runtime\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\OpenGL\Shader.cpp">
-      <Filter>Runtime\OpenGL</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp">
       <Filter>Runtime\OpenGL\Windows</Filter>
     </ClCompile>
