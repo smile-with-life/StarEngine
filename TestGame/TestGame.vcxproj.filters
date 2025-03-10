@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{56EB95D1-428D-C0A7-2B48-D4FB178947F8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StarEngine">
+      <UniqueIdentifier>{B59BD3C2-A153-1510-0A5B-EE6BF631B000}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StarEngine\Source">
+      <UniqueIdentifier>{15CC8AC9-81E2-885F-CA59-148136AF59E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StarEngine\Source\Runtime">
+      <UniqueIdentifier>{481EFD8C-B4E0-3017-FD90-BFA3699209F5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StarEngine\Source\Runtime\Launch">
+      <UniqueIdentifier>{D2C62972-BE17-15B4-E77B-0376D32BA81D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StarEngine\Source\Runtime\Launch\Windows">
+      <UniqueIdentifier>{0C23B2DE-F89F-A521-211D-A6350DF941B5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\StarEngine\Source\Runtime\Launch\Windows\WindowsLaunch.cpp">
+      <Filter>StarEngine\Source\Runtime\Launch\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\game.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

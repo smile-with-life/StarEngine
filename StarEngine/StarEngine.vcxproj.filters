@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Runtime">
+      <UniqueIdentifier>{4995DAC4-B574-5960-BE8C-E4362AEBBFC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\AppFrame">
+      <UniqueIdentifier>{24A0143F-1099-3391-39CB-18162523139D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\AppFrame\Application">
+      <UniqueIdentifier>{E7311FCD-D3EC-0E79-7CA4-87C3683E5909}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\AppFrame\Application\Windows">
+      <UniqueIdentifier>{21D317F0-0DBA-D9E7-B60A-4005A2D0524E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\AppFrame\Console">
+      <UniqueIdentifier>{469BBCCB-32C0-0B4C-5B0B-F1DB478F0A6A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\AppFrame\Console\Windows">
+      <UniqueIdentifier>{802B3C80-6C7C-27C2-95E0-15848190BA2B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\AppFrame\Window">
+      <UniqueIdentifier>{8B9C6E53-F7D3-B6EA-00DE-1A0E6C94DDE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\AppFrame\Window\Windows">
+      <UniqueIdentifier>{C5A1E97B-3185-F8BB-3A88-26F8A6EABE0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core">
+      <UniqueIdentifier>{416F811B-2DD2-10C0-D657-4976C299DC42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\Config">
+      <UniqueIdentifier>{2617B74E-9278-945C-1BE6-DA0E8746CB1B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\Container">
+      <UniqueIdentifier>{53FC2214-3FF6-4B66-2863-E27614FCB1D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\File">
+      <UniqueIdentifier>{10CFD8FB-7CE5-D691-C55C-62B331B2A719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\Math">
+      <UniqueIdentifier>{BA84DCFB-269B-DA91-6F12-66B3DB67AB19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\String">
+      <UniqueIdentifier>{A75A6674-13BC-4382-9C29-8A34088A7A41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Launch">
+      <UniqueIdentifier>{B3329D15-9F00-911B-8894-014274016D80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Launch\Windows">
+      <UniqueIdentifier>{EDDFBFA9-D9D9-E8FB-C246-7F0CAEDF4E68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\OpenGL">
+      <UniqueIdentifier>{5D52A31D-4920-9723-32B4-074A1E217388}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\OpenGL\Windows">
+      <UniqueIdentifier>{970918C4-8303-4116-6C70-D7265809A782}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Test">
+      <UniqueIdentifier>{58978A1B-44FA-19C0-ED7F-5276D9C1E542}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Runtime\AppFrame\Application\Application.h">
+      <Filter>Runtime\AppFrame\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\AppFrame\Application\Windows\WindowsApplication.h">
+      <Filter>Runtime\AppFrame\Application\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\AppFrame\Console\Console.h">
+      <Filter>Runtime\AppFrame\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\AppFrame\Console\Windows\WindowsConsole.h">
+      <Filter>Runtime\AppFrame\Console\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\AppFrame\Window\Window.h">
+      <Filter>Runtime\AppFrame\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\AppFrame\Window\Windows\WindowsWindow.h">
+      <Filter>Runtime\AppFrame\Window\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Config\Config.h">
+      <Filter>Runtime\Core\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Container\Array.h">
+      <Filter>Runtime\Core\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Container\Hash.h">
+      <Filter>Runtime\Core\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Container\List.h">
+      <Filter>Runtime\Core\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Container\Map.h">
+      <Filter>Runtime\Core\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Container\Set.h">
+      <Filter>Runtime\Core\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Core.h">
+      <Filter>Runtime\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\CorePlatform.h">
+      <Filter>Runtime\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\CoreTool.h">
+      <Filter>Runtime\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\CoreType.h">
+      <Filter>Runtime\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\File\ByteArray.h">
+      <Filter>Runtime\Core\File</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\File\File.h">
+      <Filter>Runtime\Core\File</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Math\Math.h">
+      <Filter>Runtime\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Math\Vec.h">
+      <Filter>Runtime\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\String\Convert.h">
+      <Filter>Runtime\Core\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\String\String.h">
+      <Filter>Runtime\Core\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Launch\EngineLoop.h">
+      <Filter>Runtime\Launch</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h">
+      <Filter>Runtime\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\OpenGL\Shader.h">
+      <Filter>Runtime\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.h">
+      <Filter>Runtime\OpenGL\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Test\Test.h">
+      <Filter>Runtime\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Starengine.h" />
+    <ClInclude Include="Source\starpch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
+      <Filter>Runtime\AppFrame\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\AppFrame\Application\Windows\WindowsApplication.cpp">
+      <Filter>Runtime\AppFrame\Application\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\AppFrame\Console\Console.cpp">
+      <Filter>Runtime\AppFrame\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\AppFrame\Console\Windows\WindowsConsole.cpp">
+      <Filter>Runtime\AppFrame\Console\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\AppFrame\Window\Window.cpp">
+      <Filter>Runtime\AppFrame\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\AppFrame\Window\Windows\WindowsWindow.cpp">
+      <Filter>Runtime\AppFrame\Window\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\Config\Config.cpp">
+      <Filter>Runtime\Core\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\File\ByteArray.cpp">
+      <Filter>Runtime\Core\File</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\File\File.cpp">
+      <Filter>Runtime\Core\File</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\String\String.cpp">
+      <Filter>Runtime\Core\String</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Launch\EngineLoop.cpp">
+      <Filter>Runtime\Launch</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp">
+      <Filter>Runtime\Launch\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp">
+      <Filter>Runtime\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\OpenGL\Shader.cpp">
+      <Filter>Runtime\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp">
+      <Filter>Runtime\OpenGL\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Test\Test.cpp">
+      <Filter>Runtime\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\starpch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">
+      <Filter>Runtime\Launch\Windows</Filter>
+    </None>
+  </ItemGroup>
+</Project>

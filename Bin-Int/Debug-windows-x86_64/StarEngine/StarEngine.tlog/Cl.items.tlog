@@ -1,0 +1,17 @@
+D:\Project\StarEngine\StarEngine\Source\Runtime\AppFrame\Application\Application.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\Application.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\AppFrame\Application\Windows\WindowsApplication.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\WindowsApplication.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\AppFrame\Console\Console.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\Console.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\AppFrame\Console\Windows\WindowsConsole.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\WindowsConsole.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\AppFrame\Window\Window.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\Window.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\AppFrame\Window\Windows\WindowsWindow.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\WindowsWindow.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\Core\Config\Config.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\Config.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\Core\File\ByteArray.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\ByteArray.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\Core\File\File.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\File.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\Core\String\String.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\String.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\Launch\EngineLoop.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\EngineLoop.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\Launch\Windows\WindowsLaunch.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\WindowsLaunch.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\OpenGL\OpenGL.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\OpenGL.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\OpenGL\Shader.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\Shader.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\WindowsOpenGL.obj
+D:\Project\StarEngine\StarEngine\Source\Runtime\Test\Test.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\Test.obj
+D:\Project\StarEngine\StarEngine\Source\starpch.cpp;D:\Project\StarEngine\Bin-Int\Debug-windows-x86_64\StarEngine\starpch.obj

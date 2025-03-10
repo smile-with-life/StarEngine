@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dist|x64">
+      <Configuration>Dist</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B59BD3C2-A153-1510-0A5B-EE6BF631B000}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>StarEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\Bin\Debug-windows-x86_64\StarEngine\</OutDir>
+    <IntDir>..\Bin-Int\Debug-windows-x86_64\StarEngine\</IntDir>
+    <TargetName>StarEngine</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\Bin\Release-windows-x86_64\StarEngine\</OutDir>
+    <IntDir>..\Bin-Int\Release-windows-x86_64\StarEngine\</IntDir>
+    <TargetName>StarEngine</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\Bin\Dist-windows-x86_64\StarEngine\</OutDir>
+    <IntDir>..\Bin-Int\Dist-windows-x86_64\StarEngine\</IntDir>
+    <TargetName>StarEngine</TargetName>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>STAR_DEBUG;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\Bin\Debug-windows-x86_64\StarEngine\StarEngine.lib</ImportLibrary>
+      <ModuleDefinitionFile>Source/Runtime/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST "..\bin\Debug-windows-x86_64\TestGame" (mkdir "..\bin\Debug-windows-x86_64\TestGame")
+copy /B /Y ..\Bin\Debug-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Debug-windows-x86_64\TestGame</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>STAR_RELEASE;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\Bin\Release-windows-x86_64\StarEngine\StarEngine.lib</ImportLibrary>
+      <ModuleDefinitionFile>Source/Runtime/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST "..\bin\Release-windows-x86_64\TestGame" (mkdir "..\bin\Release-windows-x86_64\TestGame")
+copy /B /Y ..\Bin\Release-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Release-windows-x86_64\TestGame</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>STAR_DIST;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.lib</ImportLibrary>
+      <ModuleDefinitionFile>Source/Runtime/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST "..\bin\Dist-windows-x86_64\TestGame" (mkdir "..\bin\Dist-windows-x86_64\TestGame")
+copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-windows-x86_64\TestGame</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Runtime\AppFrame\Application\Application.h" />
+    <ClInclude Include="Source\Runtime\AppFrame\Application\Windows\WindowsApplication.h" />
+    <ClInclude Include="Source\Runtime\AppFrame\Console\Console.h" />
+    <ClInclude Include="Source\Runtime\AppFrame\Console\Windows\WindowsConsole.h" />
+    <ClInclude Include="Source\Runtime\AppFrame\Window\Window.h" />
+    <ClInclude Include="Source\Runtime\AppFrame\Window\Windows\WindowsWindow.h" />
+    <ClInclude Include="Source\Runtime\Core\Config\Config.h" />
+    <ClInclude Include="Source\Runtime\Core\Container\Array.h" />
+    <ClInclude Include="Source\Runtime\Core\Container\Hash.h" />
+    <ClInclude Include="Source\Runtime\Core\Container\List.h" />
+    <ClInclude Include="Source\Runtime\Core\Container\Map.h" />
+    <ClInclude Include="Source\Runtime\Core\Container\Set.h" />
+    <ClInclude Include="Source\Runtime\Core\Core.h" />
+    <ClInclude Include="Source\Runtime\Core\CorePlatform.h" />
+    <ClInclude Include="Source\Runtime\Core\CoreTool.h" />
+    <ClInclude Include="Source\Runtime\Core\CoreType.h" />
+    <ClInclude Include="Source\Runtime\Core\File\ByteArray.h" />
+    <ClInclude Include="Source\Runtime\Core\File\File.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Math.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Vec.h" />
+    <ClInclude Include="Source\Runtime\Core\String\Convert.h" />
+    <ClInclude Include="Source\Runtime\Core\String\String.h" />
+    <ClInclude Include="Source\Runtime\Launch\EngineLoop.h" />
+    <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h" />
+    <ClInclude Include="Source\Runtime\OpenGL\Shader.h" />
+    <ClInclude Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.h" />
+    <ClInclude Include="Source\Runtime\Test\Test.h" />
+    <ClInclude Include="Source\Starengine.h" />
+    <ClInclude Include="Source\starpch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp" />
+    <ClCompile Include="Source\Runtime\AppFrame\Application\Windows\WindowsApplication.cpp" />
+    <ClCompile Include="Source\Runtime\AppFrame\Console\Console.cpp" />
+    <ClCompile Include="Source\Runtime\AppFrame\Console\Windows\WindowsConsole.cpp" />
+    <ClCompile Include="Source\Runtime\AppFrame\Window\Window.cpp" />
+    <ClCompile Include="Source\Runtime\AppFrame\Window\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Config\Config.cpp" />
+    <ClCompile Include="Source\Runtime\Core\File\ByteArray.cpp" />
+    <ClCompile Include="Source\Runtime\Core\File\File.cpp" />
+    <ClCompile Include="Source\Runtime\Core\String\String.cpp" />
+    <ClCompile Include="Source\Runtime\Launch\EngineLoop.cpp" />
+    <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp" />
+    <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp" />
+    <ClCompile Include="Source\Runtime\OpenGL\Shader.cpp" />
+    <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp" />
+    <ClCompile Include="Source\Runtime\Test\Test.cpp" />
+    <ClCompile Include="Source\starpch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\Runtime\Launch\Windows\WindowsExport.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Dependencies\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Dependencies\Glad\Glad.vcxproj">
+      <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
