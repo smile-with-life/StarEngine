@@ -25,7 +25,7 @@ public:
 
     constexpr Array& operator=(const Array& other)
     {
-        if (*this == other) [[unlikely]]
+        if (this == &other) [[unlikely]]
         {
             return *this;
         }
@@ -41,7 +41,7 @@ public:
 
     constexpr Array& operator=(Array&& other) noexcept
     {
-        if (*this == other) [[unlikely]]
+        if (this == &other) [[unlikely]]
         {
             return *this;
         }
@@ -169,20 +169,35 @@ public:
 
     constexpr Array& Append(const Type& value)
     {
-        m_data.insert(m_data.end(), value);
+        PushBack(value);
         return *this;
     }
 
-    constexpr Array& Append(Type&& value)
+    Array& operator+=(const Type& value)
     {
-        m_data.insert(m_data.end(), std::forward<Type>(value));
+        return Append(value);
+    }
+
+    constexpr Array& Append(Type&& value) noexcept
+    {
+        PushBack(std::move(value));
         return *this;
+    }
+
+    Array& operator+=(Type&& value) noexcept
+    {
+        return Append(std::move(value));
     }
 
     constexpr Array& Append(const Array& other)
     {
         m_data.insert(m_data.end(), other.m_data.begin(), other.m_data.end());
         return *this;
+    }
+
+    Array& operator+=(const Array& other)
+    {
+        return Append(other);
     }
 
     constexpr iterator Insert(const_iterator iter, const Type& value)
@@ -253,39 +268,40 @@ public:
         m_data.swap(other.m_data);
     }
 public:
+    template<Concept::EqualComparableType Type>
     bool operator==(const Array<Type>& other)
     {
         return m_data == other.m_data;
     }
 
+    template<Concept::EqualComparableType Type>
     bool operator!=(const Array<Type>& other)
     {
         return m_data != other.m_data;
     }
 
+    template<Concept::SortComparableType Type>
     bool operator>(const Array<Type>& other)
     {
         return m_data > other.m_data;
     }
 
+    template<Concept::SortComparableType Type>
     bool operator>=(const Array<Type>& other)
     {
         return m_data >= other.m_data;
     }
 
+    template<Concept::SortComparableType Type>
     bool operator<(const Array<Type>& other)
     {
         return m_data < other.m_data;
     }
 
+    template<Concept::SortComparableType Type>
     bool operator<=(const Array<Type>& other)
     {
         return m_data <= other.m_data;
-    }
-
-    Array& operator+=(const Array& other)
-    {
-        return Append(other);
     }
 public:
     [[nodiscard]] constexpr iterator begin() noexcept
@@ -346,6 +362,78 @@ public:
     [[nodiscard]] constexpr const_reverse_iterator crend() const noexcept
     {
         return m_data.crend();
+    }
+
+    template<Concept::EqualComparableType Type>
+    [[nodiscard]] constexpr iterator iter_find(const Type& value) noexcept
+    {
+        for (iterator iter = m_data.begin(); iter != m_data.end(); ++iter)
+        {
+            if (value == *iter)
+            {
+                return iter;
+            }
+        }
+    }
+
+    template<Concept::EqualComparableType Type>
+    [[nodiscard]] constexpr const_iterator iter_find(const Type& value) const noexcept
+    {
+        for (const_iterator iter = m_data.begin(); iter != m_data.end(); ++iter)
+        {
+            if (value == *iter)
+            {
+                return iter;
+            }
+        }
+    }
+
+    template<Concept::EqualComparableType Type>
+    [[nodiscard]] constexpr const_iterator iter_cfind(const Type& value) const noexcept
+    {
+        for (const_iterator iter = m_data.begin(); iter != m_data.end(); ++iter)
+        {
+            if (value == *iter)
+            {
+                return iter;
+            }
+        }
+    }
+
+    template<Concept::EqualComparableType Type>
+    [[nodiscard]] constexpr iterator iter_rfind(const Type& value) noexcept
+    {
+        for (reverse_iterator iter = m_data.rbegin(); iter != m_data.rend(); ++iter)
+        {
+            if (value == *iter)
+            {
+                return iter.base();
+            }
+        }
+    }
+
+    template<Concept::EqualComparableType Type>
+    [[nodiscard]] constexpr const_iterator iter_rfind(const Type& value) const noexcept
+    {
+        for (const_reverse_iterator iter = m_data.rbegin(); iter != m_data.rend(); ++iter)
+        {
+            if (value == *iter)
+            {
+                return iter.base();
+            }
+        }
+    }
+
+    template<Concept::EqualComparableType Type>
+    [[nodiscard]] constexpr const_iterator iter_crfind(const Type& value) const noexcept
+    {
+        for (const_reverse_iterator iter = m_data.rbegin(); iter != m_data.rend(); ++iter)
+        {
+            if (value == *iter)
+            {
+                return iter.base();
+            }
+        }
     }
 private:
     std::vector<Type> m_data;

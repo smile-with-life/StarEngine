@@ -6,6 +6,34 @@ namespace Star
 {
 // 前向声明
 class ConfigFile;
+class ConfigValue
+{
+public:
+    enum class ValueType : uint8
+    {
+        IntType,
+        FloatType,
+        DoubleType, 
+        StringType,
+        BoolType,
+        Vec2Type,
+        Vec3Type,
+        Vec4Type,
+    };
+public:
+    // 默认构造函数
+    ConfigValue() = default;
+
+    // 析构函数
+    ~ConfigValue() = default;
+
+private:
+    // 配置值
+    String m_value;
+
+    // 配置值的类型
+    ValueType m_type;
+};
 
 // 配置节（由多个配置项组成,每个配置项由键值对组成）
 class ConfigSection
@@ -20,22 +48,42 @@ public:
 
     ~ConfigSection() = default;
 
-    // 返回配置项的值
-    String GetValue(const Name& key) const
+    // 配置项的数量
+    int64 Num() const
     {
-        return m_items[key];
+        return m_items.Size();
     }
 
-    // 设置配置项的值
+    // 返回配置项的值，未找到时抛出异常
+    String GetValue(const Name& key) const
+    {
+        return m_items.At(key);
+    }
+
+    // 设置配置项的值，未找到时抛出异常
     void SetValue(const Name& key, const String& value)
     {
+        m_items.At(key) = value;
+    }
+
+    // 添加配置项，未找到时添加相应项
+    void AddItem(const Name& key, const String& value)
+    {
+        if (!m_items.Contains(key))
+        {
+            m_itemOrder.PushBack(key);
+        }
         m_items[key] = value;
     }
 
     // 删除配置项
-    void Erase(const Name& key)
+    void RemoveItem(const Name& key)
     {
-        m_items.Erase(key);
+        if (m_items.Erase(key))
+        {
+            const auto iter = m_itemOrder.iter_find(key);
+            m_itemOrder.Erase(iter);
+        }
     }
 public:
     [[nodiscard]] iterator begin() noexcept
@@ -132,10 +180,10 @@ public:
     // 另存为
     bool SaveAs(const String& path);
 
-    // 添加配置节
+    // 添加配置节，未找到时添加相应项
     void AddSection(const Name& section);
     
-    // 添加配置项
+    // 添加配置项，未找到时添加相应项
     void AddItem(const Name& section, const Name& key, const String& value);
 
     // 移除配置节
@@ -154,7 +202,10 @@ public:
     bool Contains(const String& section) const;
 
     // 返回节的数量
-    int64 SectionNum() const;
+    int64 Num() const;
+
+    // 访问指定节
+    ConfigSection& Visit(const String& section);
 
     // 获取配置值(String)
     String GetString(const String& section, const String& key) const;
@@ -171,25 +222,25 @@ public:
     // 获取配置值(double)
     double GetDouble(const String& section, const String& key) const;
 
-    // 获取配置值(bool)
+    // 获取配置值(bool)，未找到时抛出异常
     bool GetBool(const String& section, const String& key) const;
 
-    // 设置配置值(String)
+    // 设置配置值(String)，未找到时抛出异常
     void SetString(const String& section, const String& key, const String value);
 
-    // 设置配置值(int)
+    // 设置配置值(int)，未找到时抛出异常
     void SetInt(const String& section, const String& key, int value);
 
-    // 设置配置值(int64)
+    // 设置配置值(int64)，未找到时抛出异常
     void SetInt64(const String& section, const String& key, int64 value);
 
-    // 设置配置值(float)
+    // 设置配置值(float)，未找到时抛出异常
     void SetFloat(const String& section, const String& key, float value);
 
-    // 设置配置值(double)
+    // 设置配置值(double)，未找到时抛出异常
     void SetDouble(const String& section, const String& key, double value);
 
-    // 设置配置值(bool)
+    // 设置配置值(bool)，未找到时抛出异常
     void SetBool(const String& section, const String& key, bool value);  
 public:
     [[nodiscard]] iterator begin() noexcept

@@ -24,7 +24,7 @@ public:
 
     List& operator=(const List& other)
     {
-        if (*this == other) [[unlikely]]
+        if (this == &other) [[unlikely]]
         {
             return *this;
         }
@@ -40,7 +40,7 @@ public:
 
     List& operator=(List&& other) noexcept
     {
-        if (*this == other) [[unlikely]]
+        if (this == &other) [[unlikely]]
         {
             return *this;
         }
@@ -130,16 +130,31 @@ public:
         return *this;
     }
 
+    List& operator+=(const Type& value)
+    {
+        return Append(value);
+    }
+
     List& Append(Type&& value)
     {
         m_data.insert(m_data.end(), std::forward<Type>(value));
         return *this;
+    }
+
+    List& operator+=(Type&& value)
+    {
+        return Append(std::move(value));
     }
     
     List& Append(const List& other)
     {
         m_data.insert(m_data.end(), other.m_data.begin(), other.m_data.end());
         return *this;
+    }
+
+    List& operator+=(const List& other)
+    {
+        return Append(other);
     }
 
     List& Prepend(const Type& value)
@@ -334,39 +349,40 @@ public:
         m_data.sort(comp);
     }
 public:
-    bool operator==(const Array<Type>& other)
+    template<Concept::EqualComparableType Type>
+    bool operator==(const List<Type>& other)
     {
         return m_data == other.m_data;
     }
 
-    bool operator!=(const Array<Type>& other)
+    template<Concept::EqualComparableType Type>
+    bool operator!=(const List<Type>& other)
     {
         return m_data != other.m_data;
     }
 
-    bool operator>(const Array<Type>& other)
+    template<Concept::SortComparableType Type>
+    bool operator>(const List<Type>& other)
     {
         return m_data > other.m_data;
     }
 
-    bool operator>=(const Array<Type>& other)
+    template<Concept::SortComparableType Type>
+    bool operator>=(const List<Type>& other)
     {
         return m_data >= other.m_data;
     }
 
-    bool operator<(const Array<Type>& other)
+    template<Concept::SortComparableType Type>
+    bool operator<(const List<Type>& other)
     {
         return m_data < other.m_data;
     }
 
-    bool operator<=(const Array<Type>& other)
+    template<Concept::SortComparableType Type>
+    bool operator<=(const List<Type>& other)
     {
         return m_data <= other.m_data;
-    }
-
-    List& operator+=(const List& other)
-    {
-        return Append(other);
     }
 public:
     [[nodiscard]] constexpr iterator begin() noexcept

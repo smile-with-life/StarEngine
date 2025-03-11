@@ -81,7 +81,7 @@ String::String(const String& other)
 
 String& String::operator=(const String& other)
 {
-    if (*this == other) [[unlikely]] 
+    if (this == &other) [[unlikely]] 
     {
         return *this;
     }
@@ -98,7 +98,7 @@ String::String(String&& other)
 
 String& String::operator=(String&& other)
 {
-    if (*this == other) [[unlikely]]
+    if (this == &other) [[unlikely]]
     {
         return *this;
     }
@@ -406,7 +406,7 @@ String String::RightStr(int32 n)
 String String::Match(char start, char end)
 {
    int64 startIndex = m_data.find(start);
-   int64 endIndex = m_data.find(end, startIndex);
+   int64 endIndex = m_data.find(end, startIndex + 1);
    return SubStr(startIndex + 1, endIndex);
 }
 

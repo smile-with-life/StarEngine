@@ -117,7 +117,7 @@ String File::AbsolutePath(const String& path_)
 
 String File::FileDir(const String& path_)
 {
-    std::filesystem::path path(path_.ToStdString());
+    std::filesystem::path path(std::filesystem::absolute(path_.ToStdString()));
 
     return String(path.parent_path().string());
 }
@@ -143,12 +143,12 @@ String File::FileEXT(const String& path_)
     return String(path.extension().string());
 }
 
-void File::CreateDir(const String& path_)
+void File::CreateDir(const String& dir_)
 {
-    std::filesystem::path newDir(FileDir(path_).ToStdString());
+    std::filesystem::path dir(dir_.ToStdString());
     std::error_code err;
     
-    std::filesystem::create_directories(newDir,err);
+    std::filesystem::create_directories(dir,err);
 
     if (err.value()) [[unlikely]]
     {
@@ -361,7 +361,8 @@ bool File::Create() const
     //如果路径不存在则创建相应路径
     if (!std::filesystem::exists(m_path))
     {
-        CreateDir(m_path.string());
+        String dir = FileDir(m_path.string());
+        CreateDir(dir);
         std::ofstream file(m_path);
         if (!file.is_open()) [[unlikely]]
         {

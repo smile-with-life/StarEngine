@@ -12,10 +12,19 @@
 
 #ifdef STAR_PLATFORM_WINDOWS
     #include "Windows.h"
+    // 取消宏定义
     #undef min
     #undef max
 #endif
 
 #ifdef STAR_PLATFORM_WINDOWS
     inline SE_API HINSTANCE GWindowsInstance;
+#endif
+
+
+#ifdef STAR_TEST
+    #include <assert.h>
+    #define Assert(expression) assert(expression)
+#else
+    #define Assert(expression) ((void)0)
 #endif

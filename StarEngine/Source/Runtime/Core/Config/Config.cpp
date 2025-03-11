@@ -12,6 +12,8 @@ ConfigFile::~ConfigFile()
 
 bool ConfigFile::Load(const String& path_)
 {
+    Clear();
+
     m_fileName = path_;
     File file(path_);
 
@@ -20,6 +22,8 @@ bool ConfigFile::Load(const String& path_)
 
     if (file.Open(OpenMode::ReadOnly))
     {
+        // @实现 ini文件语法检查器
+
         ByteArray buffer;
         String line;
         String header;
@@ -47,7 +51,11 @@ bool ConfigFile::Load(const String& path_)
             // 解析键值对
             key = line.Section('=', 0).Trim();
             value = line.Section('=', 1).Trim();
-            m_sections[header].SetValue(key, value);
+            if (value.FrontChar() == '\"' && value.BackChar() == '\"')
+            {
+                value = value.Match('\"', '\"');
+            }
+            m_sections[header].AddItem(key, value);
             m_sections[header].m_itemOrder.PushBack(key);// 记录配置项的顺序    
         }
 
@@ -90,21 +98,30 @@ bool ConfigFile::SaveAs(const String& path_)
 void ConfigFile::AddSection(const Name& section)
 {
     m_sections[section];
+    m_sectionOrder.PushBack(section);
 }
 
 void ConfigFile::AddItem(const Name& section, const Name& key, const String& value)
 {
-    m_sections[section].SetValue(key, value);
+    if (!m_sections.Contains(section))
+    {
+        m_sectionOrder.PushBack(section);
+    }
+    m_sections[section].AddItem(key, value);
 }
 
 void ConfigFile::RemoveSection(const Name& section)
 {
-    m_sections.Erase(section);
+    if (m_sections.Erase(section))
+    {
+        const auto iter = m_sectionOrder.iter_find(section);
+        m_sectionOrder.Erase(iter);
+    }
 }
 
 void ConfigFile::RemoveItem(const Name& section, const Name& key)
 {
-    m_sections[section].Erase(key);
+    m_sections.At(section).RemoveItem(key);
 }
 
 bool ConfigFile::IsEmpty() const
@@ -115,6 +132,7 @@ bool ConfigFile::IsEmpty() const
 void ConfigFile::Clear()
 {
     m_sections.Clear();
+    m_sectionOrder.Clear();
 }
 
 bool ConfigFile::Contains(const String& section) const
@@ -122,68 +140,73 @@ bool ConfigFile::Contains(const String& section) const
     return m_sections.Contains(section);
 }
 
-int64 ConfigFile::SectionNum() const
+int64 ConfigFile::Num() const
 {
     return m_sections.Size();
 }
 
+ConfigSection& ConfigFile::Visit(const String& section)
+{
+    return m_sections.At(section);
+}
+
 String ConfigFile::GetString(const String& section, const String& key) const
 {
-    return m_sections[section].GetValue(key);
+    return m_sections.At(section).GetValue(key);
 }
 
 int64 ConfigFile::GetInt(const String& section, const String& key) const
 {
-    return m_sections[section].GetValue(key).ToInt32();
+    return m_sections.At(section).GetValue(key).ToInt32();
 }
 
 int64 ConfigFile::GetInt64(const String& section, const String& key) const
 {
-    return m_sections[section].GetValue(key).ToInt64();
+    return m_sections.At(section).GetValue(key).ToInt64();
 }
 
 float ConfigFile::GetFloat(const String& section, const String& key) const
 {
-    return m_sections[section].GetValue(key).ToFloat();
+    return m_sections.At(section).GetValue(key).ToFloat();
 }
 
 double ConfigFile::GetDouble(const String& section, const String& key) const
 {
-    return m_sections[section].GetValue(key).ToDouble();
+    return m_sections.At(section).GetValue(key).ToDouble();
 }
 
 bool ConfigFile::GetBool(const String& section, const String& key) const
 {
-    return m_sections[section].GetValue(key).ToBool();
+    return m_sections.At(section).GetValue(key).ToBool();
 }
 
 void ConfigFile::SetString(const String& section, const String& key, const String value)
 {
-    m_sections[section].SetValue(key, value);
+    m_sections.At(section).SetValue(key, value);
 }
 
 void ConfigFile::SetInt(const String& section, const String& key, int value)
 {
-    m_sections[section].SetValue(key, String::FromInt32(value));
+    m_sections.At(section).SetValue(key, String::FromInt32(value));
 }
 
 void ConfigFile::SetInt64(const String& section, const String& key, int64 value)
 {
-    m_sections[section].SetValue(key, String::FromInt64(value));
+    m_sections.At(section).SetValue(key, String::FromInt64(value));
 }
 
 void ConfigFile::SetFloat(const String& section, const String& key, float value)
 {
-    m_sections[section].SetValue(key, String::FromFloat(value));
+    m_sections.At(section).SetValue(key, String::FromFloat(value));
 }
 
 void ConfigFile::SetDouble(const String& section, const String& key, double value)
 {
-    m_sections[section].SetValue(key, String::FromDouble(value));
+    m_sections.At(section).SetValue(key, String::FromDouble(value));
 }
 
 void ConfigFile::SetBool(const String& section, const String& key, bool value)
 {
-    m_sections[section].SetValue(key, String::FromBool(value));
+    m_sections.At(section).SetValue(key, String::FromBool(value));
 }
 }// namespace Star

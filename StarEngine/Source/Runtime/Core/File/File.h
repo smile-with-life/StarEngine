@@ -73,7 +73,7 @@ public:
     // 重命名文件
     void Rename(const String& path);
 
-    // 文件大小
+    // 文件大小，当文件存在时返回文件大小，否则返回 -1
     int64 Size() const;
 
     // 设置文件大小
@@ -109,7 +109,7 @@ public:
     // 移动或重命名一个文件或目录
     static String Rename(const String& oldPath, const String& newPath);
 
-    // 返回文件大小
+    // 文件大小，当文件存在时返回文件大小，否则返回 -1
     static int64 FileSize(const String& path);
 
     // 设置文件大小
@@ -130,8 +130,8 @@ public:
     // 返回文件扩展名
     static String FileEXT(const String& path);
 
-    // 创建目录
-    static void CreateDir(const String& path);
+    // 创建目录，当给定路径不为目录时，行为未定义
+    static void CreateDir(const String& dir);
 
     // 判断给定的路径是否表示一个目录
     static bool IsDir(const String& path);

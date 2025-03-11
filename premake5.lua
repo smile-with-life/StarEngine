@@ -5,7 +5,8 @@ workspace "StarEngine" --工作区
     startproject "TestGame" --[[启动项目]]
 
 	configurations --配置项
-    {                               
+    {    
+        "Test",                        
         "Debug",
         "Release",
         "Dist"
@@ -67,6 +68,11 @@ project "StarEngine" --项目
         "opengl32.lib",
         "icuuc"
     }
+
+    filter "configurations:Test" --Test模式
+	    defines "STAR_TEST"
+		buildoptions "/MDd"
+		symbols "On"
 
     filter "configurations:Debug" --Debug模式
 	    defines "STAR_DEBUG"
@@ -139,20 +145,25 @@ project "TestGame"
         "icuuc"
     }
 
-    filter "configurations:Debug"
-        defines "STAR_DEBUG"
-        buildoptions "/MDd"
-        symbols "On"
-    
-    filter "configurations:Release"
-        defines "STAR_RELEASE"
-        buildoptions "/MD"
-        optimize "On"
-    
-    filter "configurations:Dist"
-        defines "STAR_DIST"
-        buildoptions "/MD"
-        optimize "On"
+    filter "configurations:Test" --Test模式
+	    defines "STAR_Test"
+		buildoptions "/MDd"
+		symbols "On"
+
+    filter "configurations:Debug" --Debug模式
+	    defines "STAR_DEBUG"
+		buildoptions "/MDd"
+		symbols "On"
+
+	filter "configurations:Release" --Release模式
+	    defines "STAR_RELEASE"
+		buildoptions "/MD"
+		optimize "On"
+
+	filter "configurations:Dist" --Dist模式
+	    defines "STAR_DIST"
+		buildoptions "/MD"
+		optimize "On"
     
     filter "system:windows"
         cppdialect "C++20"

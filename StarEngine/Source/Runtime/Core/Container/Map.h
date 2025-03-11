@@ -26,7 +26,7 @@ public:
 
     Map& operator=(const Map& other)
     {
-        if (*this == other) [[unlikely]]
+        if (this == &other) [[unlikely]]
         {
             return *this;
         }
@@ -42,7 +42,7 @@ public:
 
     Map& operator=(Map&& other) noexcept
     {
-        if (*this == other) [[unlikely]]
+        if (this == &other) [[unlikely]]
         {
             return *this;
         }
@@ -218,7 +218,42 @@ public:
     {
         m_data.swap(other.m_data);
     }
+public:
+    template<Concept::EqualComparableType KeyType, Concept::EqualComparableType ValueType>
+    bool operator==(const Map<KeyType, ValueType>& other)
+    {
+        return m_data == other.m_data;
+    }
 
+    template<Concept::EqualComparableType KeyType, Concept::EqualComparableType ValueType>
+    bool operator!=(const Map<KeyType, ValueType>& other)
+    {
+        return m_data != other.m_data;
+    }
+
+    template<Concept::SortComparableType KeyType>
+    bool operator>(const Map<KeyType, ValueType>& other)
+    {
+        return m_data > other.m_data;
+    }
+
+    template<Concept::SortComparableType KeyType>
+    bool operator>=(const Map<KeyType, ValueType>& other)
+    {
+        return m_data >= other.m_data;
+    }
+
+    template<Concept::SortComparableType KeyType>
+    bool operator<(const Map<KeyType, ValueType>& other)
+    {
+        return m_data < other.m_data;
+    }
+
+    template<Concept::SortComparableType KeyType>
+    bool operator<=(const Map<KeyType, ValueType>& other)
+    {
+        return m_data <= other.m_data;
+    }
 public:
     [[nodiscard]] constexpr iterator begin() noexcept
     {

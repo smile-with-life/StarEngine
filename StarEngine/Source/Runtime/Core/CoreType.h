@@ -2,7 +2,6 @@
 
 #include <cstdint>
 #include <concepts>
-#include <assert.h>
 
 using int8 = std::int8_t;
 using int16 = std::int16_t;
@@ -28,7 +27,6 @@ using ptrdiff = std::ptrdiff_t;
 
 using Handle = uint32;
 
-
 namespace Concept
 {
 // 算数类型
@@ -46,4 +44,25 @@ concept FloatPointType = std::floating_point<Type>;
 // 随机访问迭代器类型
 //template<class Type>
 //using RandomIteratorType = std::random_access_iterator<Type>;
+
+// 支持相等的可比较类型
+template<class Type>
+concept EqualComparableType = requires(const Type & left, const Type & right)
+{
+    { left == right } -> std::convertible_to<bool>;
+    { left != right } -> std::convertible_to<bool>;
+};
+
+// 支持排序的可比较类型
+template<class Type>
+concept SortComparableType = requires(const Type & left, const Type & right)
+{
+    { left == right } -> std::convertible_to<bool>;
+    { left != right } -> std::convertible_to<bool>;
+    { left < right } -> std::convertible_to<bool>;
+    { left <= right } -> std::convertible_to<bool>;
+    { left > right } -> std::convertible_to<bool>;
+    { left >= right } -> std::convertible_to<bool>;
+};
+
 }// namespace Concept

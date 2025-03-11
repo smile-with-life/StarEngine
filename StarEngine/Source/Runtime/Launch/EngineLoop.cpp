@@ -20,8 +20,8 @@ EngineLoop::~EngineLoop()
 int EngineLoop::Init()
 {
     m_app->Init();
-    Test::Test_File();
-    Test::Test_Config();
+    Test::UnitTesting();
+
 
     return 0;
 }
