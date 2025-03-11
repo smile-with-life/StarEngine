@@ -3,6 +3,7 @@
 #include"Runtime/Core/File/File.h"
 #include"Runtime/Core/Config/Config.h"
 #include"Runtime/OpenGL/Shader.h"
+#include"Runtime/Core/Container/List.h"
 
 namespace Star::Test
 {
@@ -94,11 +95,5 @@ void Test_Config()
     config.AddItem("group_2", "asd", "2");
     config.AddItem("group_2", "qwe", "1");
     config.Save();
-}
-
-void Test_Shader()
-{
-    Shader shader;
-    shader.Init("Asset/Shader/TestVertexShader.txt", "Asset/Shader/TestFragmentShader.txt");
 }
 }

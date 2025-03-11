@@ -76,7 +76,7 @@ public:
     {
         m_data = ilist;
     }
-
+public:
     constexpr Type& At(int64 index)
     {
         return m_data.at(index);
@@ -126,7 +126,7 @@ public:
     {
         return m_data.data();
     }
-
+public:
     constexpr bool IsEmpty() const
     {
         return m_data.empty();
@@ -135,6 +135,11 @@ public:
     constexpr int64 Size() const
     {
         return m_data.size();
+    }
+
+    int64 Max() const
+    {
+        return m_data.max_size();
     }
 
     constexpr int64 Capacity() const
@@ -162,6 +167,18 @@ public:
         m_data.shrink_to_fit();
     }
 
+    constexpr Array& Append(const Type& value)
+    {
+        m_data.insert(m_data.end(), value);
+        return *this;
+    }
+
+    constexpr Array& Append(Type&& value)
+    {
+        m_data.insert(m_data.end(), std::forward<Type>(value));
+        return *this;
+    }
+
     constexpr Array& Append(const Array& other)
     {
         m_data.insert(m_data.end(), other.m_data.begin(), other.m_data.end());
@@ -175,7 +192,7 @@ public:
 
     constexpr iterator Insert(const_iterator iter, Type&& value)
     {
-        return m_data.insert(iter, value);
+        return m_data.insert(iter, std::forward<Type>(value));
     }
 
     constexpr iterator Insert(const_iterator iter, int64 count, const Type& value)
@@ -235,7 +252,7 @@ public:
     {
         m_data.swap(other.m_data);
     }
-
+public:
     bool operator==(const Array<Type>& other)
     {
         return m_data == other.m_data;

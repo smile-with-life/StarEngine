@@ -20,27 +20,27 @@ OpenGL* OpenGL::Create()
 void WindowsOpenGL::Init(Window* window_)
 {
     m_hWnd = (HWND)(window_->GetNativeHandle());
-    LoadOpenGL();
-    MakeContext();
+    /*LoadOpenGL();
+    MakeContext();*/
 }
 
 void WindowsOpenGL::Tick()
 {
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    /*glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-    SwapBuffers(m_hDC);
+    SwapBuffers(m_hDC);*/
 }
 
 void WindowsOpenGL::Exit()
 {
-    // 将当前渲染上下文置空
-    wglMakeCurrent(NULL, NULL);
+    //// 将当前渲染上下文置空
+    //wglMakeCurrent(NULL, NULL);
 
-    // 释放渲染上下文
-    wglDeleteContext(m_hRC);
+    //// 释放渲染上下文
+    //wglDeleteContext(m_hRC);
 
-    // 释放该窗口的设备上下文。
-    ReleaseDC(m_hWnd, m_hDC);
+    //// 释放该窗口的设备上下文。
+    //ReleaseDC(m_hWnd, m_hDC);
 }
 
 void WindowsOpenGL::LoadOpenGL()
@@ -114,8 +114,8 @@ void WindowsOpenGL::MakeContext()
 
     // 在属性列表中设置OpenGL的4.0版本
     const int version[] = {
-        WGL_CONTEXT_MAJOR_VERSION_ARB, 4,
-        WGL_CONTEXT_MINOR_VERSION_ARB, 6,
+        WGL_CONTEXT_MAJOR_VERSION_ARB, 3,
+        WGL_CONTEXT_MINOR_VERSION_ARB, 0,
         0
     };
 
