@@ -34,6 +34,9 @@
     <Filter Include="Runtime\Core\Container">
       <UniqueIdentifier>{53FC2214-3FF6-4B66-2863-E27614FCB1D2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Runtime\Core\Debug">
+      <UniqueIdentifier>{7726CC76-630A-8DCC-CC6A-871FB86D774E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Runtime\Core\File">
       <UniqueIdentifier>{10CFD8FB-7CE5-D691-C55C-62B331B2A719}</UniqueIdentifier>
     </Filter>
@@ -57,6 +60,9 @@
     </Filter>
     <Filter Include="Runtime\Test">
       <UniqueIdentifier>{58978A1B-44FA-19C0-ED7F-5276D9C1E542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Test\Core">
+      <UniqueIdentifier>{B01280ED-1C29-7E83-65A0-09A5D1F54E0B}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -99,14 +105,14 @@
     <ClInclude Include="Source\Runtime\Core\Core.h">
       <Filter>Runtime\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\CorePlatform.h">
+    <ClInclude Include="Source\Runtime\Core\Platform\Platform.h">
       <Filter>Runtime\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\CoreTool.h">
+    <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h">
       <Filter>Runtime\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\CoreType.h">
-      <Filter>Runtime\Core</Filter>
+    <ClInclude Include="Source\Runtime\Core\Debug\Debug.h">
+      <Filter>Runtime\Core\Debug</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\File\ByteArray.h">
       <Filter>Runtime\Core\File</Filter>
@@ -143,6 +149,7 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
+    <ClInclude Include="Source\Runtime\Core\Concept\Concept.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -190,11 +197,10 @@
     <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp">
       <Filter>Runtime\OpenGL\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Runtime\Test\Test.cpp">
+      <Filter>Runtime\Test</Filter>
+    </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Core\TestContainer.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Core\TestFile.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Core\TestConfig.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

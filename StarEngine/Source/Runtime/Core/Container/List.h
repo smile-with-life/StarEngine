@@ -1,6 +1,7 @@
 #pragma once
 #include <list>
 #include "Runtime/Core/Core.h"
+#include"Runtime/Core/Concept/Concept.h"
 namespace Star
 {
 template<class Type>

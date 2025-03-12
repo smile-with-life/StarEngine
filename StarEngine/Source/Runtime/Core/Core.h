@@ -1,5 +1,5 @@
 #pragma once
 
-#include "CoreType.h"
-#include "CorePlatform.h"
-#include "CoreTool.h"
+#include "Runtime/Core/Platform/Platform.h"
+#include "TypeDefinition/Type.h"
+#include "Debug/Debug.h"

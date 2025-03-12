@@ -79,7 +79,7 @@ void WindowsOpenGL::LoadOpenGL()
 
     // 获取临时窗口的设备上下文
     tempDC = GetDC(tempWnd);
-    assert(tempDC);
+    Assert(tempDC);
 
     // 设置临时的默认像素格式
     SetPixelFormat(tempDC, 1, &m_pixelFormat);
