@@ -14,6 +14,8 @@ files  --要编译的源文件
     "Container/Set.h",
     "Container/Hash.h",
 
+    "Debug/Debug.h",
+
     "File/ByteArray.h",
     "File/ByteArray.cpp",
     "File/File.h",
