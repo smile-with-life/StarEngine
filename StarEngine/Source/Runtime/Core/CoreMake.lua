@@ -1,9 +1,8 @@
 files  --要编译的源文件
 {
-    "CoreType.h",
-    "CorePlatform.h",
-    "CoreTool.h",
     "Core.h",
+
+    "Concept/Concept.h",
 
     "Config/Config.h",
     "Config/Config.cpp",
@@ -24,8 +23,12 @@ files  --要编译的源文件
     "Math/Math.h",
     "Math/Vec.h",
 
+    "Platform/Platform.h",
+
     "String/String.h",
     "String/String.cpp",
-    "String/Convert.h"
+    "String/Convert.h",
+
+    "TypeDefinition/Type.h"
 
 }

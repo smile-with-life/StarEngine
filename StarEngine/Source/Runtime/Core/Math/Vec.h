@@ -1,13 +1,13 @@
 #pragma once
 
 #include "Runtime/Core/Core.h"
+#include "Runtime/Core/Concept/Concept.h"
 
 #include "Math.h"
 
 namespace Star
 {
-
-template<Concept::FloatPointType Type>
+template<Concept::ArithmeticType Type>
 class Vec2
 {
 public:
@@ -42,7 +42,7 @@ public:
     }
 
     // 拷贝赋值
-    Vec2& operator=(const Vec3& vec2)
+    Vec2& operator=(const Vec2& vec2)
     {
         if (&vec2 == this) [[unlikely]]
         {
@@ -227,7 +227,7 @@ public:
     template<Concept::ArithmeticType Scalar>
     Vec2& operator/=(Scalar scale)
     {
-        const Type invScale = (T)1 / scale;
+        const Type invScale = (Type)1 / scale;
         x *= invScale; y *= invScale;
         return *this;
     }
@@ -312,7 +312,7 @@ public:
     };
 };
 
-template<Concept::FloatPointType Type>
+template<Concept::ArithmeticType Type>
 class Vec3
 {
 public:
@@ -546,7 +546,7 @@ public:
     template<Concept::ArithmeticType Scalar>
     Vec3& operator/=(Scalar scale)
     {
-        const Type invScale = (T)1 / scale;
+        const Type invScale = (Type)1 / scale;
         x *= invScale; y *= invScale; z *= invScale;
         return *this;
     }
@@ -631,11 +631,11 @@ public:
     union 
     {
         Type data[3];
-        struct { Type x, y, ; };
+        struct { Type x, y, z; };
     };
 };
 
-template<Concept::FloatPointType Type>
+template<Concept::ArithmeticType Type>
 class Vec4
 {
 public:
@@ -656,7 +656,7 @@ public:
     }
 
     // 构造函数
-    Vec4(const Vec3& vec3, Type wValue = 1.0f)
+    Vec4(const Vec3<Type>& vec3, Type wValue = 1.0f)
         : x(vec3.x)
         , y(vec3.y)
         , z(vec3.z)
@@ -721,7 +721,7 @@ public:
     // 向量减法，返回一个新的向量
     Vec4 operator-(const Vec4& vec4) const
     {
-        return Vec4(x - vec3.x, y - vec3.y, z - vec3.z, w - vec4.w);
+        return Vec4(x - vec4.x, y - vec4.y, z - vec4.z, w - vec4.w);
     }
 
     // 向量与另一个向量的分量相乘，返回一个新的向量
@@ -787,7 +787,7 @@ public:
     // 向量与另一个向量的分量相除，返回它本身
     Vec4& operator/=(const Vec4& vec4)
     {
-        x /= vec34.x; y /= vec4.y; z /= vec4.z; w /= vec4.w;
+        x /= vec4.x; y /= vec4.y; z /= vec4.z; w /= vec4.w;
         return *this;
     }
 
@@ -838,7 +838,7 @@ public:
 
     // 向量的每个分量都乘以一个值，返回它本身
     template<Concept::ArithmeticType Scalar>
-    Vec3& operator*=(Scalar scale)
+    Vec3<Type>& operator*=(Scalar scale)
     {
         x *= scale; y *= scale; z *= scale; w *= scale;
         return *this;
@@ -846,9 +846,9 @@ public:
 
     // 获取向量的每个分量除以一个值的结果，返回它本身
     template<Concept::ArithmeticType Scalar>
-    Vec3& operator/=(Scalar scale)
+    Vec3<Type>& operator/=(Scalar scale)
     {
-        const Type invScale = (T)1 / scale;
+        const Type invScale = (Type)1 / scale;
         x *= invScale; y *= invScale; z *= invScale; w *= invScale;
         return *this;
     }

@@ -223,6 +223,7 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\AppFrame\Console\Windows\WindowsConsole.h" />
     <ClInclude Include="Source\Runtime\AppFrame\Window\Window.h" />
     <ClInclude Include="Source\Runtime\AppFrame\Window\Windows\WindowsWindow.h" />
+    <ClInclude Include="Source\Runtime\Core\Algo\Alog.h" />
     <ClInclude Include="Source\Runtime\Core\Concept\Concept.h" />
     <ClInclude Include="Source\Runtime\Core\Config\Config.h" />
     <ClInclude Include="Source\Runtime\Core\Container\Array.h" />
@@ -231,15 +232,15 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Container\Map.h" />
     <ClInclude Include="Source\Runtime\Core\Container\Set.h" />
     <ClInclude Include="Source\Runtime\Core\Core.h" />
-    <ClInclude Include="Source\Runtime\Core\Platform\Platform.h" />
-    <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h" />
     <ClInclude Include="Source\Runtime\Core\Debug\Debug.h" />
     <ClInclude Include="Source\Runtime\Core\File\ByteArray.h" />
     <ClInclude Include="Source\Runtime\Core\File\File.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Math.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Vec.h" />
+    <ClInclude Include="Source\Runtime\Core\Platform\Platform.h" />
     <ClInclude Include="Source\Runtime\Core\String\Convert.h" />
     <ClInclude Include="Source\Runtime\Core\String\String.h" />
+    <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h" />
     <ClInclude Include="Source\Runtime\Launch\EngineLoop.h" />
     <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h" />
     <ClInclude Include="Source\Runtime\OpenGL\Shader.h" />
@@ -264,6 +265,10 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\Shader.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp" />
+    <ClCompile Include="Source\Runtime\Test\Core\TestConfig.cpp" />
+    <ClCompile Include="Source\Runtime\Test\Core\TestContainer.cpp" />
+    <ClCompile Include="Source\Runtime\Test\Core\TestFile.cpp" />
+    <ClCompile Include="Source\Runtime\Test\Core\TestVec.cpp" />
     <ClCompile Include="Source\Runtime\Test\Test.cpp" />
     <ClCompile Include="Source\starpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

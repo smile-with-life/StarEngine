@@ -24,6 +24,9 @@ namespace Star
 {
 class DebugOutput
 {
+public:
+    DebugOutput() = default;
+    ~DebugOutput() = default;
 
 };
 

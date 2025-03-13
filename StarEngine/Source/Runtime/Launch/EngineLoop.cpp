@@ -22,7 +22,6 @@ int EngineLoop::Init()
     m_app->Init();
     Test::UnitTesting();
 
-
     return 0;
 }
 

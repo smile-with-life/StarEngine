@@ -28,6 +28,9 @@
     <Filter Include="Runtime\Core">
       <UniqueIdentifier>{416F811B-2DD2-10C0-D657-4976C299DC42}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Runtime\Core\Concept">
+      <UniqueIdentifier>{5C479825-48D6-21EF-F1F4-35EADD623295}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Runtime\Core\Config">
       <UniqueIdentifier>{2617B74E-9278-945C-1BE6-DA0E8746CB1B}</UniqueIdentifier>
     </Filter>
@@ -43,8 +46,14 @@
     <Filter Include="Runtime\Core\Math">
       <UniqueIdentifier>{BA84DCFB-269B-DA91-6F12-66B3DB67AB19}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Runtime\Core\Platform">
+      <UniqueIdentifier>{B564EBD3-21D1-A6CE-EAC4-3E2C56F0C836}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Runtime\Core\String">
       <UniqueIdentifier>{A75A6674-13BC-4382-9C29-8A34088A7A41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\TypeDefinition">
+      <UniqueIdentifier>{DBE17DB2-47EF-AB98-D0D5-A7833CE2774F}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Launch">
       <UniqueIdentifier>{B3329D15-9F00-911B-8894-014274016D80}</UniqueIdentifier>
@@ -84,6 +93,9 @@
     <ClInclude Include="Source\Runtime\AppFrame\Window\Windows\WindowsWindow.h">
       <Filter>Runtime\AppFrame\Window\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Concept\Concept.h">
+      <Filter>Runtime\Core\Concept</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Config\Config.h">
       <Filter>Runtime\Core\Config</Filter>
     </ClInclude>
@@ -105,12 +117,6 @@
     <ClInclude Include="Source\Runtime\Core\Core.h">
       <Filter>Runtime\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\Platform\Platform.h">
-      <Filter>Runtime\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h">
-      <Filter>Runtime\Core</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Debug\Debug.h">
       <Filter>Runtime\Core\Debug</Filter>
     </ClInclude>
@@ -126,11 +132,17 @@
     <ClInclude Include="Source\Runtime\Core\Math\Vec.h">
       <Filter>Runtime\Core\Math</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Platform\Platform.h">
+      <Filter>Runtime\Core\Platform</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\String\Convert.h">
       <Filter>Runtime\Core\String</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\String\String.h">
       <Filter>Runtime\Core\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h">
+      <Filter>Runtime\Core\TypeDefinition</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Launch\EngineLoop.h">
       <Filter>Runtime\Launch</Filter>
@@ -149,7 +161,7 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
-    <ClInclude Include="Source\Runtime\Core\Concept\Concept.h" />
+    <ClInclude Include="Source\Runtime\Core\Algo\Alog.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -196,6 +208,18 @@
     </ClCompile>
     <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp">
       <Filter>Runtime\OpenGL\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Test\Core\TestConfig.cpp">
+      <Filter>Runtime\Test\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Test\Core\TestContainer.cpp">
+      <Filter>Runtime\Test\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Test\Core\TestFile.cpp">
+      <Filter>Runtime\Test\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Test\Core\TestVec.cpp">
+      <Filter>Runtime\Test\Core</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Test\Test.cpp">
       <Filter>Runtime\Test</Filter>
