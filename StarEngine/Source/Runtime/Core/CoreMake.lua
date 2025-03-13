@@ -2,6 +2,8 @@ files  --要编译的源文件
 {
     "Core.h",
 
+    "Algo/Alog.h",
+
     "Concept/Concept.h",
 
     "Config/Config.h",
@@ -28,6 +30,9 @@ files  --要编译的源文件
     "String/String.h",
     "String/String.cpp",
     "String/Convert.h",
+
+    "Thread/Atomic.h",
+    "Thread/Thread.h",
 
     "TypeDefinition/Type.h"
 

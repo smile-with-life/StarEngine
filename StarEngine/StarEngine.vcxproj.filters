@@ -28,6 +28,9 @@
     <Filter Include="Runtime\Core">
       <UniqueIdentifier>{416F811B-2DD2-10C0-D657-4976C299DC42}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Runtime\Core\Algo">
+      <UniqueIdentifier>{531DD6FB-BF33-D491-08AB-5FB37400A519}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Runtime\Core\Concept">
       <UniqueIdentifier>{5C479825-48D6-21EF-F1F4-35EADD623295}</UniqueIdentifier>
     </Filter>
@@ -51,6 +54,9 @@
     </Filter>
     <Filter Include="Runtime\Core\String">
       <UniqueIdentifier>{A75A6674-13BC-4382-9C29-8A34088A7A41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\Thread">
+      <UniqueIdentifier>{884AE275-F4AB-BF83-7D19-0636E979F642}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Core\TypeDefinition">
       <UniqueIdentifier>{DBE17DB2-47EF-AB98-D0D5-A7833CE2774F}</UniqueIdentifier>
@@ -92,6 +98,9 @@
     </ClInclude>
     <ClInclude Include="Source\Runtime\AppFrame\Window\Windows\WindowsWindow.h">
       <Filter>Runtime\AppFrame\Window\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Algo\Alog.h">
+      <Filter>Runtime\Core\Algo</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Concept\Concept.h">
       <Filter>Runtime\Core\Concept</Filter>
@@ -141,6 +150,12 @@
     <ClInclude Include="Source\Runtime\Core\String\String.h">
       <Filter>Runtime\Core\String</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Thread\Atomic.h">
+      <Filter>Runtime\Core\Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Thread\Thread.h">
+      <Filter>Runtime\Core\Thread</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h">
       <Filter>Runtime\Core\TypeDefinition</Filter>
     </ClInclude>
@@ -161,7 +176,6 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
-    <ClInclude Include="Source\Runtime\Core\Algo\Alog.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
