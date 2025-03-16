@@ -32,7 +32,10 @@ files  --要编译的源文件
     "String/Convert.h",
 
     "Thread/Atomic.h",
+    "Thread/Mutex.h",
+    "Thread/Semaphore.h",
     "Thread/Thread.h",
+    "Thread/WaitCondition.h",
 
     "TypeDefinition/Type.h"
 

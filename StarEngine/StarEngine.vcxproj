@@ -241,7 +241,10 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\String\Convert.h" />
     <ClInclude Include="Source\Runtime\Core\String\String.h" />
     <ClInclude Include="Source\Runtime\Core\Thread\Atomic.h" />
+    <ClInclude Include="Source\Runtime\Core\Thread\Mutex.h" />
+    <ClInclude Include="Source\Runtime\Core\Thread\Semaphore.h" />
     <ClInclude Include="Source\Runtime\Core\Thread\Thread.h" />
+    <ClInclude Include="Source\Runtime\Core\Thread\WaitCondition.h" />
     <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h" />
     <ClInclude Include="Source\Runtime\Launch\EngineLoop.h" />
     <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h" />

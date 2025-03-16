@@ -176,6 +176,9 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
+    <ClInclude Include="Source\Runtime\Core\Thread\Mutex.h" />
+    <ClInclude Include="Source\Runtime\Core\Thread\Semaphore.h" />
+    <ClInclude Include="Source\Runtime\Core\Thread\WaitCondition.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
