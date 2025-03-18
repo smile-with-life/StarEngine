@@ -235,6 +235,7 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Debug\Debug.h" />
     <ClInclude Include="Source\Runtime\Core\File\ByteArray.h" />
     <ClInclude Include="Source\Runtime\Core\File\File.h" />
+    <ClInclude Include="Source\Runtime\Core\Image\Image.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Math.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Vec.h" />
     <ClInclude Include="Source\Runtime\Core\Platform\Platform.h" />
@@ -249,6 +250,7 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Launch\EngineLoop.h" />
     <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h" />
     <ClInclude Include="Source\Runtime\OpenGL\Shader.h" />
+    <ClInclude Include="Source\Runtime\OpenGL\VertexArray.h" />
     <ClInclude Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.h" />
     <ClInclude Include="Source\Runtime\Test\Test.h" />
     <ClInclude Include="Source\Starengine.h" />
@@ -269,6 +271,7 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\Shader.cpp" />
+    <ClCompile Include="Source\Runtime\OpenGL\VertexArray.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestConfig.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestContainer.cpp" />

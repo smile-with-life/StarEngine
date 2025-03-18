@@ -27,7 +27,7 @@ class DebugOutput
 public:
     DebugOutput() = default;
     ~DebugOutput() = default;
-
+    
 };
 
 inline DebugOutput console;

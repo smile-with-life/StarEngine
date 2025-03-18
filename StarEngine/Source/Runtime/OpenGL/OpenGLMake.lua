@@ -3,7 +3,9 @@ files  --要编译的源文件
     "OpenGL.h",
     "OpenGL.cpp",
     "Shader.h",
-    "Shader.cpp"
+    "Shader.cpp",
+    "VertexBuffer.h",
+    "VertexBuffer.cpp"
 }
 
 filter "system:Windows"
