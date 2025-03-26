@@ -177,7 +177,7 @@
     <ClInclude Include="Source\Runtime\OpenGL\Shader.h">
       <Filter>Runtime\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\OpenGL\VertexArray.h">
+    <ClInclude Include="Source\Runtime\OpenGL\VertexBuffer.h">
       <Filter>Runtime\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.h">
@@ -189,11 +189,10 @@
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
     <ClInclude Include="Source\Runtime\Core\Image\Image.h" />
-    <ClInclude Include="Source\Runtime\Core\Image\ImageParser.h" />
     <ClInclude Include="Source\Runtime\Core\GUID\GUID.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Date.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Time.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\DateTime.h" />
     <ClInclude Include="Source\Runtime\Core\Time\Timer.h" />
+    <ClInclude Include="Source\Runtime\Core\Scene\Entity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -261,9 +260,10 @@
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
     <ClCompile Include="Source\Runtime\Core\GUID\GUID.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Date.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Time.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Time\DateTime.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Image\Image.cpp" />
     <ClCompile Include="Source\Runtime\Core\Time\Timer.cpp" />
+    <ClCompile Include="Source\Runtime\OpenGL\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">
