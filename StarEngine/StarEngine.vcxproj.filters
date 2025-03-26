@@ -189,6 +189,11 @@
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
     <ClInclude Include="Source\Runtime\Core\Image\Image.h" />
+    <ClInclude Include="Source\Runtime\Core\Image\ImageParser.h" />
+    <ClInclude Include="Source\Runtime\Core\GUID\GUID.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\Date.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\Time.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -255,6 +260,10 @@
       <Filter>Runtime\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
+    <ClCompile Include="Source\Runtime\Core\GUID\GUID.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Time\Date.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Time\Time.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Time\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

@@ -232,10 +232,13 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Container\Map.h" />
     <ClInclude Include="Source\Runtime\Core\Container\Set.h" />
     <ClInclude Include="Source\Runtime\Core\Core.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\Date.h" />
     <ClInclude Include="Source\Runtime\Core\Debug\Debug.h" />
     <ClInclude Include="Source\Runtime\Core\File\ByteArray.h" />
     <ClInclude Include="Source\Runtime\Core\File\File.h" />
+    <ClInclude Include="Source\Runtime\Core\GUID\GUID.h" />
     <ClInclude Include="Source\Runtime\Core\Image\Image.h" />
+    <ClInclude Include="Source\Runtime\Core\Image\ImageParser.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Math.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Vec.h" />
     <ClInclude Include="Source\Runtime\Core\Platform\Platform.h" />
@@ -246,6 +249,8 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Thread\Semaphore.h" />
     <ClInclude Include="Source\Runtime\Core\Thread\Thread.h" />
     <ClInclude Include="Source\Runtime\Core\Thread\WaitCondition.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\Time.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\Timer.h" />
     <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h" />
     <ClInclude Include="Source\Runtime\Launch\EngineLoop.h" />
     <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h" />
@@ -264,9 +269,13 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\AppFrame\Window\Window.cpp" />
     <ClCompile Include="Source\Runtime\AppFrame\Window\Windows\WindowsWindow.cpp" />
     <ClCompile Include="Source\Runtime\Core\Config\Config.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Time\Date.cpp" />
     <ClCompile Include="Source\Runtime\Core\File\ByteArray.cpp" />
     <ClCompile Include="Source\Runtime\Core\File\File.cpp" />
+    <ClCompile Include="Source\Runtime\Core\GUID\GUID.cpp" />
     <ClCompile Include="Source\Runtime\Core\String\String.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Time\Time.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Time\Timer.cpp" />
     <ClCompile Include="Source\Runtime\Launch\EngineLoop.cpp" />
     <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp" />

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <ostream>
 #include <cstdint>
 #include <thread>
 #include <string>

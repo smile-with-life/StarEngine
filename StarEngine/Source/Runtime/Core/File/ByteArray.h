@@ -34,6 +34,10 @@ public:
 
     ByteArray& operator<<(char ch);
 
+    char* Data();
+
+    const char* Data() const;
+
     // 返回数组的元素个数
     int64 Size() const;
 

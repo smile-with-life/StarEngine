@@ -64,6 +64,16 @@ ByteArray& ByteArray::operator<<(char ch)
     return *this;
 }
 
+char* ByteArray::Data()
+{
+    return m_data.Data();
+}
+
+const char* ByteArray::Data() const
+{
+    return m_data.Data();
+}
+
 int64 ByteArray::Size() const
 {
     return m_data.Size();
