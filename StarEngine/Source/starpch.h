@@ -15,5 +15,6 @@
 #include <atomic>
 #include <filesystem>
 #include <fstream>
+#include <chrono>
 
 #include "Runtime/Core/Core.h"
