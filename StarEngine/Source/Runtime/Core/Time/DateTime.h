@@ -58,6 +58,10 @@ public:
     bool operator<(const Date& other);
 
     bool operator<=(const Date& other);
+private:
+    uint16 m_year;
+    uint16 m_month;
+    uint16 m_day;
 };
 
 // 时间
@@ -114,6 +118,10 @@ public:
     bool operator<(const Time& other);
 
     bool operator<=(const Time& other);
+private:
+    uint16 m_hour;
+    uint16 m_minute;
+    uint16 m_second;
 };
 
 // 时间和日期
@@ -195,7 +203,8 @@ public:
 
     bool operator<=(const DateTime& other);
 private:
-    std::chrono::year m_year;
+    Star::Date m_date;
+    Star::Time m_time;
 
 };
 }// namespace Star
