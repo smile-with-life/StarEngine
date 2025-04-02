@@ -15,12 +15,19 @@ files  --要编译的源文件
     "Container/Set.h",
     "Container/Hash.h",
 
+    "DateTime/DateTime.h",
+    "DateTime/DateTime.cpp",
+
     "Debug/Debug.h",
 
-    "File/ByteArray.h",
-    "File/ByteArray.cpp",
     "File/File.h",
     "File/File.cpp",
+
+    "GUID/GUID.h",
+    "GUID/GUID.cpp",
+
+    "Image/Image.h",
+    "Image/Image.cpp",
 
     "Math/Math.h",
     "Math/Vec.h",

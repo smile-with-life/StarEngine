@@ -40,11 +40,20 @@
     <Filter Include="Runtime\Core\Container">
       <UniqueIdentifier>{53FC2214-3FF6-4B66-2863-E27614FCB1D2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Runtime\Core\DateTime">
+      <UniqueIdentifier>{3D694D9D-A9D5-0898-72C9-A0F5DEF42A00}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Runtime\Core\Debug">
       <UniqueIdentifier>{7726CC76-630A-8DCC-CC6A-871FB86D774E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Core\File">
       <UniqueIdentifier>{10CFD8FB-7CE5-D691-C55C-62B331B2A719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\GUID">
+      <UniqueIdentifier>{B901D9FB-2518-D791-6E8F-62B3DAE4A719}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\Image">
+      <UniqueIdentifier>{F3FD2A77-DFE1-EBCC-4842-E61F3445D64E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Core\Math">
       <UniqueIdentifier>{BA84DCFB-269B-DA91-6F12-66B3DB67AB19}</UniqueIdentifier>
@@ -126,14 +135,20 @@
     <ClInclude Include="Source\Runtime\Core\Core.h">
       <Filter>Runtime\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\DateTime\DateTime.h">
+      <Filter>Runtime\Core\DateTime</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Debug\Debug.h">
       <Filter>Runtime\Core\Debug</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\File\ByteArray.h">
-      <Filter>Runtime\Core\File</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\File\File.h">
       <Filter>Runtime\Core\File</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\GUID\GUID.h">
+      <Filter>Runtime\Core\GUID</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Image\Image.h">
+      <Filter>Runtime\Core\Image</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Math\Math.h">
       <Filter>Runtime\Core\Math</Filter>
@@ -171,10 +186,16 @@
     <ClInclude Include="Source\Runtime\Launch\EngineLoop.h">
       <Filter>Runtime\Launch</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Runtime\OpenGL\IndexBuffer.h">
+      <Filter>Runtime\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h">
       <Filter>Runtime\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\OpenGL\Shader.h">
+      <Filter>Runtime\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\OpenGL\Texture.h">
       <Filter>Runtime\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\OpenGL\VertexBuffer.h">
@@ -188,11 +209,6 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
-    <ClInclude Include="Source\Runtime\Core\Image\Image.h" />
-    <ClInclude Include="Source\Runtime\Core\GUID\GUID.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\DateTime.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Timer.h" />
-    <ClInclude Include="Source\Runtime\Core\Scene\Entity.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -216,11 +232,17 @@
     <ClCompile Include="Source\Runtime\Core\Config\Config.cpp">
       <Filter>Runtime\Core\Config</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\Core\File\ByteArray.cpp">
-      <Filter>Runtime\Core\File</Filter>
+    <ClCompile Include="Source\Runtime\Core\DateTime\DateTime.cpp">
+      <Filter>Runtime\Core\DateTime</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\File\File.cpp">
       <Filter>Runtime\Core\File</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\GUID\GUID.cpp">
+      <Filter>Runtime\Core\GUID</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\Image\Image.cpp">
+      <Filter>Runtime\Core\Image</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\String\String.cpp">
       <Filter>Runtime\Core\String</Filter>
@@ -231,13 +253,19 @@
     <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp">
       <Filter>Runtime\Launch\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Runtime\OpenGL\IndexBuffer.cpp">
+      <Filter>Runtime\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp">
       <Filter>Runtime\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\OpenGL\Shader.cpp">
       <Filter>Runtime\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\OpenGL\VertexArray.cpp">
+    <ClCompile Include="Source\Runtime\OpenGL\Texture.cpp">
+      <Filter>Runtime\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\OpenGL\VertexBuffer.cpp">
       <Filter>Runtime\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp">
@@ -259,11 +287,6 @@
       <Filter>Runtime\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
-    <ClCompile Include="Source\Runtime\Core\GUID\GUID.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\DateTime.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Image\Image.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Timer.cpp" />
-    <ClCompile Include="Source\Runtime\OpenGL\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

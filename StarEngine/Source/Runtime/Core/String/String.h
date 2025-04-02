@@ -1,6 +1,6 @@
 #pragma once
 #include "Runtime/Core/Core.h"
-#include "Runtime/Core/File/ByteArray.h"
+#include "Runtime/Core/Memory/ByteBuffer.h"
 #include "Runtime/Core/Container/Array.h"
 
 namespace Star
@@ -44,6 +44,11 @@ public:
     // 字节数组赋值
     String& operator=(const ByteArray& buffer);
 
+    // 隐式转化为 std::string
+    operator std::string() const;
+
+    operator const char* () const;
+public:
     // 将 str 附加到字符串的末尾
     String& Append(const String& buffer);
 

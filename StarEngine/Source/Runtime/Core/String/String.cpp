@@ -154,6 +154,16 @@ String& String::operator=(const ByteArray& buffer)
     return *this;
 }
 
+String::operator std::string() const
+{
+    return m_data;
+}
+
+String::operator const char* () const
+{
+    return m_data.c_str();
+}
+
 String& String::Append(const String& str)
 {
     m_data.append(str.m_data);

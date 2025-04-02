@@ -29,7 +29,6 @@ public:
 	// 是否退出
 	virtual bool IsQuit() override;
 
-
 	// 轮询输入设备
 	virtual void PollInputDevice() override;
 

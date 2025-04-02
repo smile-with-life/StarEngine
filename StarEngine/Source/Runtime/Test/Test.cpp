@@ -10,4 +10,19 @@ void UnitTesting()
     Test_File();
     Test_Config();
 }
+
+void UnitTesting_Init()
+{
+
+}
+
+void UnitTesting_Tick()
+{
+
+}
+
+void UnitTesting_Exit()
+{
+
+}
 }// namespace Star::Test

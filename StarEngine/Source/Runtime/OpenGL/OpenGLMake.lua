@@ -2,10 +2,18 @@ files  --要编译的源文件
 {
     "OpenGL.h",
     "OpenGL.cpp",
+
+    "IndexBuffer.h",
+    "IndexBuffer.cpp",
+
+    "VertexBuffer.h",
+    "VertexBuffer.cpp",
+
+    "Texture.h",
+    "Texture.cpp",
+
     "Shader.h",
     "Shader.cpp",
-    "VertexBuffer.h",
-    "VertexBuffer.cpp"
 }
 
 filter "system:Windows"
@@ -13,5 +21,4 @@ filter "system:Windows"
     {
         "Windows/WindowsOpenGL.h",
         "Windows/WindowsOpenGL.cpp"
-
     }

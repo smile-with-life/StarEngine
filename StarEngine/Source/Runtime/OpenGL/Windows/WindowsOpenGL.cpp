@@ -20,27 +20,29 @@ OpenGL* OpenGL::Create()
 void WindowsOpenGL::Init(Window* window_)
 {
     m_hWnd = (HWND)(window_->GetNativeHandle());
-    /*LoadOpenGL();
-    MakeContext();*/
+    LoadOpenGL();
+    MakeContext();
 }
 
 void WindowsOpenGL::Tick()
 {
-    /*glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-    SwapBuffers(m_hDC);*/
+
+
+    SwapBuffers(m_hDC);
 }
 
 void WindowsOpenGL::Exit()
 {
-    //// 将当前渲染上下文置空
-    //wglMakeCurrent(NULL, NULL);
+    // 将当前渲染上下文置空
+    wglMakeCurrent(NULL, NULL);
 
-    //// 释放渲染上下文
-    //wglDeleteContext(m_hRC);
+    // 释放渲染上下文
+    wglDeleteContext(m_hRC);
 
-    //// 释放该窗口的设备上下文。
-    //ReleaseDC(m_hWnd, m_hDC);
+    // 释放该窗口的设备上下文。
+    ReleaseDC(m_hWnd, m_hDC);
 }
 
 void WindowsOpenGL::LoadOpenGL()
@@ -146,7 +148,7 @@ void WindowsOpenGL::MakeContext()
     // 如果显卡/显示器可以处理所需的像素格式，则将其设置为当前像素格式。
     result = SetPixelFormat(m_hDC, formatIndexs[0], &m_pixelFormat);
     
-    // 创建OpenGL 4.0渲染上下文.
+    // 创建OpenGL 3.0渲染上下文.
     m_hRC = wglCreateContextAttribsARB(m_hDC, 0, version);
 
 

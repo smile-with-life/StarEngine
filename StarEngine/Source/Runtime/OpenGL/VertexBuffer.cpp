@@ -52,10 +52,10 @@ VertexBuffer::VertexBuffer(int32 index)
 VertexBuffer::VertexBuffer(int32 index, void* data, uint32 count, VertexType type)
 	: m_index(index)
 {
-	Init(data, count, type);
+	UploadData(data, count, type);
 }
 
-void VertexBuffer::Init(void* data, uint32 count, VertexType type)
+void VertexBuffer::UploadData(void* data, uint32 count, VertexType type)
 {
 	m_count = count;
 	m_type = type;
@@ -97,6 +97,11 @@ void VertexBuffer::Init(void* data, uint32 count, VertexType type)
 	}
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
+}
+
+uint32 VertexBuffer::Count() const
+{
+	return m_count;
 }
 
 uint32 VertexBuffer::GetVertexSize(VertexType type)

@@ -10,6 +10,7 @@ namespace Star
 EngineLoop::EngineLoop()
 {
     m_app = Application::Create();
+    Test::UnitTesting();
 }
 
 EngineLoop::~EngineLoop()
@@ -17,21 +18,21 @@ EngineLoop::~EngineLoop()
     delete m_app;
 }
 
-int EngineLoop::Init()
+void EngineLoop::Init()
 {
     m_app->Init();
-    Test::UnitTesting();
-
-    return 0;
+    Test::UnitTesting_Init();
 }
 
 void EngineLoop::Tick()
-{   
+{  
+    Test::UnitTesting_Tick();
     m_app->Tick();
 }
 
 void EngineLoop::Exit()
 {
+    Test::UnitTesting_Exit();
     m_app->Exit();
 }
 

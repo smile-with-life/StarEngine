@@ -100,7 +100,7 @@
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STAR_TEST;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -113,7 +113,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;icuuc.lib;Stb.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\Bin\Test-windows-x86_64\StarEngine\StarEngine.lib</ImportLibrary>
       <ModuleDefinitionFile>Source/Runtime/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
@@ -129,7 +129,7 @@ copy /B /Y ..\Bin\Test-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Test-wind
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STAR_DEBUG;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -142,7 +142,7 @@ copy /B /Y ..\Bin\Test-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Test-wind
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;icuuc.lib;Stb.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\Bin\Debug-windows-x86_64\StarEngine\StarEngine.lib</ImportLibrary>
       <ModuleDefinitionFile>Source/Runtime/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
@@ -158,7 +158,7 @@ copy /B /Y ..\Bin\Debug-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Debug-wi
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STAR_RELEASE;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -174,7 +174,7 @@ copy /B /Y ..\Bin\Debug-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Debug-wi
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;icuuc.lib;Stb.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\Bin\Release-windows-x86_64\StarEngine\StarEngine.lib</ImportLibrary>
       <ModuleDefinitionFile>Source/Runtime/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
@@ -190,7 +190,7 @@ copy /B /Y ..\Bin\Release-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Releas
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STAR_DIST;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -206,7 +206,7 @@ copy /B /Y ..\Bin\Release-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Releas
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;icuuc.lib;Stb.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.lib</ImportLibrary>
       <ModuleDefinitionFile>Source/Runtime/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
@@ -232,10 +232,8 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Container\Map.h" />
     <ClInclude Include="Source\Runtime\Core\Container\Set.h" />
     <ClInclude Include="Source\Runtime\Core\Core.h" />
-    <ClInclude Include="Source\Runtime\Core\Scene\Entity.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\DateTime.h" />
+    <ClInclude Include="Source\Runtime\Core\DateTime\DateTime.h" />
     <ClInclude Include="Source\Runtime\Core\Debug\Debug.h" />
-    <ClInclude Include="Source\Runtime\Core\File\ByteArray.h" />
     <ClInclude Include="Source\Runtime\Core\File\File.h" />
     <ClInclude Include="Source\Runtime\Core\GUID\GUID.h" />
     <ClInclude Include="Source\Runtime\Core\Image\Image.h" />
@@ -249,11 +247,12 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Thread\Semaphore.h" />
     <ClInclude Include="Source\Runtime\Core\Thread\Thread.h" />
     <ClInclude Include="Source\Runtime\Core\Thread\WaitCondition.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Timer.h" />
     <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h" />
     <ClInclude Include="Source\Runtime\Launch\EngineLoop.h" />
+    <ClInclude Include="Source\Runtime\OpenGL\IndexBuffer.h" />
     <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h" />
     <ClInclude Include="Source\Runtime\OpenGL\Shader.h" />
+    <ClInclude Include="Source\Runtime\OpenGL\Texture.h" />
     <ClInclude Include="Source\Runtime\OpenGL\VertexBuffer.h" />
     <ClInclude Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.h" />
     <ClInclude Include="Source\Runtime\Test\Test.h" />
@@ -268,18 +267,17 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\AppFrame\Window\Window.cpp" />
     <ClCompile Include="Source\Runtime\AppFrame\Window\Windows\WindowsWindow.cpp" />
     <ClCompile Include="Source\Runtime\Core\Config\Config.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Image\Image.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\DateTime.cpp" />
-    <ClCompile Include="Source\Runtime\Core\File\ByteArray.cpp" />
+    <ClCompile Include="Source\Runtime\Core\DateTime\DateTime.cpp" />
     <ClCompile Include="Source\Runtime\Core\File\File.cpp" />
     <ClCompile Include="Source\Runtime\Core\GUID\GUID.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Image\Image.cpp" />
     <ClCompile Include="Source\Runtime\Core\String\String.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Timer.cpp" />
     <ClCompile Include="Source\Runtime\Launch\EngineLoop.cpp" />
     <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp" />
+    <ClCompile Include="Source\Runtime\OpenGL\IndexBuffer.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\Shader.cpp" />
-    <ClCompile Include="Source\Runtime\OpenGL\VertexArray.cpp" />
+    <ClCompile Include="Source\Runtime\OpenGL\Texture.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\VertexBuffer.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestConfig.cpp" />

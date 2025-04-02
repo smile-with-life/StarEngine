@@ -1,7 +1,7 @@
 #pragma once
 #include "Runtime/Core/Core.h"
 #include "Runtime/Core/String/String.h"
-#include "Runtime/Core/File/ByteArray.h"
+#include "Runtime/Core/Memory/ByteBuffer.h"
 
 namespace Star
 {

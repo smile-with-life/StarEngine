@@ -124,6 +124,8 @@ void WindowsWindow::Init()
 
     SetOpacity(m_props.Opacity);
 
+    ShowWindow();
+
     //if ()
     //{
     //    // Tell OLE that we are opting into drag and drop.

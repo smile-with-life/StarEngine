@@ -10,7 +10,7 @@ public:
     EngineLoop();
     virtual ~EngineLoop();
 public:
-    virtual int Init();
+    virtual void Init();
     virtual void Tick();
     virtual void Exit();
 

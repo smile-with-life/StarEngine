@@ -21,9 +21,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}" --输出目录
 
 IncludeDir={}
 
-IncludeDir["GLFW"] ="StarEngine/Dependencies/GLFW/include"
-IncludeDir["Glad"] ="StarEngine/Dependencies/GLAD/include"
-IncludeDir["ICU4C"] ="StarEngine/Dependencies/ICU4C/include"
+IncludeDir["GLFW"] = "StarEngine/Dependencies/GLFW/include"
+IncludeDir["Glad"] = "StarEngine/Dependencies/GLAD/include"
+IncludeDir["ICU4C"] = "StarEngine/Dependencies/ICU4C/include"
+IncludeDir["Stb"] = "StarEngine/Dependencies/Stb/include"
 
 include "StarEngine/Dependencies/GLFW"
 include "StarEngine/Dependencies/Glad"
@@ -53,7 +54,8 @@ project "StarEngine" --项目
         "%{prj.name}/Source",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
-        "%{IncludeDir.ICU4C}"
+        "%{IncludeDir.ICU4C}",
+        "%{IncludeDir.Stb}"
     }
 
     libdirs 
@@ -66,7 +68,8 @@ project "StarEngine" --项目
         "GLFW",
         "Glad",
         "opengl32.lib",
-        "icuuc"
+        "icuuc",
+        "Stb"
     }
 
     filter "configurations:Test" --Test模式
@@ -111,7 +114,7 @@ project "StarEngine" --项目
     include "StarEngine/Source/Runtime/Launch/LaunchMake.lua" --启动模块
     include "StarEngine/Source/Runtime/AppFrame/AppFrameMake.lua" --应用程序模块
     include "StarEngine/Source/Runtime/OpenGL/OpenGLMake.lua" --OpenGL模块
-    include "StarEngine/Source/Runtime/Test/TestMake.lua" --OpenGL模块
+    include "StarEngine/Source/Runtime/Test/TestMake.lua" --Test模块
 project "TestGame"
     location "TestGame"
     kind "windowedapp"

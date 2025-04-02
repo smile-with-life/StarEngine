@@ -5,6 +5,7 @@
 
 namespace Star
 {
+// 顶点属性类型
 enum class VertexType
 {
 	None = 0,		// 默认值
@@ -16,6 +17,7 @@ enum class VertexType
 	BoneWeight,     // 骨骼权重属性 4*float
 };
 
+// 顶点属性数组
 class VertexBuffer
 {
 public:
@@ -33,17 +35,18 @@ public:
 
 	VertexBuffer(int32 index);
 
-	VertexBuffer(int32 index, void* data,uint32 count, VertexType type);
-
+	VertexBuffer(int32 index, void* data, uint32 count, VertexType type);
 public:
-	void Init(void* data, uint32 count, VertexType type);
+	void UploadData(void* data, uint32 count, VertexType type);
+
+	uint32 Count() const;
 private:
 	uint32 GetVertexSize(VertexType type);
 private:
 	// 顶点属性位置索引
 	int32 m_index;
 
-	// 对象句柄 VBO
+	// 顶点属性缓冲对象句柄
 	Handle m_handle = 0;
 
 	// 顶点数量
@@ -53,5 +56,4 @@ private:
 	VertexType m_type = VertexType::None;
 
 };
-
 }// namespace Star
