@@ -102,10 +102,10 @@ private:
 /* 锁定策略 */
 enum class LockStrategy
 {
-    NormalLock,     //获得Mutex的所有权
-    DeferLock,      //不获得Mutex的所有权
-    TryToLock,      //尝试获得Mutex的所有权而不阻塞
-    AdoptLock       //领养调用方线程已拥有Mutex的所有权
+    NormalLock,     // 获得Mutex的所有权
+    DeferLock,      // 不获得Mutex的所有权
+    TryToLock,      // 尝试获得Mutex的所有权而不阻塞
+    AdoptLock       // 领养调用方线程已拥有Mutex的所有权
 
 };
 

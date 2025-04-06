@@ -209,6 +209,10 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\Time.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\Duration.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Radian.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -280,13 +284,16 @@
     <ClCompile Include="Source\Runtime\Test\Core\TestFile.cpp">
       <Filter>Runtime\Test\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\Test\Core\TestVec.cpp">
+    <ClCompile Include="Source\Runtime\Test\Core\TestMath.cpp">
       <Filter>Runtime\Test\Core</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Test\Test.cpp">
       <Filter>Runtime\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Time\Time.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Time\Duration.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Math\Radian.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

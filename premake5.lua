@@ -28,6 +28,7 @@ IncludeDir["Stb"] = "StarEngine/Dependencies/Stb/include"
 
 include "StarEngine/Dependencies/GLFW"
 include "StarEngine/Dependencies/Glad"
+include "StarEngine/Dependencies/Stb"
 
 project "StarEngine" --项目
     location "StarEngine" --项目文件的目录

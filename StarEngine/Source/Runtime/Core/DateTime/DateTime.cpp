@@ -65,4 +65,14 @@ String DateTime::ToString()
     std::string result = std::format("{0}-{1}-{2} {3}:{4}:{5}", m_year, m_month, m_day, m_hour, m_minute, m_second);
     return String(result);
 }
+
+void DateTime::Swap(DateTime& other) noexcept
+{  
+    std::swap(m_year, other.m_year);
+    std::swap(m_month, other.m_month);
+    std::swap(m_day, other.m_day);
+    std::swap(m_hour, other.m_hour);
+    std::swap(m_minute, other.m_minute);
+    std::swap(m_second, other.m_second);   
+}
 }// namespace Star

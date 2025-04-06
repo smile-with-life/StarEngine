@@ -1,6 +1,6 @@
 #pragma once
 #include "Runtime/Core/Core.h"
-#include<thread>
+#include <thread>
 
 namespace Star
 {
@@ -115,8 +115,8 @@ public:
         std::swap(m_thread, other.m_thread);
     }
 public:
-    //强制当前线程休眠 msecs 毫秒
-    static void Sleep(unsigned long msecs)
+    // 强制当前线程休眠 msecs 毫秒
+    static void Sleep(uint64 msecs)
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(msecs));
     }

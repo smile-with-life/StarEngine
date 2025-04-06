@@ -9,7 +9,7 @@ class DateTime
 {
 public:
     // 默认构造函数
-    DateTime() = default;
+    DateTime();
 
     // 析构函数
     ~DateTime() = default;
@@ -28,6 +28,9 @@ public:
 
     // 构造函数
     DateTime(const String& iso8601);
+
+    // 构造函数
+    // DateTime(const Time& time);
 public:
     // 年份
     int32 Year() const;
@@ -49,6 +52,9 @@ public:
 
     // 转为字符串
     String ToString();
+
+    // 交换
+    void Swap(DateTime& other) noexcept;    
 public:
     bool operator==(const DateTime& other);
 
