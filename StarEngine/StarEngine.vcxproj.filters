@@ -209,10 +209,13 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Time.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Duration.h" />
+    <ClInclude Include="Source\Runtime\Core\DateTime\Time.h" />
+    <ClInclude Include="Source\Runtime\Core\DateTime\Duration.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Radian.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Vector2.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Vector3.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Vector4.h" />
+    <ClInclude Include="Source\Runtime\Core\Memory\RAII.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -291,9 +294,11 @@
       <Filter>Runtime\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Time.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Duration.cpp" />
+    <ClCompile Include="Source\Runtime\Core\DateTime\Time.cpp" />
+    <ClCompile Include="Source\Runtime\Core\DateTime\Duration.cpp" />
     <ClCompile Include="Source\Runtime\Core\Math\Radian.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Memory\RAII.cpp" />
+    <ClCompile Include="Source\Runtime\Test\Core\TestRAII.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

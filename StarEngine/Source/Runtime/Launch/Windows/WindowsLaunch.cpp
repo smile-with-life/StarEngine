@@ -13,7 +13,7 @@ int32 WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
     // 处理命令行参数
     // @ 实现
 
-    error = Star::GEngineLoop.Init();
+    Star::GEngineLoop.Init();
 
     while (!Star::GEngineLoop.IsQuit())
     {

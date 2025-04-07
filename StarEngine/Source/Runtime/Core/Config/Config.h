@@ -39,10 +39,10 @@ private:
 class ConfigSection
 {
 public:
-    using iterator = Map<Name, String>::iterator;
-    using const_iterator = Map<Name, String>::const_iterator;
-    using reverse_iterator = Map<Name, String>::reverse_iterator;
-    using const_reverse_iterator = Map<Name, String>::const_reverse_iterator;
+    using iterator = Map<String, String>::iterator;
+    using const_iterator = Map<String, String>::const_iterator;
+    using reverse_iterator = Map<String, String>::reverse_iterator;
+    using const_reverse_iterator = Map<String, String>::const_reverse_iterator;
 public:
     ConfigSection() = default;
 
@@ -55,19 +55,19 @@ public:
     }
 
     // 返回配置项的值，未找到时抛出异常
-    String GetValue(const Name& key) const
+    String GetValue(const String& key) const
     {
         return m_items.At(key);
     }
 
     // 设置配置项的值，未找到时抛出异常
-    void SetValue(const Name& key, const String& value)
+    void SetValue(const String& key, const String& value)
     {
         m_items.At(key) = value;
     }
 
     // 添加配置项，未找到时添加相应项
-    void AddItem(const Name& key, const String& value)
+    void AddItem(const String& key, const String& value)
     {
         if (!m_items.Contains(key))
         {
@@ -77,11 +77,11 @@ public:
     }
 
     // 删除配置项
-    void RemoveItem(const Name& key)
+    void RemoveItem(const String& key)
     {
         if (m_items.Erase(key))
         {
-            const auto iter = m_itemOrder.iter_find(key);
+            const auto iter = m_itemOrder.find_iter(key);
             m_itemOrder.Erase(iter);
         }
     }
@@ -150,20 +150,20 @@ private:
     friend ConfigFile;
     
     // 配置项映射表
-    Map<Name, String> m_items;
+    Map<String, String> m_items;
 
     // 配置项顺序数组
-    Array<Name> m_itemOrder;
+    Array<String> m_itemOrder;
 };
 
 // 配置文件（由多个配置节组成）
 class ConfigFile
 { 
 public:
-    using iterator = Map<Name, ConfigSection>::iterator;
-    using const_iterator = Map<Name, ConfigSection>::const_iterator;
-    using reverse_iterator = Map<Name, ConfigSection>::reverse_iterator;
-    using const_reverse_iterator = Map<Name, ConfigSection>::const_reverse_iterator;
+    using iterator = Map<String, ConfigSection>::iterator;
+    using const_iterator = Map<String, ConfigSection>::const_iterator;
+    using reverse_iterator = Map<String, ConfigSection>::reverse_iterator;
+    using const_reverse_iterator = Map<String, ConfigSection>::const_reverse_iterator;
 public:
     // 默认构造函数
     ConfigFile() = default;
@@ -181,16 +181,16 @@ public:
     bool SaveAs(const String& path);
 
     // 添加配置节，未找到时添加相应项
-    void AddSection(const Name& section);
+    void AddSection(const String& section);
     
     // 添加配置项，未找到时添加相应项
-    void AddItem(const Name& section, const Name& key, const String& value);
+    void AddItem(const String& section, const String& key, const String& value);
 
     // 移除配置节
-    void RemoveSection(const Name& section);
+    void RemoveSection(const String& section);
 
     // 移除配置项
-    void RemoveItem(const Name& section, const Name& key);
+    void RemoveItem(const String& section, const String& key);
 
     // 检查配置文件是否为空
     bool IsEmpty() const;
@@ -304,10 +304,10 @@ public:
     }
 private:
     // 配置节映射列表
-    Map<Name, ConfigSection> m_sections;
+    Map<String, ConfigSection> m_sections;
 
     // 配置节的顺序数组
-    Array<Name> m_sectionOrder;
+    Array<String> m_sectionOrder;
 
     // 配置文件
     String m_fileName;

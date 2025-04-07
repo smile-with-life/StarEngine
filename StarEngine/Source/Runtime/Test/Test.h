@@ -1,14 +1,76 @@
 #pragma once
 
+#ifdef STAR_TEST
+    #define TESTING_INIT_BEGIN() Star::Test::UnitTestingInitBegin()
+    #define TESTING_INIT_END() Star::Test::UnitTestingInitEnd()
+    #define TESTING_TICK_BEGIN() Star::Test::UnitTestingTickBegin()
+    #define TESTING_TICK_END() Star::Test::UnitTestingTickEnd()
+    #define TESTING_EXIT_BEGIN() Star::Test::UnitTestingExitBegin()
+    #define TESTING_EXIT_END() Star::Test::UnitTestingExitEnd()
+#else
+    #define TESTING_INIT_BEGIN ((void)0)
+    #define TESTING_INIT_END ((void)0)
+    #define TESTING_TICK_BEGIN ((void)0)
+    #define TESTING_TICK_END ((void)0)
+    #define TESTING_EXIT_BEGIN ((void)0)
+    #define TESTING_EXIT_END ((void)0)
+#endif
+
+
 namespace Star::Test
 {
-void UnitTesting();
-void UnitTesting_Init();
-void UnitTesting_Tick();
-void UnitTesting_Exit();
+// 引擎初始化开始前进行
+void UnitTestingInitBegin();
+
+// 引擎初始化完成后进行
+void UnitTestingInitEnd();
+
+// 引擎帧开始前进行
+void UnitTestingTickBegin();
+
+// 引擎帧完成后进行
+void UnitTestingTickEnd();
+
+// 引擎退出开始前进行
+void UnitTestingExitBegin();
+
+// 引擎退出完成后进行
+void UnitTestingExitEnd();
 
 void Test_Array();
 void Test_File();
 void Test_Config();
-void Test_Vec2();
+void Test_RAII();
+
+
+class Test_Standard_Class
+{
+public:
+    Test_Standard_Class() = default;
+    ~Test_Standard_Class() = default;
+
+    Test_Standard_Class(int n)
+        : m_num(n)
+    {
+
+    }
+
+    Test_Standard_Class(const Test_Standard_Class& other) = default;
+    Test_Standard_Class& operator=(const Test_Standard_Class& other) = default;
+
+    Test_Standard_Class(Test_Standard_Class&& other) noexcept = default;
+    Test_Standard_Class& operator=(Test_Standard_Class&& other) noexcept = default;
+
+    int Value() const
+    {
+        return m_num;
+    }
+
+    int SetValue(int value)
+    {
+        m_num = value;
+    }
+private:
+    int m_num = 1;
+};
 }// namespace Star::Test

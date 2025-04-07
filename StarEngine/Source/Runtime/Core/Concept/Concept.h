@@ -1,5 +1,6 @@
 #pragma once
 #include <concepts>
+#include <type_traits>
 
 namespace Star::Concept
 {
@@ -14,6 +15,10 @@ concept FloatPointType = std::floating_point<Type>;
 // 算数类型
 template<class Type>
 concept ArithmeticType = IntegralType<Type> && FloatPointType<Type>;
+
+// 类类型
+template<class Type>
+concept ClassType = std::is_class_v<Type>;
 
 // 随机访问迭代器类型
 //template<class Type>

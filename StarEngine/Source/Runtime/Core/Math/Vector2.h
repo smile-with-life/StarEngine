@@ -14,24 +14,24 @@ class Vector2
 {
 public:
     // 默认构造函数
-    Vector2()
+    constexpr Vector2()
         : x(0), y(0)
     {
 
     }
 
     // 析构函数
-    ~Vector2() = default;
+    constexpr ~Vector2() = default;
 
     // 拷贝构造函数
-    Vector2(const Vector2& vec2)
+    constexpr Vector2(const Vector2& vec2)
         : x(vec2.x), y(vec2.y)
     {
 
     }
 
     // 拷贝赋值
-    Vector2& operator=(const Vector2& vec2)
+    constexpr Vector2& operator=(const Vector2& vec2)
     {
         if (&vec2 == this) [[unlikely]]
         {
@@ -44,24 +44,45 @@ public:
         return *this;
     }
 
+    // 移动构造函数
+    constexpr Vector2(Vector2&& vec2) noexcept
+        : x(vec2.x), y(vec2.y)
+    {
+        vec2.x = 0;
+        vec2.y = 0;
+    }
+
+    // 移动赋值
+    constexpr Vector2& operator=(Vector2&& vec2) noexcept
+    {
+        if (&vec2 == this) [[unlikely]]
+        {
+            return *this;
+        }
+        x = vec2.x;
+        y = vec2.y;
+        vec2.x = 0;
+        vec2.y = 0;
+        return *this;
+    }
+
     // 列表构造函数
-    Vector2& operator=(std::initializer_list<Type> vecList)
+    constexpr Vector2& operator=(std::initializer_list<Type> vecList)
     {
         x = vecList.begin()[0];
         y = vecList.begin()[1];
-
         return *this;
     }
 
     // 构造函数
-    explicit Vector2(Type value)
+    constexpr explicit Vector2(Type value)
         : x(value), y(value)
     {
 
     }
 
     // 构造函数
-    Vector2(Type xValue, Type yValue)
+    constexpr Vector2(Type xValue, Type yValue)
         : x(xValue), y(yValue)
     {
 
@@ -128,18 +149,6 @@ public:
         return Vector2(-x, -y);
     }
 
-    // 判断两个向量是否相等
-    bool operator==(const Vector2& vec2) const
-    {
-        return x == vec2.x && y == vec2.y;
-    }
-
-    // 判断两个向量是否不相等
-    bool operator!=(const Vector2& vec2) const
-    {
-        return x != vec2.x || y != vec2.y;
-    }
-
     // 两个向量相加，返回一个新的向量
     Vector2 operator+(const Vector2& vec2) const
     {
@@ -166,6 +175,13 @@ public:
     {
         x += scale; y += scale;
         return *this;
+    }
+
+    // 标量加上一个向量，返回一个新的向量
+    template<Concept::ArithmeticType Scalar>
+    friend Vector2 operator+(Scalar scale, const Vector2& vec2)
+    {
+        return Vector2(scale + vec2.x, scale + vec2.y);
     }
 
     // 两个向量相减，返回一个新的向量
@@ -196,6 +212,13 @@ public:
         return *this;
     }
 
+    // 标量减去一个向量，返回一个新的向量
+    template<Concept::ArithmeticType Scalar>
+    friend Vector2 operator-(Scalar scale, const Vector2& vec2)
+    {
+        return Vector2(scale - vec2.x, scale - vec2.y);
+    }
+
     // 两个向量的分量相乘，返回一个新的向量
     Vector2 operator*(const Vector2& vec2) const
     {
@@ -224,15 +247,24 @@ public:
         return *this;
     }
 
+    // 标量乘以一个向量的分量，返回一个新的向量
+    template<Concept::ArithmeticType Scalar>
+    friend Vector2 operator*(Scalar scale, const Vector2& vec2)
+    {
+        return Vector2(scale * vec2.x, scale * vec2.y);
+    }
+
     // 两个向量的分量相除，返回一个新的向量
     Vector2 operator/(const Vector2& vec2) const
     {
-        return Vec2(x / vec2.x, y / vec2.y);
+        Assert(!vec2.IsZero());
+        return Vector2(x / vec2.x, y / vec2.y);
     }
 
     // 两个向量的分量相除，返回它本身
     Vector2& operator/=(const Vector2& vec2)
     {
+        Assert(!vec2.IsZero());
         x /= vec2.x; y /= vec2.y;
         return *this;
     }
@@ -241,6 +273,7 @@ public:
     template<Concept::ArithmeticType Scalar>
     Vector2 operator/(Scalar scale) const
     {
+        Assert(scale != 0.0);
         const Type invScale = Type(1) / scale;
         return Vector2(x * (Type)invScale, y * (Type)invScale);
     }
@@ -249,9 +282,17 @@ public:
     template<Concept::ArithmeticType Scalar>
     Vector2& operator/=(Scalar scale)
     {
+        Assert(scale != 0.0);
         const Type invScale = (Type)1 / scale;
         x *= invScale; y *= invScale;
         return *this;
+    }
+
+    // 标量除以一个向量的分量，返回一个新的向量
+    template<Concept::ArithmeticType Scalar>
+    friend Vector2 operator/(Scalar scale, const Vector2& vec2)
+    {
+        return Vector2(scale / vec2.x, scale / vec2.y);
     }
 public:
     union

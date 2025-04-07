@@ -222,27 +222,10 @@ public:
     
     // 将字符串转换为 C 类型的字符串
     const char* ToCString() const;
-
-    // 判断两字符串是否相等
-    bool operator==(const String& str) const;
-
-    // 判断两字符串是否不相等
-    bool operator!=(const String& str) const;
-
-    // 以字典序比较字符串, 大于
-    bool operator>(const String& str) const;
-
-    // 以字典序比较字符串, 大于等于
-    bool operator>=(const String& str) const;
-
-    // 以字典序比较字符串, 小于
-    bool operator<(const String& str) const;
-
-    // 以字典序比较字符串, 小于等于
-    bool operator<=(const String& str) const;
-
-    // 向字符串末尾追加字符串或字符
+public:
     String& operator+=(const String& str);
+
+    friend String operator+(const String& left, const String& right);  
 public:
     static String FromStdString(const std::string& str);
     static String FromCString(const char* str);
@@ -261,10 +244,5 @@ private:
     // UTF-8 字符串
     std::string m_data;
 };
-
-String operator+(const String& left, const String& right);
-
-std::ostream& operator<<(std::ostream& os, String str);
-
 using Name = String;
 }// namespace Star

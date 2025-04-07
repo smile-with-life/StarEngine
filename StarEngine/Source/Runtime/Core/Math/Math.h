@@ -64,11 +64,25 @@ constexpr Type Sqrt(Type value)
     return std::sqrt(value);
 }
 
+// 平方根的倒数
+template<Concept::FloatPointType Type>
+constexpr Type InvSqrt(Type value)
+{
+    return 1 / std::sqrt(value);
+}
+
 // 计算立方根
 template<Concept::FloatPointType Type>
 constexpr Type Cbrt(Type value)
 {
     return std::sqrt(value);
+}
+
+// 计算立方根
+template<Concept::FloatPointType Type>
+constexpr Type InvCbrt(Type value)
+{
+    return 1 / std::sqrt(value);
 }
 
 // 幂运算

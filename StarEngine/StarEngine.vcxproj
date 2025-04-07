@@ -241,6 +241,9 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Math\Radian.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Vec.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Vector2.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Vector3.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Vector4.h" />
+    <ClInclude Include="Source\Runtime\Core\Memory\RAII.h" />
     <ClInclude Include="Source\Runtime\Core\Platform\Platform.h" />
     <ClInclude Include="Source\Runtime\Core\String\Convert.h" />
     <ClInclude Include="Source\Runtime\Core\String\String.h" />
@@ -249,8 +252,8 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Thread\Semaphore.h" />
     <ClInclude Include="Source\Runtime\Core\Thread\Thread.h" />
     <ClInclude Include="Source\Runtime\Core\Thread\WaitCondition.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Duration.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Time.h" />
+    <ClInclude Include="Source\Runtime\Core\DateTime\Duration.h" />
+    <ClInclude Include="Source\Runtime\Core\DateTime\Time.h" />
     <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h" />
     <ClInclude Include="Source\Runtime\Launch\EngineLoop.h" />
     <ClInclude Include="Source\Runtime\OpenGL\IndexBuffer.h" />
@@ -276,9 +279,10 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\Core\GUID\GUID.cpp" />
     <ClCompile Include="Source\Runtime\Core\Image\Image.cpp" />
     <ClCompile Include="Source\Runtime\Core\Math\Radian.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Memory\RAII.cpp" />
     <ClCompile Include="Source\Runtime\Core\String\String.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Duration.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Time.cpp" />
+    <ClCompile Include="Source\Runtime\Core\DateTime\Duration.cpp" />
+    <ClCompile Include="Source\Runtime\Core\DateTime\Time.cpp" />
     <ClCompile Include="Source\Runtime\Launch\EngineLoop.cpp" />
     <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\IndexBuffer.cpp" />
@@ -291,6 +295,7 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\Test\Core\TestContainer.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestFile.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestMath.cpp" />
+    <ClCompile Include="Source\Runtime\Test\Core\TestRAII.cpp" />
     <ClCompile Include="Source\Runtime\Test\Test.cpp" />
     <ClCompile Include="Source\starpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

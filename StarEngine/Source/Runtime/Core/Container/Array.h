@@ -364,6 +364,16 @@ public:
     {
         return m_data.crend();
     }
+
+    [[nodiscard]] constexpr const_iterator find_iter(const Type& value) const noexcept
+    {
+        return std::find(begin(), end(), value);
+    }
+
+    [[nodiscard]] constexpr const_iterator rfind_iter(const Type& value) const noexcept
+    {
+        return std::find(rbegin(), rend(), value).base();
+    }
 private:
     std::vector<Type> m_data;
 };

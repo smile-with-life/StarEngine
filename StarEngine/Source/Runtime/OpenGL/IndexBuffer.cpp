@@ -25,6 +25,7 @@ IndexBuffer& IndexBuffer::operator=(IndexBuffer&& other) noexcept
 
     other.m_handle = 0;
     other.m_count = 0;
+    return *this;
 }
 
 IndexBuffer::IndexBuffer(void* data, uint32 count)

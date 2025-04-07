@@ -691,43 +691,43 @@ const char* String::ToCString() const
     return m_data.c_str();
 }
 
-bool String::operator==(const String& str) const
-{
-    return m_data == str.m_data;
-}
-
-bool String::operator!=(const String& str) const
-{
-    return m_data != str.m_data;
-}
-
-bool String::operator>(const String& str) const
-{
-    return m_data > str.m_data;
-}
-
-bool String::operator>=(const String& str) const
-{
-    return m_data >= str.m_data;
-}
-
-bool String::operator<(const String& str) const
-{
-    return m_data < str.m_data;
-}
-
-bool String::operator<=(const String& str) const
-{
-    return m_data <= str.m_data;
-}
-
 String& String::operator+=(const String& str)
 {
     m_data += str.m_data;
     return *this;
 }
 
-/* global */
+/* friend */
+//bool operator==(const String& left, const String& right)
+//{
+//    return left.m_data == right.m_data;
+//}
+//
+//bool operator!=(const String& left, const String& right)
+//{
+//    return left.m_data != right.m_data;
+//}
+//
+//bool operator>(const String& left, const String& right)
+//{
+//    return left.m_data > right.m_data;
+//}
+//
+//bool operator>=(const String& left, const String& right)
+//{
+//    return left.m_data >= right.m_data;
+//}
+//
+//bool operator<(const String& left, const String& right)
+//{
+//    return left.m_data < right.m_data;
+//}
+//
+//bool operator<=(const String& left, const String& right)
+//{
+//    return left.m_data <= right.m_data;
+//}
+
 String operator+(const String& left, const String& right)
 {
     String str(left);
@@ -736,8 +736,8 @@ String operator+(const String& left, const String& right)
     return str;
 }
 
-std::ostream& operator<<(std::ostream& os, String str)
-{
-    return os << str.ToStdString();
-}
+//std::ostream& operator<<(std::ostream& os, String str)
+//{
+//    return os << str.ToStdString();
+//}
 }// namespace Star

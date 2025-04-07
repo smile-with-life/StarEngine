@@ -95,13 +95,13 @@ bool ConfigFile::SaveAs(const String& path_)
     return false;
 }
 
-void ConfigFile::AddSection(const Name& section)
+void ConfigFile::AddSection(const String& section)
 {
     m_sections[section];
     m_sectionOrder.PushBack(section);
 }
 
-void ConfigFile::AddItem(const Name& section, const Name& key, const String& value)
+void ConfigFile::AddItem(const String& section, const String& key, const String& value)
 {
     if (!m_sections.Contains(section))
     {
@@ -110,16 +110,16 @@ void ConfigFile::AddItem(const Name& section, const Name& key, const String& val
     m_sections[section].AddItem(key, value);
 }
 
-void ConfigFile::RemoveSection(const Name& section)
+void ConfigFile::RemoveSection(const String& section)
 {
     if (m_sections.Erase(section))
     {
-        const auto iter = m_sectionOrder.iter_find(section);
+        const auto iter = m_sectionOrder.find_iter(section);
         m_sectionOrder.Erase(iter);
     }
 }
 
-void ConfigFile::RemoveItem(const Name& section, const Name& key)
+void ConfigFile::RemoveItem(const String& section, const String& key)
 {
     m_sections.At(section).RemoveItem(key);
 }

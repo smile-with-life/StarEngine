@@ -4,24 +4,34 @@
 
 namespace Star::Test
 {
-void UnitTesting()
+void UnitTestingInitBegin()
+{
+
+}
+
+void UnitTestingInitEnd()
+{
+
+}
+
+void UnitTestingTickBegin()
 {
     Test_Array();
     Test_File();
     Test_Config();
 }
 
-void UnitTesting_Init()
+void UnitTestingTickEnd()
 {
 
 }
 
-void UnitTesting_Tick()
+void UnitTestingExitBegin()
 {
 
 }
 
-void UnitTesting_Exit()
+void UnitTestingExitEnd()
 {
 
 }

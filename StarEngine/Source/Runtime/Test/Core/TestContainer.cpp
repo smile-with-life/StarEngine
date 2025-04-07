@@ -4,32 +4,6 @@
 #include"Runtime/Core/Container/Array.h"
 namespace Star::Test
 {
-class Test_Standard_Class
-{
-public:
-    Test_Standard_Class() = default;
-    ~Test_Standard_Class() = default;
-
-    Test_Standard_Class(int n)
-        : m_num(n)
-    {
-
-    }
-
-    Test_Standard_Class(const Test_Standard_Class& other) = default;
-    Test_Standard_Class& operator=(const Test_Standard_Class& other) = default;
-
-    Test_Standard_Class(Test_Standard_Class&& other) noexcept = default;
-    Test_Standard_Class& operator=(Test_Standard_Class&& other) noexcept = default;
-
-    int Value() const
-    {
-        return m_num;
-    }
-private:
-    int m_num = 1;
-};
-
 void Test_Array_1()
 {
     using TestObject = Test_Standard_Class;
