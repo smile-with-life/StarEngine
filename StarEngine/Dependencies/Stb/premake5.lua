@@ -9,14 +9,13 @@ project "Stb"
 
 	files
 	{
-		"%{prj.name}/include/stb_image.h",
-        "%{prj.name}/src/stb_image.cpp",
+		"include/stb_image.h",
+        "src/stb_image.cpp",
 	}
 
 	includedirs --包含目录
     {
-		"%{prj.name}/include",
-		"%{prj.name}/src",
+		"include"
 	}
 
 	filter "configurations:Debug"

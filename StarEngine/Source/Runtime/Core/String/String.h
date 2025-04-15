@@ -225,7 +225,45 @@ public:
 public:
     String& operator+=(const String& str);
 
-    friend String operator+(const String& left, const String& right);  
+    friend String operator+(const String& left, const String& right);
+
+    friend bool operator==(const String& left, const String& right);
+
+    friend bool operator==(const String& left, const char* right);
+
+    friend bool operator==(const char* left, const String& right);
+
+    friend bool operator!=(const String& left, const String& right);
+
+    friend bool operator!=(const String& left, const char* right);
+
+    friend bool operator!=(const char* left, const String& right);
+
+    friend bool operator>(const String& left, const String& right);
+
+    friend bool operator>(const String& left, const char* right);
+
+    friend bool operator>(const char* left, const String& right);
+
+    friend bool operator>=(const String& left, const String& right);
+
+    friend bool operator>=(const String& left, const char* right);
+
+    friend bool operator>=(const char* left, const String& right);
+
+    friend bool operator<(const String& left, const String& right);
+
+    friend bool operator<(const String& left, const char* right);
+
+    friend bool operator<(const char* left, const String& right);
+
+    friend bool operator<=(const String& left, const String& right);
+
+    friend bool operator<=(const String& left, const char* right);
+
+    friend bool operator<=(const char* left, const String& right);
+
+    friend std::ostream& operator<<(std::ostream& os, const String& str);
 public:
     static String FromStdString(const std::string& str);
     static String FromCString(const char* str);

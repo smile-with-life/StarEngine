@@ -5,5 +5,6 @@ files  --要编译的源文件
     "Core/TestConfig.cpp",
     "Core/TestContainer.cpp",
     "Core/TestFile.cpp",
-    "Core/TestVec.cpp"
+    "Core/TestMath.cpp",
+    "Core/TestRAII.cpp",
 }

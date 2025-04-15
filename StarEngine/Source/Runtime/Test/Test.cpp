@@ -6,19 +6,20 @@ namespace Star::Test
 {
 void UnitTestingInitBegin()
 {
-
+    
 }
 
 void UnitTestingInitEnd()
 {
-
+    Test_Array();
+    Test_File();
+    Test_Config();
+    Test_RAII();
 }
 
 void UnitTestingTickBegin()
 {
-    Test_Array();
-    Test_File();
-    Test_Config();
+    
 }
 
 void UnitTestingTickEnd()

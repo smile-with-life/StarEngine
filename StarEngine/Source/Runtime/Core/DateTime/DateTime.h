@@ -1,6 +1,7 @@
 #pragma once
 #include "Runtime/Core/Core.h"
 #include "Runtime/Core/String/String.h"
+#include "Runtime/Core/DateTime/Time.h"
 
 namespace Star
 {
@@ -30,7 +31,7 @@ public:
     DateTime(const String& iso8601);
 
     // 构造函数
-    // DateTime(const Time& time);
+    DateTime(const Time& time);
 public:
     // 年份
     int32 Year() const;

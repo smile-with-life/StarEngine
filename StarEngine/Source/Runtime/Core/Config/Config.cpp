@@ -55,8 +55,9 @@ bool ConfigFile::Load(const String& path_)
             {
                 value = value.Match('\"', '\"');
             }
-            m_sections[header].AddItem(key, value);
-            m_sections[header].m_itemOrder.PushBack(key);// 记录配置项的顺序    
+            auto& section = m_sections[header];
+            section.AddItem(key, value);
+            //section.m_itemOrder.PushBack(key);// 记录配置项的顺序    
         }
 
         return true;
@@ -80,11 +81,11 @@ bool ConfigFile::SaveAs(const String& path_)
     {
         for (const auto& header : m_sectionOrder)
         {    
-            const auto& section = m_sections[header];
+            auto& section = m_sections[header];
             config.Append(std::format("[{}]\n", header.ToStdString()));
             for (const auto& key : section.m_itemOrder) 
             {
-                const auto& value = section.m_items[key];
+                auto& value = section.m_items[key];
                 config.Append(std::format("{} = {}\n", key.ToStdString(), value.ToStdString()));
             }
             config.Append('\n');

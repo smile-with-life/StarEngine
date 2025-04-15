@@ -42,7 +42,7 @@ void Test_File();
 void Test_Config();
 void Test_RAII();
 
-
+// 标准测试类
 class Test_Standard_Class
 {
 public:
@@ -60,7 +60,7 @@ public:
 
     Test_Standard_Class(Test_Standard_Class&& other) noexcept = default;
     Test_Standard_Class& operator=(Test_Standard_Class&& other) noexcept = default;
-
+public:
     int Value() const
     {
         return m_num;
@@ -69,6 +69,36 @@ public:
     int SetValue(int value)
     {
         m_num = value;
+    }
+public:
+    friend bool operator==(const Test_Standard_Class& left, const Test_Standard_Class& right)
+    {
+        return left.m_num == right.m_num;
+    }
+
+    friend bool operator!=(const Test_Standard_Class& left, const Test_Standard_Class& right)
+    {
+        return left.m_num != right.m_num;
+    }
+
+    friend bool operator>(const Test_Standard_Class& left, const Test_Standard_Class& right)
+    {
+        return left.m_num > right.m_num;
+    }
+
+    friend bool operator>=(const Test_Standard_Class& left, const Test_Standard_Class& right)
+    {
+        return left.m_num >= right.m_num;
+    }
+
+    friend bool operator<(const Test_Standard_Class& left, const Test_Standard_Class& right)
+    {
+        return left.m_num < right.m_num;
+    }
+
+    friend bool operator<=(const Test_Standard_Class& left, const Test_Standard_Class& right)
+    {
+        return left.m_num <= right.m_num;
     }
 private:
     int m_num = 1;

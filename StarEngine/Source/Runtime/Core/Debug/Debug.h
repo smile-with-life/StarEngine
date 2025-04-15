@@ -19,16 +19,3 @@
 #else
     #define Assert(expression) ((void)0)
 #endif
-
-namespace Star
-{
-class DebugOutput
-{
-public:
-    DebugOutput() = default;
-    ~DebugOutput() = default;
-    
-};
-
-inline DebugOutput console;
-}// namespace Star

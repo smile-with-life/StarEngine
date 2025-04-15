@@ -86,6 +86,11 @@ public:
         }
     }
 public:
+    String& operator[](const String& key)
+    {
+        return m_items[key];
+    }
+public:
     [[nodiscard]] iterator begin() noexcept
     {
         return m_items.begin();

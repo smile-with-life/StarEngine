@@ -6,7 +6,7 @@ namespace Star
 DateTime::DateTime(const String& iso8601)
 {
     std::tm tm = {};
-    std::istringstream ss(iso8601);
+    std::istringstream ss(iso8601.ToStdString());
     ss >> std::get_time(&tm, "%Y-%m-%dT%H:%M:%SZ");
 
     if (ss.fail()) 

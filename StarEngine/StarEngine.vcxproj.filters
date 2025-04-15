@@ -58,6 +58,9 @@
     <Filter Include="Runtime\Core\Math">
       <UniqueIdentifier>{BA84DCFB-269B-DA91-6F12-66B3DB67AB19}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Runtime\Core\Memory">
+      <UniqueIdentifier>{89535565-F5B4-3273-7E22-7925EA826932}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Runtime\Core\Platform">
       <UniqueIdentifier>{B564EBD3-21D1-A6CE-EAC4-3E2C56F0C836}</UniqueIdentifier>
     </Filter>
@@ -138,6 +141,12 @@
     <ClInclude Include="Source\Runtime\Core\DateTime\DateTime.h">
       <Filter>Runtime\Core\DateTime</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\DateTime\Duration.h">
+      <Filter>Runtime\Core\DateTime</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\DateTime\Time.h">
+      <Filter>Runtime\Core\DateTime</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Debug\Debug.h">
       <Filter>Runtime\Core\Debug</Filter>
     </ClInclude>
@@ -153,8 +162,23 @@
     <ClInclude Include="Source\Runtime\Core\Math\Math.h">
       <Filter>Runtime\Core\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\Math\Vec.h">
+    <ClInclude Include="Source\Runtime\Core\Math\Radian.h">
       <Filter>Runtime\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Math\Vector2.h">
+      <Filter>Runtime\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Math\Vector3.h">
+      <Filter>Runtime\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Math\Vector4.h">
+      <Filter>Runtime\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Memory\ByteBuffer.h">
+      <Filter>Runtime\Core\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Memory\RAII.h">
+      <Filter>Runtime\Core\Memory</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Platform\Platform.h">
       <Filter>Runtime\Core\Platform</Filter>
@@ -209,13 +233,7 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
-    <ClInclude Include="Source\Runtime\Core\DateTime\Time.h" />
-    <ClInclude Include="Source\Runtime\Core\DateTime\Duration.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Radian.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Vector2.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Vector3.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Vector4.h" />
-    <ClInclude Include="Source\Runtime\Core\Memory\RAII.h" />
+    <ClInclude Include="Source\Runtime\Core\DateTime\Clock.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -242,6 +260,12 @@
     <ClCompile Include="Source\Runtime\Core\DateTime\DateTime.cpp">
       <Filter>Runtime\Core\DateTime</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\DateTime\Duration.cpp">
+      <Filter>Runtime\Core\DateTime</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\DateTime\Time.cpp">
+      <Filter>Runtime\Core\DateTime</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Runtime\Core\File\File.cpp">
       <Filter>Runtime\Core\File</Filter>
     </ClCompile>
@@ -250,6 +274,15 @@
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\Image\Image.cpp">
       <Filter>Runtime\Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\Math\Radian.cpp">
+      <Filter>Runtime\Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\Memory\ByteBuffer.cpp">
+      <Filter>Runtime\Core\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\Memory\RAII.cpp">
+      <Filter>Runtime\Core\Memory</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\String\String.cpp">
       <Filter>Runtime\Core\String</Filter>
@@ -290,15 +323,14 @@
     <ClCompile Include="Source\Runtime\Test\Core\TestMath.cpp">
       <Filter>Runtime\Test\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Runtime\Test\Core\TestRAII.cpp">
+      <Filter>Runtime\Test\Core</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Runtime\Test\Test.cpp">
       <Filter>Runtime\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
-    <ClCompile Include="Source\Runtime\Core\DateTime\Time.cpp" />
-    <ClCompile Include="Source\Runtime\Core\DateTime\Duration.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Math\Radian.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Memory\RAII.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Core\TestRAII.cpp" />
+    <ClCompile Include="Source\Runtime\Core\DateTime\Clock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

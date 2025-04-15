@@ -14,7 +14,10 @@ public:
 
     constexpr ~Scope()
     {
-        delete m_ptr;
+        if(m_ptr)
+        {
+            delete m_ptr;
+        }
     }
 
     constexpr Scope(const Scope& other) = delete;
@@ -366,7 +369,7 @@ private:
     Type* m_ptr = nullptr;
 
     // 引用计数
-    RefCount* m_ref{};
+    RefCount<Type>* m_ref{};
 };
 
 template<Concept::ClassType Type, class... Args>

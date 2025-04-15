@@ -1,7 +1,7 @@
 #include"starpch.h"
 
-#include "ByteArray.h"
-#include "String.h"
+#include "ByteBuffer.h"
+#include "Runtime/Core/String/String.h"
 
 namespace Star
 {

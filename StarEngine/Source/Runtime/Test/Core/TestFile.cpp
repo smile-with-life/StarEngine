@@ -25,6 +25,7 @@ void Test_File()
         std::cout << "文件名:" << fileName << std::endl;
         std::cout << "文件名主干部分:" << fileStem << std::endl;
         std::cout << "文件扩展名:" << fileEXT << std::endl;
+        std::cout << File::AbsolutePath("Asset/Test/test.txt") << std::endl;
         Assert(filePath == File::AbsolutePath("Asset/Test/test.txt"));
         Assert(fileDir == File::FileDir("Asset/Test/test.txt"));
         Assert(fileName == File::FileName("Asset/Test/test.txt"));

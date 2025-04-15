@@ -17,6 +17,10 @@ files  --要编译的源文件
 
     "DateTime/DateTime.h",
     "DateTime/DateTime.cpp",
+    "DateTime/Duration.h",
+    "DateTime/Duration.cpp",
+    "DateTime/Time.h",
+    "DateTime/Time.cpp",
 
     "Debug/Debug.h",
 
@@ -30,7 +34,16 @@ files  --要编译的源文件
     "Image/Image.cpp",
 
     "Math/Math.h",
-    "Math/Vec.h",
+    "Math/Radian.h",
+    "Math/Radian.cpp",
+    "Math/Vector2.h",
+    "Math/Vector3.h",
+    "Math/Vector4.h",
+
+    "Memory/ByteBuffer.h",
+    "Memory/ByteBuffer.cpp",
+    "Memory/RAII.h",
+    "Memory/RAII.cpp",
 
     "Platform/Platform.h",
 

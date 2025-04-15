@@ -79,7 +79,7 @@ public:
         return m_data.at(key);
     }
 
-    template<class Key>
+    /*template<class Key>
     constexpr ValueType& At(const Key& key)
     {
         return m_data.at(key);
@@ -89,44 +89,28 @@ public:
     constexpr const ValueType& At(const Key& key) const
     {
         return m_data.at(key);
-    }
+    }*/
 
     constexpr ValueType& operator[](const KeyType& key)
     {
         return m_data[key];
     }
 
-    constexpr const ValueType& operator[](const KeyType& key) const
+    /*constexpr const ValueType& operator[](const KeyType& key) const
     {
         return m_data.at(key);
-    }
+    }*/
 
-    //constexpr ValueType& operator[](KeyType&& key)
-    //{
-    //    return m_data[key];
-    //}
+    constexpr ValueType& operator[](KeyType&& key)
+    {
+        return m_data[key];
+    }
 
     /*template<class Key>
     constexpr ValueType& operator[](Key&& key)
     {
         return m_data[key];
     }*/
-
-    constexpr ValueType& Find(const KeyType& key)
-    {
-        return m_data[key];
-    }
-
-    constexpr ValueType& Find(KeyType&& key)
-    {
-        return m_data[key];
-    }
-
-    template<class Key>
-    constexpr ValueType& Find(Key&& key)
-    {
-        return m_data[key];
-    }
 
     bool Contains(const KeyType& key) const
     {
@@ -155,12 +139,12 @@ public:
 
     constexpr iterator Insert(const element_type& value)
     {
-        return m_data.insert(value).first();
+        return m_data.insert(value).first;
     }
 
     constexpr iterator Insert(element_type&& value)
     {
-        return m_data.insert(value).first();
+        return m_data.insert(value).first;
     }
 
     template<class InputIt>
@@ -187,7 +171,7 @@ public:
     template<class... Args>
     constexpr iterator Emplace(Args&&... args)
     {
-        return m_data.try_emplace(std::forward<Args>(args)...).first();
+        return m_data.try_emplace(std::forward<Args>(args)...).first;
     }
 
     constexpr int64 Erase(const KeyType& key)
