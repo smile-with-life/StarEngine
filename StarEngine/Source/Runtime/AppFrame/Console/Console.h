@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Runtime/Core/Core.h"
+#include "Runtime/Core/Memory/RAII.h"
 
 namespace Star
 {

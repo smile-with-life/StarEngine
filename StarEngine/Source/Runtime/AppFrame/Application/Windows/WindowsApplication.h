@@ -4,7 +4,9 @@
 #include "Runtime/AppFrame/Application/Application.h"
 
 #include "Runtime/OpenGL/OpenGL.h"
-#include"Runtime/AppFrame/Console/Windows/WindowsConsole.h"
+#include "Runtime/AppFrame/Console/Windows/WindowsConsole.h"
+#include "Runtime/Core/Core.h"
+#include "Runtime/Core/Memory/RAII.h"
 
 
 namespace Star
@@ -51,13 +53,13 @@ private:
 	//Array<InputDevice> m_inputDevices;
 
 	// 主窗口
-	Window* m_window;
+	Scope<Window> m_window;
 
 	// 渲染接口
-	OpenGL* m_renderer;
+	Scope<OpenGL> m_renderer;
 
 	// 控制台
-	Console* m_console;
+	Scope<Console> m_console;
 
 	// 应用程序句柄
 	HINSTANCE m_hInstance;

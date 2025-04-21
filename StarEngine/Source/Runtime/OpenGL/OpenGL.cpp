@@ -4,7 +4,7 @@
 
 namespace Star 
 {
-void OpenGL::Init(Window* window) 
+void OpenGL::Init(void* window)
 {
 
 }

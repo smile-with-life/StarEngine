@@ -1,10 +1,10 @@
 #pragma once
 #include "Runtime/Core/Core.h"
-#include "Runtime/Core/DateTime/Time.h"
+#include "Runtime/Core/Time/Time.h"
 
 namespace Star
 {
-// 高精度时钟
+// 单调时钟
 class Clock
 {
 public:
@@ -15,4 +15,6 @@ public:
 public:
     static Time NowTime();
 };
+
+
 }// namespace Star

@@ -138,13 +138,13 @@
     <ClInclude Include="Source\Runtime\Core\Core.h">
       <Filter>Runtime\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\DateTime\DateTime.h">
+    <ClInclude Include="Source\Runtime\Core\Time\DateTime.h">
       <Filter>Runtime\Core\DateTime</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\DateTime\Duration.h">
+    <ClInclude Include="Source\Runtime\Core\Time\Duration.h">
       <Filter>Runtime\Core\DateTime</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\DateTime\Time.h">
+    <ClInclude Include="Source\Runtime\Core\Time\Time.h">
       <Filter>Runtime\Core\DateTime</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Debug\Debug.h">
@@ -233,7 +233,7 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
-    <ClInclude Include="Source\Runtime\Core\DateTime\Clock.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\Clock.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -257,13 +257,13 @@
     <ClCompile Include="Source\Runtime\Core\Config\Config.cpp">
       <Filter>Runtime\Core\Config</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\Core\DateTime\DateTime.cpp">
+    <ClCompile Include="Source\Runtime\Core\Time\DateTime.cpp">
       <Filter>Runtime\Core\DateTime</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\Core\DateTime\Duration.cpp">
+    <ClCompile Include="Source\Runtime\Core\Time\Duration.cpp">
       <Filter>Runtime\Core\DateTime</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\Core\DateTime\Time.cpp">
+    <ClCompile Include="Source\Runtime\Core\Time\Time.cpp">
       <Filter>Runtime\Core\DateTime</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\File\File.cpp">
@@ -330,7 +330,7 @@
       <Filter>Runtime\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
-    <ClCompile Include="Source\Runtime\Core\DateTime\Clock.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Time\Clock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

@@ -3,6 +3,10 @@
 
 namespace Star
 {
+class Duration
+{
+
+};
 // 年
 class Years
 {

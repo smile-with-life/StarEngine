@@ -17,7 +17,7 @@ OpenGL* OpenGL::Create()
 }
 
 /* member */
-void WindowsOpenGL::Init(Window* window_)
+void WindowsOpenGL::Init(void* window_)
 {
     m_hWnd = (HWND)(window_->GetNativeHandle());
     LoadOpenGL();

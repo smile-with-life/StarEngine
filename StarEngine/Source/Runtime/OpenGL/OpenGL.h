@@ -9,7 +9,7 @@ namespace Star
 class OpenGL
 {
 public:
-    virtual void Init(Window* window);
+    virtual void Init(void* window);
 
     virtual void Tick();
 

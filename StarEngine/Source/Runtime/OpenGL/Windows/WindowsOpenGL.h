@@ -11,7 +11,7 @@ public:
     WindowsOpenGL() = default;
     ~WindowsOpenGL() = default;
 public:
-    virtual void Init(Window* window) override;
+    virtual void Init(void* window) override;
 
     virtual void Tick() override;
 

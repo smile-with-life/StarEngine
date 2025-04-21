@@ -26,10 +26,9 @@ WindowsApplication::WindowsApplication(const HINSTANCE hInstance, const HICON hI
 {
     RegisterWindowClassInfo(m_hInstance, hIcon);
 
-    m_console = Console::Create();
-    m_console->Show();
-    m_window = Window::Create();
-    m_renderer = OpenGL::Create();
+    m_console = Scope<Console>(Console::Create());
+    m_window = Scope<Window>(Window::Create());
+    m_renderer = Scope<OpenGL>(OpenGL::Create());
 
     // 初始化了 OLE 库，以支持拖放功能
     // CA_SUPPRESS(6031);
@@ -42,9 +41,7 @@ WindowsApplication::WindowsApplication(const HINSTANCE hInstance, const HICON hI
 
 WindowsApplication::~WindowsApplication()
 {
-    delete m_window;
-    delete m_renderer;
-    delete m_console;
+
     // ::CoUninitialize();
     // OleUninitialize();
 }
@@ -52,7 +49,7 @@ WindowsApplication::~WindowsApplication()
 void WindowsApplication::Init()
 {   
     m_window->Init();
-    m_renderer->Init(m_window);
+    m_renderer->Init(m_window->GetNativeHandle());
 }
 
 void WindowsApplication::Tick()

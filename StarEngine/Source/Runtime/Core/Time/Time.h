@@ -9,9 +9,6 @@ namespace Star
 class Time
 {
 public:
-    using clock = std::chrono::steady_clock;
-    using time_point = std::chrono::time_point<clock>;
-public:
     Time() = default;
 
     ~Time() = default;
@@ -24,7 +21,12 @@ public:
 
     Time& operator=(Time&& other) = default;
 
-    Time(time_point time);
+    Time(std::chrono::time_point<std::chrono::steady_clock> time);
+public:
+    Time& operator++();
+    Time& operator++(int);
+    Time& operator--();
+    Time& operator--(int);
 public:
     friend bool operator==(const Time& left, const Time& right);
 
@@ -55,7 +57,9 @@ public:
     friend Time operator+(const Time& time, const Mircoseconds& us);
 
     friend Time operator+(const Time& time, const Nanoseconds& ns);
+
+    friend Duration operator-(const Time& left, const Time& right);
 private:
-    time_point m_time{};
+    std::chrono::time_point<std::chrono::steady_clock> m_time{};
 };
 }// namespace Star
