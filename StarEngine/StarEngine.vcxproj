@@ -232,6 +232,8 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Container\Map.h" />
     <ClInclude Include="Source\Runtime\Core\Container\Set.h" />
     <ClInclude Include="Source\Runtime\Core\Core.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Matrix3.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Matrix4.h" />
     <ClInclude Include="Source\Runtime\Core\Time\Clock.h" />
     <ClInclude Include="Source\Runtime\Core\Time\DateTime.h" />
     <ClInclude Include="Source\Runtime\Core\Time\Duration.h" />

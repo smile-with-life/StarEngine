@@ -234,6 +234,8 @@
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
     <ClInclude Include="Source\Runtime\Core\Time\Clock.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Matrix4.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Matrix3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
