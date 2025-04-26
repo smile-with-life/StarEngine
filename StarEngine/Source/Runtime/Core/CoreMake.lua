@@ -15,13 +15,6 @@ files  --要编译的源文件
     "Container/Set.h",
     "Container/Hash.h",
 
-    "DateTime/DateTime.h",
-    "DateTime/DateTime.cpp",
-    "DateTime/Duration.h",
-    "DateTime/Duration.cpp",
-    "DateTime/Time.h",
-    "DateTime/Time.cpp",
-
     "Debug/Debug.h",
 
     "File/File.h",
@@ -34,6 +27,8 @@ files  --要编译的源文件
     "Image/Image.cpp",
 
     "Math/Math.h",
+    "Math/Matrix3.h",
+    "Math/Matrix4.h",
     "Math/Radian.h",
     "Math/Radian.cpp",
     "Math/Vector2.h",
@@ -56,6 +51,14 @@ files  --要编译的源文件
     "Thread/Semaphore.h",
     "Thread/Thread.h",
     "Thread/WaitCondition.h",
+
+    "Time/Clock.h",
+    "Time/Clock.cpp",
+    "Time/DateTime.h",
+    "Time/DateTime.cpp",
+    "Time/Duration.h",
+    "Time/Duration.cpp",
+    "Time/TimePoint.h",
 
     "TypeDefinition/Type.h"
 

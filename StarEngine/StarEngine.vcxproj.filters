@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Runtime">
@@ -40,9 +40,6 @@
     <Filter Include="Runtime\Core\Container">
       <UniqueIdentifier>{53FC2214-3FF6-4B66-2863-E27614FCB1D2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Runtime\Core\DateTime">
-      <UniqueIdentifier>{3D694D9D-A9D5-0898-72C9-A0F5DEF42A00}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Runtime\Core\Debug">
       <UniqueIdentifier>{7726CC76-630A-8DCC-CC6A-871FB86D774E}</UniqueIdentifier>
     </Filter>
@@ -69,6 +66,9 @@
     </Filter>
     <Filter Include="Runtime\Core\Thread">
       <UniqueIdentifier>{884AE275-F4AB-BF83-7D19-0636E979F642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Core\Time">
+      <UniqueIdentifier>{7F7CE0FB-EB92-DE91-340A-6AB3A05FAF19}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Core\TypeDefinition">
       <UniqueIdentifier>{DBE17DB2-47EF-AB98-D0D5-A7833CE2774F}</UniqueIdentifier>
@@ -138,12 +138,6 @@
     <ClInclude Include="Source\Runtime\Core\Core.h">
       <Filter>Runtime\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\Time\DateTime.h">
-      <Filter>Runtime\Core\DateTime</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\Time\Duration.h">
-      <Filter>Runtime\Core\DateTime</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Debug\Debug.h">
       <Filter>Runtime\Core\Debug</Filter>
     </ClInclude>
@@ -157,6 +151,12 @@
       <Filter>Runtime\Core\Image</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Math\Math.h">
+      <Filter>Runtime\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Math\Matrix3.h">
+      <Filter>Runtime\Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Math\Matrix4.h">
       <Filter>Runtime\Core\Math</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Math\Radian.h">
@@ -201,6 +201,18 @@
     <ClInclude Include="Source\Runtime\Core\Thread\WaitCondition.h">
       <Filter>Runtime\Core\Thread</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Time\Clock.h">
+      <Filter>Runtime\Core\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Time\DateTime.h">
+      <Filter>Runtime\Core\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Time\Duration.h">
+      <Filter>Runtime\Core\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Time\TimePoint.h">
+      <Filter>Runtime\Core\Time</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h">
       <Filter>Runtime\Core\TypeDefinition</Filter>
     </ClInclude>
@@ -230,11 +242,6 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Clock.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Matrix4.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Matrix3.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\TimePoint.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Ratio.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -258,12 +265,6 @@
     <ClCompile Include="Source\Runtime\Core\Config\Config.cpp">
       <Filter>Runtime\Core\Config</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\Core\Time\DateTime.cpp">
-      <Filter>Runtime\Core\DateTime</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Runtime\Core\Time\Duration.cpp">
-      <Filter>Runtime\Core\DateTime</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Runtime\Core\File\File.cpp">
       <Filter>Runtime\Core\File</Filter>
     </ClCompile>
@@ -284,6 +285,15 @@
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\String\String.cpp">
       <Filter>Runtime\Core\String</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\Time\Clock.cpp">
+      <Filter>Runtime\Core\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\Time\DateTime.cpp">
+      <Filter>Runtime\Core\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\Time\Duration.cpp">
+      <Filter>Runtime\Core\Time</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Launch\EngineLoop.cpp">
       <Filter>Runtime\Launch</Filter>
@@ -328,7 +338,6 @@
       <Filter>Runtime\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Clock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">
