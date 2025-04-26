@@ -19,7 +19,7 @@ OpenGL* OpenGL::Create()
 /* member */
 void WindowsOpenGL::Init(void* window_)
 {
-    m_hWnd = (HWND)(window_->GetNativeHandle());
+    m_hWnd = (HWND)window_;
     LoadOpenGL();
     MakeContext();
 }

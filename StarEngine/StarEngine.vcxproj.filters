@@ -144,9 +144,6 @@
     <ClInclude Include="Source\Runtime\Core\Time\Duration.h">
       <Filter>Runtime\Core\DateTime</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\Time\Time.h">
-      <Filter>Runtime\Core\DateTime</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Debug\Debug.h">
       <Filter>Runtime\Core\Debug</Filter>
     </ClInclude>
@@ -236,6 +233,8 @@
     <ClInclude Include="Source\Runtime\Core\Time\Clock.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Matrix4.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Matrix3.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\TimePoint.h" />
+    <ClInclude Include="Source\Runtime\Core\Math\Ratio.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -263,9 +262,6 @@
       <Filter>Runtime\Core\DateTime</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\Time\Duration.cpp">
-      <Filter>Runtime\Core\DateTime</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Runtime\Core\Time\Time.cpp">
       <Filter>Runtime\Core\DateTime</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\File\File.cpp">

@@ -13,11 +13,11 @@ public:
     WindowsConsole();
     ~WindowsConsole();
 
-    virtual void Show() override;
+    virtual void Init() override;
 
-    virtual void Hide() override;
+    virtual void Tick() override;
 
-    virtual bool isShow() override;
+    virtual void Exit() override;
 private:
     // 控制台句柄
     HANDLE m_console;

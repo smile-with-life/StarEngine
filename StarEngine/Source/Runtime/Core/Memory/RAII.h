@@ -109,31 +109,31 @@ public:
         return left.m_ptr == right.m_ptr;
     }
 
-    template<class Type>
+    //template<class Type>
     constexpr friend bool operator==(const Type* left, const Scope<Type>& right)
     {
         return left== right.m_ptr;
     }
 
-    template<class Type>
+    //template<class Type>
     constexpr friend bool operator==(const Scope<Type>& left, const Type* right)
     {
         return left.m_ptr == right;
     }
 
-    template<class Type>
+    //template<class Type>
     constexpr friend bool operator!=(const Scope<Type>& left, const Scope<Type>& right)
     {
         return left.m_ptr != right.m_ptr;
     }
 
-    template<class Type>
+    //template<class Type>
     constexpr friend bool operator!=(const Type* left, const Scope<Type>& right)
     {
         return left != right.m_ptr;
     }
 
-    template<class Type>
+    //template<class Type>
     constexpr friend bool operator!=(const Scope<Type>& left, const Type* right)
     {
         return left.m_ptr != right;

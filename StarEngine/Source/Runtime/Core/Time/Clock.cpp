@@ -3,8 +3,15 @@
 
 namespace Star
 {
-Time Clock::NowTime()
+TimePoint<SystemClock> SystemClock::Now()
 {
-    return Time(clock::now());
+    auto time = std::chrono::system_clock::now();
+    return TimePoint<SystemClock>();
+}
+
+TimePoint<SteadyClock> SteadyClock::Now()
+{
+    auto time = std::chrono::steady_clock::now();
+    return TimePoint<SteadyClock>();
 }
 }// namespace Star

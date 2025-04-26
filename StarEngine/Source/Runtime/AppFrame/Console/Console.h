@@ -12,11 +12,11 @@ public:
     Console() = default;
     ~Console() = default;
 
-    virtual void Show();
+    virtual void Init();
 
-    virtual void Hide();
+    virtual void Tick();
 
-    virtual bool isShow();
+    virtual void Exit();
 public:
     static Console* Create();
 };

@@ -2,7 +2,7 @@
 #include "WindowsConsole.h"
 
 namespace Star
-{
+{	
 /* static*/
 Console* Console::Create()
 {
@@ -10,18 +10,18 @@ Console* Console::Create()
 }
 /* member */
 WindowsConsole::WindowsConsole()
-	: Console()
-	, m_console(0)
+	: m_console(0)
 {
 
 }
 
 WindowsConsole::~WindowsConsole()
 {
-	Hide();
+	m_console = NULL;
+	FreeConsole();
 }
 
-void WindowsConsole::Show()
+void WindowsConsole::Init()
 {
 	AllocConsole();
 	FILE* fp;
@@ -31,15 +31,14 @@ void WindowsConsole::Show()
 	m_console = GetStdHandle(STD_OUTPUT_HANDLE);
 }
 
-void WindowsConsole::Hide()
+void WindowsConsole::Tick()
 {
-	m_console = NULL;
-	FreeConsole();
+	
 }
 
-bool WindowsConsole::isShow()
+void WindowsConsole::Exit()
 {
-	return m_console != NULL;
+	
 }
 
 }// namespace Star

@@ -2,7 +2,7 @@
 
 #include "Runtime/Core/Core.h"
 #include "Runtime/AppFrame/Window/Window.h"
-#include "Runtime/Core/Time/Time.h"
+#include "Runtime/Core/Time/Duration.h"
 #include "Runtime/Core/Time/Clock.h"
 
 namespace Star 
@@ -18,43 +18,6 @@ namespace Star
 //		return args[index];
 //	}
 //};
-
-// 引擎帧管理器
-class FrameManager
-{
-public:
-	void Init()
-	{
-		m_startTime = m_lastStatisticTime = Clock::NowTime();
-	}
-
-	void Tick()
-	{
-		auto duration = m_frameStartTime - m_lastStatisticTime;
-		if (duration > std::chrono::seconds(1)) 
-		{
-			m_FPS = m_frameCount;
-			m_frameCount = 0;
-			m_lastStatisticTime = m_frameStartTime;
-		}
-		else 
-		{
-			m_frameCount++;
-		}
-	}
-
-	void Exit();
-private:
-	Time m_startTime;// 引擎开始时间
-	Time m_lastUpdateTime;// 上次更新时间
-	Time m_frameStartTime;// 帧开始时间
-	Time m_frameEndTime;// 帧结束时间
-	Time m_lastStatisticTime;// 上次统计的时间
-	int32 m_frameCount = 0;// 自上次统计以来的帧数
-	float m_FPS = 0.0;// 帧率
-	Nanoseconds m_deltaTime;// 存储当前帧与上一帧的时间差
-};
-
 
 class SE_API Application
 {

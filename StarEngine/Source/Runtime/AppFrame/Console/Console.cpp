@@ -3,19 +3,19 @@
 
 namespace Star
 {
-void Console::Show()
+void Console::Init()
 {
 
 }
 
-void Console::Hide()
+void Console::Tick()
 {
 
 }
 
-bool Console::isShow()
+void Console::Exit()
 {
-    return false;
+    
 }
 }// namespace Star
 

@@ -1,19 +1,31 @@
 #pragma once
 #include "Runtime/Core/Core.h"
-#include "Runtime/Core/Time/Time.h"
+#include "Runtime/Core/Time/TimePoint.h"
 
 namespace Star
 {
+// 系统时钟
+class SystemClock
+{
+public:
+    using clock = std::chrono::system_clock;
+public:
+    SystemClock() = default;
+    ~SystemClock() = default;
+public:
+    static TimePoint<SystemClock> Now();
+};
+
 // 单调时钟
-class Clock
+class SteadyClock
 {
 public:
     using clock = std::chrono::steady_clock;
 public:
-    Clock() = default;
-    ~Clock() = default;
+    SteadyClock() = default;
+    ~SteadyClock() = default;
 public:
-    static Time NowTime();
+    static TimePoint<SteadyClock> Now();
 };
 
 

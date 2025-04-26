@@ -48,6 +48,7 @@ WindowsApplication::~WindowsApplication()
 
 void WindowsApplication::Init()
 {   
+    m_console->Init();
     m_window->Init();
     m_renderer->Init(m_window->GetNativeHandle());
 }
