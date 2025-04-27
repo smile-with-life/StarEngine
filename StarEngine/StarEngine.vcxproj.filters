@@ -177,9 +177,6 @@
     <ClInclude Include="Source\Runtime\Core\Memory\RAII.h">
       <Filter>Runtime\Core\Memory</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\Platform\Platform.h">
-      <Filter>Runtime\Core\Platform</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\String\Convert.h">
       <Filter>Runtime\Core\String</Filter>
     </ClInclude>
@@ -207,7 +204,7 @@
     <ClInclude Include="Source\Runtime\Core\Time\DateTime.h">
       <Filter>Runtime\Core\Time</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\Time\Duration.h">
+    <ClInclude Include="Source\Runtime\Core\Time\Duration-old.h">
       <Filter>Runtime\Core\Time</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Time\TimePoint.h">
@@ -242,6 +239,15 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\Duration.h" />
+    <ClInclude Include="Source\Platform\Application.h" />
+    <ClInclude Include="Source\Platform\Console.h" />
+    <ClInclude Include="Source\Platform\Window.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsApplication.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsConsole.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="Source\Platform\Platform.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsPlatform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp">
@@ -292,7 +298,7 @@
     <ClCompile Include="Source\Runtime\Core\Time\DateTime.cpp">
       <Filter>Runtime\Core\Time</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\Core\Time\Duration.cpp">
+    <ClCompile Include="Source\Runtime\Core\Time\Duration-old.cpp">
       <Filter>Runtime\Core\Time</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Launch\EngineLoop.cpp">
@@ -338,6 +344,14 @@
       <Filter>Runtime\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
+    <ClCompile Include="Source\Platform\Application.cpp" />
+    <ClCompile Include="Source\Platform\Console.cpp" />
+    <ClCompile Include="Source\Platform\Window.cpp" />
+    <ClCompile Include="Source\Platform\Windows\WindowsApplication.cpp" />
+    <ClCompile Include="Source\Platform\Windows\WindowsConsole.cpp" />
+    <ClCompile Include="Source\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="Source\Platform\Platform.cpp" />
+    <ClCompile Include="Source\Platform\Windows\WindowsPlatform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

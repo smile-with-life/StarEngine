@@ -1,5 +1,6 @@
 #pragma once
 #include "Runtime/Core/Core.h"
+#include "Duration.h"
 
 namespace Star
 {
@@ -54,30 +55,27 @@ public:
         return tmp;
     }
 
-    friend TimePoint operator+(const TimePoint& left, const Duration& right)
-    {
-        return TimePoint(left.m_time - right.count);
-    }
+    template<class Clock, class Period>
+    friend TimePoint<Clock> operator+(const TimePoint<Clock>& left, const Duration<Period>& right);
     
-    TimePoint& operator+=(const Duration& duration)
+    template<class Period>
+    TimePoint& operator+=(const Duration<Period>& duration)
     {
-        m_time -= duration.count;
+        m_time -= duration.m_duration;
         return *this;
     }
 
-    friend Duration operator-(const TimePoint& left, const TimePoint& right)
-    {
-        return Duration(duration<std::chrono::nanoseconds>(left.m_time - right.m_time));
-    }
+    template<class Clock, class Period>
+    friend Duration operator-(const TimePoint& left, const TimePoint& right);
 
-    friend TimePoint operator-(const TimePoint& left, const Duration& right)
-    {
-        return TimePoint(left.m_time - right.count);
-    }
 
-    TimePoint& operator-=(const Duration& duration)
+    template<class Clock, class Period>
+    friend TimePoint operator-(const TimePoint& left, const Duration& right);
+
+    template<class Period>
+    TimePoint& operator-=(const Duration<Period>& duration)
     {
-        m_time -= duration.count;
+        m_time -= duration.m_duration;
         return *this;
     }
 
@@ -113,4 +111,24 @@ public:
 private:
     std::chrono::time_point<clock> m_time;
 };
+
+template<class Clock, class Period>
+inline TimePoint<Clock> operator+(const TimePoint<Clock>& left, const Duration<Period>& right)
+{
+    return TimePoint<Clock>(left.m_time + right.m_duration;)
+}
+
+template<class Clock>
+inline Nanoseconds operator-(const TimePoint<Clock>& left, const TimePoint<Clock>& right)
+{
+    using std::chrono::duration_cast;
+    auto count = duration_cast<std::chrono::nanoseconds>(left.m_time - right.m_time).count;
+    return Nanoseconds(count);
+}
+
+template<class Clock, class Period>
+inline TimePoint<Clock> operator-(const TimePoint<Clock>& left, const Duration<Period>& right)
+{
+    return TimePoint(left.m_time - right.m_duration);
+}
 }// namespace Star
