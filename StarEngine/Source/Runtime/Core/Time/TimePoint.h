@@ -65,12 +65,12 @@ public:
         return *this;
     }
 
-    template<class Clock, class Period>
-    friend Duration operator-(const TimePoint& left, const TimePoint& right);
+    template<class Clock>
+    friend Nanoseconds operator-(const TimePoint<Clock>& left, const TimePoint<Clock>& right);
 
 
     template<class Clock, class Period>
-    friend TimePoint operator-(const TimePoint& left, const Duration& right);
+    friend TimePoint operator-(const TimePoint& left, const Duration<Period>& right);
 
     template<class Period>
     TimePoint& operator-=(const Duration<Period>& duration)
@@ -115,14 +115,14 @@ private:
 template<class Clock, class Period>
 inline TimePoint<Clock> operator+(const TimePoint<Clock>& left, const Duration<Period>& right)
 {
-    return TimePoint<Clock>(left.m_time + right.m_duration;)
+    return TimePoint<Clock>(left.m_time + right.m_duration);
 }
 
 template<class Clock>
 inline Nanoseconds operator-(const TimePoint<Clock>& left, const TimePoint<Clock>& right)
 {
     using std::chrono::duration_cast;
-    auto count = duration_cast<std::chrono::nanoseconds>(left.m_time - right.m_time).count;
+    auto count = duration_cast<std::chrono::nanoseconds>(left.m_time - right.m_time).count();
     return Nanoseconds(count);
 }
 

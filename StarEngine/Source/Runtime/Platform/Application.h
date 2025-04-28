@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Runtime/Core/Core.h"
-#include "Runtime/AppFrame/Window/Window.h"
+#include "Runtime/Platform/Window.h"
 #include "Runtime/Core/Time/Duration.h"
 #include "Runtime/Core/Time/Clock.h"
 
@@ -18,41 +18,6 @@ namespace Star
 //		return args[index];
 //	}
 //};
-class FrameController
-{
-public:
-	FrameController(int32 frame)
-		: m_maxFPS(frame)
-		, m_frameTime(1000000 / frame)
-	{
-		
-	}
-public:
-	void Init(int32 frame) 
-	{
-		m_lastUpdateTime = SteadyClock::Now();
-	}
-
-	void Tick() 
-	{
-
-		Nanoseconds currentFrameTime = SteadyClock::Now() - m_lastUpdateTime;// 当前帧的时间
-		auto delay = m_frameTime - ConvertType<Microseconds>(currentFrameTime);
-		if (currentFrameTime < m_frameTime)
-		{
-			Delay();
-		}
-	}
-
-	void Exit()
-	{
-
-	}
-private:
-	int32 m_maxFPS;// 最大帧率
-	Microseconds m_frameTime;// 帧时间
-	TimePoint<SteadyClock> m_lastUpdateTime;// 上次更新时间
-};
 
 class SE_API Application
 {

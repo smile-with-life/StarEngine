@@ -2,7 +2,7 @@
 
 #include "Runtime/Core/Core.h"
 
-#include "Runtime/AppFrame/Window/Window.h"
+#include "Runtime/Platform/Window.h"
 
 namespace Star
 {

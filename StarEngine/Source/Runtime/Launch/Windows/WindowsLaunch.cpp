@@ -1,26 +1,24 @@
 #include "starpch.h"
 
 #include "Runtime/Core/Core.h"
-#include "Runtime/Launch/EngineLoop.h"
-//HANDLE g_hOutput = 0;
+#include "Runtime/Launch/MainLoop.h"
+
 int32 WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
 {
-    //AllocConsole();
-    //g_hOutput = GetStdHandle(STD_OUTPUT_HANDLE);
     int32 error = 0;
     GWindowsInstance = hInstance;
 
     // 处理命令行参数
     // @ 实现
 
-    Star::GEngineLoop.Init();
+    Star::GMainLoop.Init();
 
-    while (!Star::GEngineLoop.IsQuit())
+    while (!Star::GMainLoop.IsQuit())
     {
-        Star::GEngineLoop.Tick();
+        Star::GMainLoop.Tick();
     }
 
-    Star::GEngineLoop.Exit();
+    Star::GMainLoop.Exit();
 
 	return error;
 }

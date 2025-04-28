@@ -8,8 +8,5 @@ Platform* Platform::Create()
     return new WindowsPlatform();
 }
 
-void WindowsPlatform::HighAccuracyDelay()
-{
 
-}
 }// namespace Star

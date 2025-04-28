@@ -2,7 +2,7 @@
 
 #include "Runtime/Core/Core.h"
 
-#include "Runtime/AppFrame/Console/Console.h"
+#include "Runtime/Platform/Console.h"
 
 namespace Star
 {
@@ -11,7 +11,8 @@ class WindowsConsole:public Console
 {
 public:
     WindowsConsole();
-    ~WindowsConsole();
+
+    virtual ~WindowsConsole();
 
     virtual void Init() override;
 

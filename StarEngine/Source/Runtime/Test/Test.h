@@ -8,12 +8,12 @@
     #define TESTING_EXIT_BEGIN() Star::Test::UnitTestingExitBegin()
     #define TESTING_EXIT_END() Star::Test::UnitTestingExitEnd()
 #else
-    #define TESTING_INIT_BEGIN ((void)0)
-    #define TESTING_INIT_END ((void)0)
-    #define TESTING_TICK_BEGIN ((void)0)
-    #define TESTING_TICK_END ((void)0)
-    #define TESTING_EXIT_BEGIN ((void)0)
-    #define TESTING_EXIT_END ((void)0)
+    #define TESTING_INIT_BEGIN() 
+    #define TESTING_INIT_END()
+    #define TESTING_TICK_BEGIN()
+    #define TESTING_TICK_END()
+    #define TESTING_EXIT_BEGIN()
+    #define TESTING_EXIT_END()
 #endif
 
 

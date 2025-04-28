@@ -1,10 +1,9 @@
 #pragma once
 // 创建一个Windows平台的应用程序
 
-#include "Runtime/AppFrame/Application/Application.h"
+#include "Runtime/Platform/Application.h"
 
-#include "Runtime/OpenGL/OpenGL.h"
-#include "Runtime/AppFrame/Console/Windows/WindowsConsole.h"
+#include "Runtime/Platform/Windows/WindowsConsole.h"
 #include "Runtime/Core/Core.h"
 #include "Runtime/Core/Memory/RAII.h"
 
@@ -54,9 +53,6 @@ private:
 
 	// 主窗口
 	Scope<Window> m_window;
-
-	// 渲染接口
-	Scope<OpenGL> m_renderer;
 
 	// 控制台
 	Scope<Console> m_console;

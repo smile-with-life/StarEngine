@@ -40,7 +40,7 @@ public:
 		auto delay = m_frameTime - ConvertType<Microseconds>(currentFrameTime);
 		if (currentFrameTime < m_frameTime)
 		{
-			Delay();
+			
 		}
 	}
 
@@ -49,7 +49,7 @@ public:
 
 	}
 private:
-	int32 m_maxFPS;// 最大帧率
+	int32 m_maxFPS;// 最大帧率限制
 	Microseconds m_frameTime;// 帧时间
 	TimePoint<SteadyClock> m_lastUpdateTime;// 上次更新时间
 };

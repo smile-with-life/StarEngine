@@ -58,6 +58,8 @@ files  --要编译的源文件
     "Time/DateTime.cpp",
     "Time/Duration.h",
     "Time/TimePoint.h",
+    "Time/Time.h",
+    "Time/Time.cpp",
 
     "TypeDefinition/Type.h"
 

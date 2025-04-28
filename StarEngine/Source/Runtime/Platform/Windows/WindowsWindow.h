@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Runtime/AppFrame/Window/Window.h"
+#include "Runtime/Platform/Window.h"
 
 #include <windows.h>
 #include <windowsx.h>

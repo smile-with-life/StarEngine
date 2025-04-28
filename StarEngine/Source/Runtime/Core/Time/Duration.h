@@ -34,6 +34,14 @@ public:
 
     }
 public:
+    int64_t Count() const
+    {
+        return m_duration.count();
+    }
+
+    template<class ToDuration, class Period>
+    friend constexpr auto ConvertType(const Duration<Period>& duration);
+public:
     template<class Period1, class Period2>
     friend constexpr auto operator+(const Duration<Period1>& left, const Duration<Period2>& right);
 
@@ -105,14 +113,17 @@ public:
 
     template<class Period1, class Period2>
     friend constexpr bool operator<=(const Duration<Period1>& left, const Duration<Period2>& right);
-public:
-    int64_t Count() const
-    {
-        return m_duration.count();
-    }
 private:
     std::chrono::duration<int64_t, Period> m_duration;
 };
+
+template<class ToDuration, class Period>
+inline constexpr auto ConvertType(const Duration<Period>& duration)
+{
+    using std::chrono::duration_cast;
+    auto count = duration_cast<typename ToDuration::type>(duration.m_duration).count();
+    return ToDuration(count);
+}
 
 template<class Period1, class Period2>
 inline constexpr auto operator+(const Duration<Period1>& left, const Duration<Period2>& right)
@@ -179,19 +190,11 @@ inline constexpr auto operator%(const Duration<Period1>& left, const Duration<Pe
     return Duration<Period>(count);
 }
 
-template<class Period1, class Period2>
-inline constexpr auto operator%(const Duration<Period1>& left, int64 right)
+template<class Period>
+inline constexpr auto operator%(const Duration<Period>& left, int64 right)
 {
     auto count = left.Count() % right;
     return Duration<Period>(count);
-}
-
-template<class ToDuration,class Period>
-inline constexpr auto ConvertType(const Duration<Period>& duration)
-{
-    using std::chrono::duration_cast;
-    auto count = duration_cast<typename ToDuration::type>(duration.m_duration).count();
-    return Duration<ToDuration>(count);
 }
 
 template<class Period1, class Period2>

@@ -10,7 +10,7 @@ class Console
 { 
 public:
     Console() = default;
-    ~Console() = default;
+    virtual ~Console() = default;
 
     virtual void Init();
 

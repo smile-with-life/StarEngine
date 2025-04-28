@@ -2,7 +2,7 @@
 
 #include"WindowsApplication.h"
 
-#include"Runtime/AppFrame/Window/Windows/WindowsWindow.h"
+#include"Runtime/Platform/Windows/WindowsWindow.h"
 
 
 
@@ -28,7 +28,6 @@ WindowsApplication::WindowsApplication(const HINSTANCE hInstance, const HICON hI
 
     m_console = Scope<Console>(Console::Create());
     m_window = Scope<Window>(Window::Create());
-    m_renderer = Scope<OpenGL>(OpenGL::Create());
 
     // 初始化了 OLE 库，以支持拖放功能
     // CA_SUPPRESS(6031);
@@ -50,21 +49,17 @@ void WindowsApplication::Init()
 {   
     m_console->Init();
     m_window->Init();
-    m_renderer->Init(m_window->GetNativeHandle());
 }
 
 void WindowsApplication::Tick()
 {
     PumpMessage();
     m_window->Tick();
-    m_renderer->Tick();
-
 }
 
 void WindowsApplication::Exit()
 {
     m_window->Exit();
-    m_renderer->Exit();
 }
 
 bool WindowsApplication::IsQuit()

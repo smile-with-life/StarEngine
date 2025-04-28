@@ -113,7 +113,7 @@ project "StarEngine" --项目
     -- 模块构建
     include "StarEngine/Source/Runtime/Core/CoreMake.lua" --核心模块
     include "StarEngine/Source/Runtime/Launch/LaunchMake.lua" --启动模块
-    include "StarEngine/Source/Runtime/AppFrame/AppFrameMake.lua" --应用程序模块
+    include "StarEngine/Source/Runtime/Platform/PlatformMake.lua" --平台模块
     include "StarEngine/Source/Runtime/OpenGL/OpenGLMake.lua" --OpenGL模块
     include "StarEngine/Source/Runtime/Test/TestMake.lua" --Test模块
 project "TestGame"

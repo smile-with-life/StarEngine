@@ -217,20 +217,6 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Platform\Application.h" />
-    <ClInclude Include="Source\Platform\Console.h" />
-    <ClInclude Include="Source\Platform\Platform.h" />
-    <ClInclude Include="Source\Platform\Window.h" />
-    <ClInclude Include="Source\Platform\Windows\WindowsApplication.h" />
-    <ClInclude Include="Source\Platform\Windows\WindowsConsole.h" />
-    <ClInclude Include="Source\Platform\Windows\WindowsPlatform.h" />
-    <ClInclude Include="Source\Platform\Windows\WindowsWindow.h" />
-    <ClInclude Include="Source\Runtime\AppFrame\Application\Application.h" />
-    <ClInclude Include="Source\Runtime\AppFrame\Application\Windows\WindowsApplication.h" />
-    <ClInclude Include="Source\Runtime\AppFrame\Console\Console.h" />
-    <ClInclude Include="Source\Runtime\AppFrame\Console\Windows\WindowsConsole.h" />
-    <ClInclude Include="Source\Runtime\AppFrame\Window\Window.h" />
-    <ClInclude Include="Source\Runtime\AppFrame\Window\Windows\WindowsWindow.h" />
     <ClInclude Include="Source\Runtime\Core\Algo\Alog.h" />
     <ClInclude Include="Source\Runtime\Core\Concept\Concept.h" />
     <ClInclude Include="Source\Runtime\Core\Config\Config.h" />
@@ -253,6 +239,7 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Math\Vector4.h" />
     <ClInclude Include="Source\Runtime\Core\Memory\ByteBuffer.h" />
     <ClInclude Include="Source\Runtime\Core\Memory\RAII.h" />
+    <ClInclude Include="Source\Runtime\Core\Platform\Platform.h" />
     <ClInclude Include="Source\Runtime\Core\String\Convert.h" />
     <ClInclude Include="Source\Runtime\Core\String\String.h" />
     <ClInclude Include="Source\Runtime\Core\Thread\Atomic.h" />
@@ -263,35 +250,30 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Time\Clock.h" />
     <ClInclude Include="Source\Runtime\Core\Time\DateTime.h" />
     <ClInclude Include="Source\Runtime\Core\Time\Duration.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Duration-old.h" />
+    <ClInclude Include="Source\Runtime\Core\Time\Time.h" />
     <ClInclude Include="Source\Runtime\Core\Time\TimePoint.h" />
     <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h" />
-    <ClInclude Include="Source\Runtime\Launch\EngineLoop.h" />
+    <ClInclude Include="Source\Runtime\Launch\MainLoop.h" />
     <ClInclude Include="Source\Runtime\OpenGL\IndexBuffer.h" />
     <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h" />
     <ClInclude Include="Source\Runtime\OpenGL\Shader.h" />
     <ClInclude Include="Source\Runtime\OpenGL\Texture.h" />
     <ClInclude Include="Source\Runtime\OpenGL\VertexBuffer.h" />
     <ClInclude Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.h" />
+    <ClInclude Include="Source\Runtime\Platform\Application.h" />
+    <ClInclude Include="Source\Runtime\Platform\Console.h" />
+    <ClInclude Include="Source\Runtime\Platform\Platform.h" />
+    <ClInclude Include="Source\Runtime\Platform\Window.h" />
+    <ClInclude Include="Source\Runtime\Platform\Windows\WindowsApplication.h" />
+    <ClInclude Include="Source\Runtime\Platform\Windows\WindowsConsole.h" />
+    <ClInclude Include="Source\Runtime\Platform\Windows\WindowsPlatform.h" />
+    <ClInclude Include="Source\Runtime\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="Source\Runtime\Renderer\Renderer.h" />
     <ClInclude Include="Source\Runtime\Test\Test.h" />
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Platform\Application.cpp" />
-    <ClCompile Include="Source\Platform\Console.cpp" />
-    <ClCompile Include="Source\Platform\Platform.cpp" />
-    <ClCompile Include="Source\Platform\Window.cpp" />
-    <ClCompile Include="Source\Platform\Windows\WindowsApplication.cpp" />
-    <ClCompile Include="Source\Platform\Windows\WindowsConsole.cpp" />
-    <ClCompile Include="Source\Platform\Windows\WindowsPlatform.cpp" />
-    <ClCompile Include="Source\Platform\Windows\WindowsWindow.cpp" />
-    <ClCompile Include="Source\Runtime\AppFrame\Application\Application.cpp" />
-    <ClCompile Include="Source\Runtime\AppFrame\Application\Windows\WindowsApplication.cpp" />
-    <ClCompile Include="Source\Runtime\AppFrame\Console\Console.cpp" />
-    <ClCompile Include="Source\Runtime\AppFrame\Console\Windows\WindowsConsole.cpp" />
-    <ClCompile Include="Source\Runtime\AppFrame\Window\Window.cpp" />
-    <ClCompile Include="Source\Runtime\AppFrame\Window\Windows\WindowsWindow.cpp" />
     <ClCompile Include="Source\Runtime\Core\Config\Config.cpp" />
     <ClCompile Include="Source\Runtime\Core\File\File.cpp" />
     <ClCompile Include="Source\Runtime\Core\GUID\GUID.cpp" />
@@ -302,8 +284,8 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\Core\String\String.cpp" />
     <ClCompile Include="Source\Runtime\Core\Time\Clock.cpp" />
     <ClCompile Include="Source\Runtime\Core\Time\DateTime.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Duration-old.cpp" />
-    <ClCompile Include="Source\Runtime\Launch\EngineLoop.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Time\Time.cpp" />
+    <ClCompile Include="Source\Runtime\Launch\MainLoop.cpp" />
     <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\IndexBuffer.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp" />
@@ -311,6 +293,15 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\OpenGL\Texture.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\VertexBuffer.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp" />
+    <ClCompile Include="Source\Runtime\Platform\Application.cpp" />
+    <ClCompile Include="Source\Runtime\Platform\Console.cpp" />
+    <ClCompile Include="Source\Runtime\Platform\Platform.cpp" />
+    <ClCompile Include="Source\Runtime\Platform\Window.cpp" />
+    <ClCompile Include="Source\Runtime\Platform\Windows\WindowsApplication.cpp" />
+    <ClCompile Include="Source\Runtime\Platform\Windows\WindowsConsole.cpp" />
+    <ClCompile Include="Source\Runtime\Platform\Windows\WindowsPlatform.cpp" />
+    <ClCompile Include="Source\Runtime\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="Source\Runtime\Renderer\Renderer.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestConfig.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestContainer.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestFile.cpp" />
