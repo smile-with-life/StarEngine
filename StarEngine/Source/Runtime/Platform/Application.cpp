@@ -33,4 +33,9 @@ void Application::PumpMessage()
 {
 
 }
+
+void* Application::GetWindowHandle()
+{
+    return nullptr;
+}
 }// namespace Star

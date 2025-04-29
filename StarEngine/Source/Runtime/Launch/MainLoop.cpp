@@ -11,6 +11,7 @@ namespace Star
 MainLoop::MainLoop()
 {
     m_app = Scope<Application>(Application::Create());
+    m_renderer = Scope<OpenGL>(OpenGL::Create());
     m_lastUpdateTime = SteadyClock::Now();
 }
 
@@ -23,13 +24,15 @@ void MainLoop::Init()
 {
     TESTING_INIT_BEGIN();
     m_app->Init();
+    m_renderer->Init();
+    m_renderer->CreateContext(m_app->GetWindowHandle());
     TESTING_INIT_END();
 }
 
 void MainLoop::Tick()
 {  
     TESTING_TICK_BEGIN();
-
+    m_renderer->Tick();
     auto start = SteadyClock::Now();
     {
         m_startTime = SteadyClock::Now();

@@ -4,7 +4,7 @@
 
 namespace Star 
 {
-void OpenGL::Init(void* window)
+void OpenGL::Init()
 {
 
 }
@@ -15,6 +15,10 @@ void OpenGL::Tick()
 }
 
 void OpenGL::Exit()
+{
+
+}
+void OpenGL::CreateContext(void* windowHandle)
 {
 
 }

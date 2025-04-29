@@ -9,11 +9,13 @@ namespace Star
 class OpenGL
 {
 public:
-    virtual void Init(void* window);
+    virtual void Init();
 
     virtual void Tick();
 
     virtual void Exit();
+
+    virtual void CreateContext(void* windowHandle);
 public:
     static OpenGL* Create();
 };

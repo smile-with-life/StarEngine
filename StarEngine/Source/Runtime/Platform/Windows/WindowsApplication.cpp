@@ -87,6 +87,11 @@ void WindowsApplication::PumpMessage()
     }
 }
 
+void* WindowsApplication::GetWindowHandle()
+{
+    return m_window->GetNativeHandle();
+}
+
 /* protected */
 LRESULT WinAppWndProc(HWND hWnd, uint32 msg, WPARAM wParam, LPARAM lParam)
 {
@@ -480,19 +485,5 @@ void WindowsApplication::RegisterWindowClassInfo(const HINSTANCE hInstance, cons
 	}
 }
 
-static LRESULT CALLBACK TmpWndProc(HWND hWnd, UINT uiMsg, WPARAM wParam, LPARAM lParam)
-{
-    switch (uiMsg)
-    {
-    case WM_CLOSE:
-        PostQuitMessage(0);
-        break;
-
-    default:
-        return DefWindowProc(hWnd, uiMsg, wParam, lParam);
-    }
-
-    return 0;
-}
 
 }// namespace Star

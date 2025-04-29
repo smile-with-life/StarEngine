@@ -35,6 +35,8 @@ public:
 
 	// 处理消息队列中的消息
 	virtual void PumpMessage() override;
+
+	virtual void* GetWindowHandle() override;
 protected:
 	// 友元函数
 	friend LRESULT WinAppWndProc(HWND hwnd, uint32 msg, WPARAM wParam, LPARAM lParam);

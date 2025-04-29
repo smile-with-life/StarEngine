@@ -11,17 +11,21 @@ public:
     WindowsOpenGL() = default;
     ~WindowsOpenGL() = default;
 public:
-    virtual void Init(void* window) override;
+    virtual void Init() override;
 
     virtual void Tick() override;
 
     virtual void Exit() override;
+
+    virtual void CreateContext(void* windowHandle);
 private:
     // 加载OpenGL函数
     void LoadOpenGL();
 
     // 设置当前上下文
     void MakeContext();
+
+    void LoadWGL();
 private:
     // Windows窗口句柄
     HWND m_hWnd = NULL;

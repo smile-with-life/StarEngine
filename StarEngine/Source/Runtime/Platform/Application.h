@@ -42,6 +42,8 @@ public:
 
 	// 处理消息队列中的消息
 	virtual void PumpMessage();
+
+	virtual void* GetWindowHandle();
 public:
 	// 创建应用程序
 	static Application* Create();

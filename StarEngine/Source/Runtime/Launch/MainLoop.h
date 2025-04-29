@@ -22,7 +22,6 @@ private:
     // 
     Scope<Application> m_app;
 
-    // 渲染接口
     Scope<OpenGL> m_renderer;
 
     // 最大帧率限制
