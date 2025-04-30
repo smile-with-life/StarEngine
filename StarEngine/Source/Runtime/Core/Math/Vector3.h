@@ -214,7 +214,7 @@ public:
     }
 
     // 两个向量相减，返回它本身
-    Vector3& operator-=(const Vec3& vec3)
+    Vector3& operator-=(const Vector3& vec3)
     {
         x -= vec3.x; y -= vec3.y; z -= vec3.z;
         return *this;

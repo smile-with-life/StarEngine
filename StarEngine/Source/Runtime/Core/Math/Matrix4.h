@@ -96,7 +96,7 @@ public:
         return result;
     }
 
-    friend Vector4<Type> operator*(const Matrix4& mat4, const Vector4<Type>& vec4) const
+    friend Vector4<Type> operator*(const Matrix4& mat4, const Vector4<Type>& vec4)
     {
         Vector4<Type> result;
         for (size_t row = 0; row < 4; row++)

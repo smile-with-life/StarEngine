@@ -24,8 +24,6 @@ private:
 
     // 设置当前上下文
     void MakeContext();
-
-    void LoadWGL();
 private:
     // Windows窗口句柄
     HWND m_hWnd = NULL;

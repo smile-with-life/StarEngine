@@ -14,7 +14,7 @@ concept FloatPointType = std::floating_point<Type>;
 
 // 算数类型
 template<class Type>
-concept ArithmeticType = IntegralType<Type> && FloatPointType<Type>;
+concept ArithmeticType = IntegralType<Type> || FloatPointType<Type>;
 
 // 类类型
 template<class Type>

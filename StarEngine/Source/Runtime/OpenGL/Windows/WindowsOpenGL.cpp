@@ -34,8 +34,8 @@ static LRESULT CALLBACK TmpWndProc(HWND hWnd, UINT uiMsg, WPARAM wParam, LPARAM 
 /* member */
 void WindowsOpenGL::Init()
 {
-    // 加载 WGL 扩展
-    LoadWGL();
+    // 加载 OpenGL 函数
+    LoadOpenGL();
 }
 
 void WindowsOpenGL::Tick()
@@ -56,78 +56,6 @@ void WindowsOpenGL::Exit()
 
     // 释放该窗口的设备上下文。
     ReleaseDC(m_hWnd, m_hDC);
-}
-
-void WindowsOpenGL::LoadOpenGL()
-{
-    HWND tempWnd;
-    HDC tempDC;
-    HGLRC tempRC;
-    int result = 0;
-
-    memset(&m_pixelFormat, 0, sizeof(PIXELFORMATDESCRIPTOR));
-
-    m_pixelFormat.nSize = sizeof(PIXELFORMATDESCRIPTOR);                                  // 像素格式的大小
-    m_pixelFormat.nVersion = 1;                                                           // 像素格式的版本
-    m_pixelFormat.dwFlags = PFD_DOUBLEBUFFER | PFD_SUPPORT_OPENGL | PFD_DRAW_TO_WINDOW;   // 像素缓冲区属性
-    m_pixelFormat.iPixelType = PFD_TYPE_RGBA;                                             // 像素数据的类型
-    m_pixelFormat.cColorBits = 24;                                                        // 颜色的位数
-    m_pixelFormat.cRedBits = 8;                                                           // 红色通道的位数
-    m_pixelFormat.cGreenBits = 8;                                                         // 绿色通道的位数
-    m_pixelFormat.cBlueBits = 8;                                                          // 蓝色通道的位数
-    m_pixelFormat.cAlphaBits = 8;                                                         // alpha通道的位数
-    m_pixelFormat.cDepthBits = 24;                                                        // 深度缓冲区的位数
-    m_pixelFormat.cStencilBits = 8;                                                       // 模板缓冲区的位数
-
-    // 创建临时窗口
-    tempWnd = ::CreateWindowEx(NULL,        // 窗口扩展样式
-        TEXT("StarEngineWindow"),           // 窗口类名
-        TEXT("LoadOpenGLWindow"),           // 窗口标题
-        NULL,                               // 窗口样式
-        10,                                 // 窗口的初始水平位置
-        10,                                 // 窗口的初始垂直位置
-        500,                                // 窗口的宽度
-        500,                                // 窗口的高度
-        NULL,                               // 父窗口句柄
-        NULL,                               // 菜单的句柄
-        GWindowsInstance,                   // 应用程序句柄
-        NULL);                              // 传给窗口过程函数的参数
-
-    // 获取临时窗口的设备上下文
-    tempDC = GetDC(tempWnd);
-    Assert(tempDC);
-
-    // 设置临时的默认像素格式
-    SetPixelFormat(tempDC, 1, &m_pixelFormat);
-
-    // 创建一个临时渲染上下文
-    tempRC = wglCreateContext(tempDC);
-
-    // 将临时渲染上下文设置为此窗口的当前渲染上下文
-    wglMakeCurrent(tempDC, tempRC);
-
-    // 加载OpenGL的WGL扩展
-    result = gladLoadWGL(tempDC);
-    if (!result)
-    {
-        std::cout << "WGL 扩展加载失败！" << std::endl;
-    }
-
-    result = gladLoadGLLoader((GLADloadproc)wglGetProcAddress);
-    if (!result)
-    {
-        std::cout << "OpenGL函数加载失败！" << std::endl;
-        Assert(false);
-    }
-
-    // 将当前渲染上下文置空
-    wglMakeCurrent(NULL, NULL);
-
-    // 释放临时渲染上下文
-    wglDeleteContext(tempRC);
-
-    // 释放该窗口的设备上下文。
-    ReleaseDC(tempWnd, tempDC);
 }
 
 void WindowsOpenGL::MakeContext()
@@ -192,7 +120,7 @@ void WindowsOpenGL::MakeContext()
     glCullFace(GL_BACK);
 }
 
-void WindowsOpenGL::LoadWGL()
+void WindowsOpenGL::LoadOpenGL()
 {
     int result = 0;
     WNDCLASSEX tempWndClass;// 窗口类
@@ -228,7 +156,7 @@ void WindowsOpenGL::LoadWGL()
     pixelFormatDescriptor.nVersion = 1;
     pixelFormatDescriptor.dwFlags = PFD_DOUBLEBUFFER | PFD_SUPPORT_OPENGL | PFD_DRAW_TO_WINDOW;
     pixelFormatDescriptor.iPixelType = PFD_TYPE_RGBA;
-    pixelFormatDescriptor.cColorBits = 24;
+    pixelFormatDescriptor.cColorBits = 32;
     pixelFormatDescriptor.cRedBits = 8;
     pixelFormatDescriptor.cGreenBits = 8;
     pixelFormatDescriptor.cBlueBits = 8;
@@ -282,7 +210,7 @@ void WindowsOpenGL::LoadWGL()
     }
 
     // 加载OpenGL的函数
-    //result = gladLoadGLLoader((GLADloadproc)wglGetProcAddress);
+    gladLoadGLLoader((GLADloadproc)wglGetProcAddress);
     result = gladLoadGL();
     if (!result)
     {

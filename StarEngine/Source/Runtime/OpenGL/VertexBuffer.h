@@ -41,7 +41,7 @@ public:
 
 	uint32 Count() const;
 private:
-	uint32 GetVertexSize(VertexType type);
+	uint32 GetAttributeSize() const;
 private:
 	// 顶点属性位置索引
 	int32 m_index;
@@ -54,6 +54,5 @@ private:
 
 	// 顶点类型
 	VertexType m_type = VertexType::None;
-
 };
 }// namespace Star

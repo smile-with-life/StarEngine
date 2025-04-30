@@ -5,6 +5,8 @@
 #include "Runtime/Platform/Application.h"
 #include "Runtime/Core/Time/Time.h"
 #include "Runtime/OpenGL/OpenGL.h"
+#include "Runtime/Sence/Sence.h"
+#include "Runtime/Manager/FrameManager/FrameManager.h"
 
 namespace Star {
 class SE_API MainLoop
@@ -19,31 +21,17 @@ public:
 
     bool IsQuit();
 private:
-    // 
+    // 应用程序模块
     Scope<Application> m_app;
 
+    // 渲染模块
     Scope<OpenGL> m_renderer;
 
-    // 最大帧率限制
-    int32 m_maxFPS = 30;
+    // 场景模块
+    Scope<Sence> m_sence;
 
-    // 帧间隔
-    Microseconds m_frameTime = 33333;
-
-    // 帧计数
-    int32 m_frameCount = 0;
-
-    // 帧率
-    int32 m_FPS = 0;
-
-    // 上次更新帧率的时间
-    TimePoint<SteadyClock> m_lastUpdateTime;
-
-    // 帧开始的时间
-    TimePoint<SteadyClock> m_startTime;
-
-    // 帧结束的时间
-    TimePoint<SteadyClock> m_endTime;
+    // 帧管理器
+    Scope<FrameManager> m_frameManager;
 };
 
 inline MainLoop GMainLoop;

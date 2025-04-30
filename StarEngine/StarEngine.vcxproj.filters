@@ -237,6 +237,15 @@
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
     <ClInclude Include="Source\Runtime\Renderer\Renderer.h" />
+    <ClInclude Include="Source\Runtime\Core\Object\Object.h" />
+    <ClInclude Include="Source\Runtime\Sence\Component.h" />
+    <ClInclude Include="Source\Runtime\Sence\Entity.h" />
+    <ClInclude Include="Source\Runtime\Sence\Sence.h" />
+    <ClInclude Include="Source\Runtime\Sence\System.h" />
+    <ClInclude Include="Source\Runtime\Sence\Components\CameraComponent.h" />
+    <ClInclude Include="Source\Runtime\Manager\FrameManager\FrameManager.h" />
+    <ClInclude Include="Source\Runtime\Manager\AssetManager\AssetManager.h" />
+    <ClInclude Include="Source\Runtime\Manager\SenceManager.h\SenceManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\Core\Config\Config.cpp">
@@ -340,6 +349,15 @@
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
     <ClCompile Include="Source\Runtime\Renderer\Renderer.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Object\Object.cpp" />
+    <ClCompile Include="Source\Runtime\Sence\Component.cpp" />
+    <ClCompile Include="Source\Runtime\Sence\Entity.cpp" />
+    <ClCompile Include="Source\Runtime\Sence\Sence.cpp" />
+    <ClCompile Include="Source\Runtime\Sence\System.cpp" />
+    <ClCompile Include="Source\Runtime\Sence\Components\cameraComponent.cpp" />
+    <ClCompile Include="Source\Runtime\Manager\FrameManager\FrameManager.cpp" />
+    <ClCompile Include="Source\Runtime\Manager\AssetManager\AssetManager.cpp" />
+    <ClCompile Include="Source\Runtime\Manager\SenceManager.h\SenceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

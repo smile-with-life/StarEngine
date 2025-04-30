@@ -1,16 +1,13 @@
 #pragma once
 #include "Runtime/Core/Core.h"
 #include "Runtime/Core/String/String.h"
+#include "Runtime/Core/Thread/Mutex.h"
+#include <random>
 
 namespace Star
 {
 class GUID
 {
-public:
-	enum Version
-	{
-
-	};
 public:
 	// 默认构造函数
 	GUID();
@@ -33,29 +30,27 @@ public:
 	// 构造函数 
 	GUID(uint64 guid);
 public:
-	// 转为字符串
-	String ToString() const;
-
-	// 返回 GUID 的版本信息，版本决定了 GUID 的生成方式
-	GUID::Version Version();
-public:
-	// 从字符串解析GUID
-	static GUID FromString(const String& str);
-public:
 	operator uint64() const;
 
-	bool operator==(const GUID& other);
+	friend bool operator==(const GUID& left, const GUID& right);
+	  
+	friend bool operator!=(const GUID& left, const GUID& right);
 
-	bool operator!=(const GUID& other);
+	friend bool operator>(const GUID& left, const GUID& right);
 
-	bool operator>(const GUID& other);
+	friend bool operator>=(const GUID& left, const GUID& right);
 
-	bool operator>=(const GUID& other);
+	friend bool operator<(const GUID& left, const GUID& right);
 
-	bool operator<(const GUID& other);
-
-	bool operator<=(const GUID& other);
+	friend bool operator<=(const GUID& left, const GUID& right);
 private:
+	
 	uint64 m_guid;
+
+	static Mutex s_mutex;
+
+	static std::mt19937_64 s_randomEngine;
+
+	static std::uniform_int_distribution<uint64_t> s_dist;
 };
 }// namespace Star
