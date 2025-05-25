@@ -230,6 +230,7 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\File\File.h" />
     <ClInclude Include="Source\Runtime\Core\GUID\GUID.h" />
     <ClInclude Include="Source\Runtime\Core\Image\Image.h" />
+    <ClInclude Include="Source\Runtime\Core\Log\Log.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Math.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Matrix3.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Matrix4.h" />
@@ -254,9 +255,6 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Time\TimePoint.h" />
     <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h" />
     <ClInclude Include="Source\Runtime\Launch\MainLoop.h" />
-    <ClInclude Include="Source\Runtime\Manager\AssetManager\AssetManager.h" />
-    <ClInclude Include="Source\Runtime\Manager\FrameManager\FrameManager.h" />
-    <ClInclude Include="Source\Runtime\Manager\SenceManager.h\SenceManager.h" />
     <ClInclude Include="Source\Runtime\OpenGL\IndexBuffer.h" />
     <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h" />
     <ClInclude Include="Source\Runtime\OpenGL\Shader.h" />
@@ -271,13 +269,6 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Platform\Windows\WindowsConsole.h" />
     <ClInclude Include="Source\Runtime\Platform\Windows\WindowsPlatform.h" />
     <ClInclude Include="Source\Runtime\Platform\Windows\WindowsWindow.h" />
-    <ClInclude Include="Source\Runtime\Renderer\Renderer.h" />
-    <ClInclude Include="Source\Runtime\Sence\Component.h" />
-    <ClInclude Include="Source\Runtime\Sence\Components\CameraComponent.h" />
-    <ClInclude Include="Source\Runtime\Sence\Entity.h" />
-    <ClInclude Include="Source\Runtime\Core\Object\Object.h" />
-    <ClInclude Include="Source\Runtime\Sence\Sence.h" />
-    <ClInclude Include="Source\Runtime\Sence\System.h" />
     <ClInclude Include="Source\Runtime\Test\Test.h" />
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
@@ -287,6 +278,7 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\Core\File\File.cpp" />
     <ClCompile Include="Source\Runtime\Core\GUID\GUID.cpp" />
     <ClCompile Include="Source\Runtime\Core\Image\Image.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Log\Log.cpp" />
     <ClCompile Include="Source\Runtime\Core\Math\Radian.cpp" />
     <ClCompile Include="Source\Runtime\Core\Memory\ByteBuffer.cpp" />
     <ClCompile Include="Source\Runtime\Core\Memory\RAII.cpp" />
@@ -296,9 +288,6 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\Core\Time\Time.cpp" />
     <ClCompile Include="Source\Runtime\Launch\MainLoop.cpp" />
     <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\AssetManager\AssetManager.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\FrameManager\FrameManager.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\SenceManager.h\SenceManager.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\IndexBuffer.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\Shader.cpp" />
@@ -313,13 +302,6 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\Platform\Windows\WindowsConsole.cpp" />
     <ClCompile Include="Source\Runtime\Platform\Windows\WindowsPlatform.cpp" />
     <ClCompile Include="Source\Runtime\Platform\Windows\WindowsWindow.cpp" />
-    <ClCompile Include="Source\Runtime\Renderer\Renderer.cpp" />
-    <ClCompile Include="Source\Runtime\Sence\Component.cpp" />
-    <ClCompile Include="Source\Runtime\Sence\Components\cameraComponent.cpp" />
-    <ClCompile Include="Source\Runtime\Sence\Entity.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Object\Object.cpp" />
-    <ClCompile Include="Source\Runtime\Sence\Sence.cpp" />
-    <ClCompile Include="Source\Runtime\Sence\System.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestConfig.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestContainer.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestFile.cpp" />

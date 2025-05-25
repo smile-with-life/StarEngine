@@ -13,4 +13,19 @@ Component::~Component()
 {
 
 }
+
+void Component::Init()
+{
+
+}
+
+void Component::Tick()
+{
+
+}
+
+void Component::Exit()
+{
+
+}
 }// namespace Star

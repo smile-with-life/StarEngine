@@ -1,5 +1,6 @@
 #include "starpch.h"
-#include "SenceManager.h"
+#include "TransformComponent.h"
+
 
 namespace Star
 {

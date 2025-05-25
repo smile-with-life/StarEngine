@@ -7,6 +7,13 @@
 // Test
 #include "Runtime/Core/String/String.h"
 
+
+#include "Runtime/OpenGL/Mesh.h"
+#include "Runtime/OpenGL/Shader.h"
+#include "Runtime/OpenGL/Texture.h"
+#include "Runtime/OpenGL/IndexBuffer.h"
+#include "Runtime/OpenGL/vertexBuffer.h"
+
 // 
 namespace Star
 {
@@ -36,12 +43,15 @@ void WindowsOpenGL::Init()
 {
     // 加载 OpenGL 函数
     LoadOpenGL();
+    glEnable(GL_DEPTH_TEST);// 启用深度测试，并在每一帧都清理深度缓冲
 }
 
 void WindowsOpenGL::Tick()
 {
-    glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    // 清理颜色缓冲和深度缓冲
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        
 
     SwapBuffers(m_hDC);
 }
@@ -67,7 +77,7 @@ void WindowsOpenGL::MakeContext()
     // 在属性列表中设置OpenGL的4.0版本
     const int version[] = {
         WGL_CONTEXT_MAJOR_VERSION_ARB, 3,
-        WGL_CONTEXT_MINOR_VERSION_ARB, 0,
+        WGL_CONTEXT_MINOR_VERSION_ARB, 3,
         0
     };
 

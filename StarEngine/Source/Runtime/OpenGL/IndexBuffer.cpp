@@ -1,51 +1,31 @@
 #include "starpch.h"
 #include "IndexBuffer.h"
 
-#include"glad/glad.h"
-
+#include "OpenGLCommon.h"
 namespace Star
 {
-IndexBuffer::~IndexBuffer()
-{
-    glDeleteBuffers(1, &m_handle);
-}
-
-IndexBuffer::IndexBuffer(IndexBuffer&& other) noexcept
-    : m_handle(other.m_handle)
-    , m_count(other.m_count)
-{
-    other.m_handle = 0;
-    other.m_count = 0;
-}
-
-IndexBuffer& IndexBuffer::operator=(IndexBuffer&& other) noexcept
-{
-    m_handle = other.m_handle;
-    m_count = other.m_count;
-
-    other.m_handle = 0;
-    other.m_count = 0;
-    return *this;
-}
-
-IndexBuffer::IndexBuffer(void* data, uint32 count)
+IndexBuffer::IndexBuffer(const uint32* data, uint32 count)
     : m_count(count)
 {
-    UploadData(data, count);
+    Assert(sizeof(uint32) == sizeof(GLuint));
+
+    GLCall(glGenBuffers(1, &m_handle));
+    GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_handle));
+    GLCall(glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(unsigned int), data, GL_STATIC_DRAW));
 }
 
-void IndexBuffer::UploadData(void* data, uint32 count)
+IndexBuffer::~IndexBuffer()
 {
-    m_count = count;
-    glGenBuffers(1, &m_handle);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_handle);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * 4, data, GL_STATIC_DRAW);
-
+    GLCall(glDeleteBuffers(1, &m_handle));
 }
 
-uint32 IndexBuffer::Count() const
+void IndexBuffer::Bind() const
 {
-    return m_count;
+    GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_handle));
 }
 
-}// namespace Star
+void IndexBuffer::Unbind() const
+{
+    GLCall(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
+}
+}// namespace Satr

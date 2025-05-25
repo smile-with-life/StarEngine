@@ -134,10 +134,10 @@ public:
     }
 
     //template<class Type>
-    constexpr friend bool operator!=(const Scope<Type>& left, const Type* right)
-    {
-        return left.m_ptr != right;
-    }
+    //constexpr friend bool operator!=(const Scope<Type>& left, const Type* right)
+    //{
+    //    return left.m_ptr != right;
+    //}
 private:
     Type* m_ptr = nullptr;
 };
@@ -145,7 +145,7 @@ private:
 template<Concept::ClassType Type, class... Args>
 constexpr Scope<Type> MakeScope(Args&&... args)
 {
-    return Scope<Type>(new Type(std::forward<Type>(args)...));
+    return Scope<Type>(new Type(std::forward<Args>(args)...));
 }
 
 // 共享指针
@@ -221,7 +221,7 @@ public:
                 delete m_ref;
             }
         }
-        m_ptr = other.ptr_;
+        m_ptr = other.m_ptr;
         m_ref = other.m_ref;
         if (m_ref) 
         {
@@ -333,31 +333,31 @@ public:
         return left.m_ptr == right.m_ptr;
     }
 
-    template<class Type>
+    //template<class Type>
     constexpr friend bool operator==(const Type* left, const Shared<Type>& right)
     {
         return left == right.m_ptr;
     }
 
-    template<class Type>
+    //template<class Type>
     constexpr friend bool operator==(const Shared<Type>& left, const Type* right)
     {
         return left.m_ptr == right;
     }
 
-    template<class Type>
+    //template<class Type>
     constexpr friend bool operator!=(const Shared<Type>& left, const Shared<Type>& right)
     {
         return left.m_ptr != right.m_ptr;
     }
 
-    template<class Type>
+    //template<class Type>
     constexpr friend bool operator!=(const Type* left, const Shared<Type>& right)
     {
         return left != right.m_ptr;
     }
 
-    template<class Type>
+    //template<class Type>
     constexpr friend bool operator!=(const Scope<Type>& left, const Type* right)
     {
         return left.m_ptr != right;
@@ -375,6 +375,6 @@ private:
 template<Concept::ClassType Type, class... Args>
 constexpr Shared<Type> MakeShared(Args&&... args)
 {
-    return Shared<Type>(new Type(std::forward<Type>(args)...));
+    return Shared<Type>(new Type(std::forward<Args>(args)...));
 }
 }// namespace Star

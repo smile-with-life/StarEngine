@@ -7,6 +7,8 @@ namespace Star
 class AssetManager
 {
 public:
+    AssetManager() = default;
+public:
     void Init();
 
     void Tick();

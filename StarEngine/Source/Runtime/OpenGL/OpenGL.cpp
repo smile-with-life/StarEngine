@@ -2,6 +2,7 @@
 
 #include"OpenGL.h"
 
+
 namespace Star 
 {
 void OpenGL::Init()

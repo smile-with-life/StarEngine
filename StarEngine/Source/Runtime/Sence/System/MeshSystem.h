@@ -1,24 +1,18 @@
 #pragma once
-
 #include "Runtime/Core/Core.h"
-#include "Runtime/Core/Memory/RAII.h"
+#include "Runtime/Sence/System.h"
 
 namespace Star
 {
-
-class Console
-{ 
+class MeshSystem :public System
+{
 public:
-    Console() = default;
-    ~Console() = default;
-
     virtual void Init();
 
     virtual void Tick();
 
     virtual void Exit();
-public:
-    static Console* Create();
-};
+private:
 
+};
 }// namespace Star

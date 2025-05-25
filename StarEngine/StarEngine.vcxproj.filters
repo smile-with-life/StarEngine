@@ -31,6 +31,9 @@
     <Filter Include="Runtime\Core\Image">
       <UniqueIdentifier>{F3FD2A77-DFE1-EBCC-4842-E61F3445D64E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Runtime\Core\Log">
+      <UniqueIdentifier>{923F54D1-7E38-7323-A76A-58A893C2522F}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Runtime\Core\Math">
       <UniqueIdentifier>{BA84DCFB-269B-DA91-6F12-66B3DB67AB19}</UniqueIdentifier>
     </Filter>
@@ -116,6 +119,9 @@
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Image\Image.h">
       <Filter>Runtime\Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Core\Log\Log.h">
+      <Filter>Runtime\Core\Log</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Math\Math.h">
       <Filter>Runtime\Core\Math</Filter>
@@ -236,16 +242,6 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
-    <ClInclude Include="Source\Runtime\Renderer\Renderer.h" />
-    <ClInclude Include="Source\Runtime\Core\Object\Object.h" />
-    <ClInclude Include="Source\Runtime\Sence\Component.h" />
-    <ClInclude Include="Source\Runtime\Sence\Entity.h" />
-    <ClInclude Include="Source\Runtime\Sence\Sence.h" />
-    <ClInclude Include="Source\Runtime\Sence\System.h" />
-    <ClInclude Include="Source\Runtime\Sence\Components\CameraComponent.h" />
-    <ClInclude Include="Source\Runtime\Manager\FrameManager\FrameManager.h" />
-    <ClInclude Include="Source\Runtime\Manager\AssetManager\AssetManager.h" />
-    <ClInclude Include="Source\Runtime\Manager\SenceManager.h\SenceManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\Core\Config\Config.cpp">
@@ -259,6 +255,9 @@
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\Image\Image.cpp">
       <Filter>Runtime\Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Core\Log\Log.cpp">
+      <Filter>Runtime\Core\Log</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\Math\Radian.cpp">
       <Filter>Runtime\Core\Math</Filter>
@@ -348,16 +347,6 @@
       <Filter>Runtime\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
-    <ClCompile Include="Source\Runtime\Renderer\Renderer.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Object\Object.cpp" />
-    <ClCompile Include="Source\Runtime\Sence\Component.cpp" />
-    <ClCompile Include="Source\Runtime\Sence\Entity.cpp" />
-    <ClCompile Include="Source\Runtime\Sence\Sence.cpp" />
-    <ClCompile Include="Source\Runtime\Sence\System.cpp" />
-    <ClCompile Include="Source\Runtime\Sence\Components\cameraComponent.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\FrameManager\FrameManager.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\AssetManager\AssetManager.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\SenceManager.h\SenceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

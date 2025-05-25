@@ -1,35 +1,20 @@
 #pragma once
-
 #include "Runtime/Core/Core.h"
-#include "Runtime/Core/String/String.h"
 
 namespace Star
 {
 class IndexBuffer
 {
 public:
-	IndexBuffer() = default;
-
+	IndexBuffer(const uint32* data, uint32 count);
 	~IndexBuffer();
 
-	IndexBuffer(const IndexBuffer& other) = delete;
+	void Bind() const;
+	void Unbind() const;
 
-	IndexBuffer& operator=(const IndexBuffer& other) = delete;
-
-	IndexBuffer(IndexBuffer&& other) noexcept;
-
-	IndexBuffer& operator=(IndexBuffer&& other) noexcept;
-
-	IndexBuffer(void* data, uint32 count);
-public:
-	void UploadData(void* data, uint32 count);
-
-	uint32 Count() const;
+	inline unsigned int Count() const { return m_count; }
 private:
-	// 索引缓冲对象句柄
-	Handle m_handle = 0;
-
-	// 顶点数量
-	uint32 m_count = 0;
+	unsigned int m_handle;// EBO
+	unsigned int m_count;
 };
 }// namespace Star

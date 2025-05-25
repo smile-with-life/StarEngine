@@ -3,6 +3,7 @@
 #include "MainLoop.h"
 
 #include "Runtime/Test/Test.h"
+#include "Runtime/Core/File/File.h"
 
 
 
@@ -12,8 +13,9 @@ MainLoop::MainLoop()
 {
     m_app = Scope<Application>(Application::Create());
     m_renderer = Scope<OpenGL>(OpenGL::Create());
-    m_sence = MakeScope<Sence>();
+    m_senceManager = MakeScope<SenceManager>();
     m_frameManager = MakeScope<FrameManager>();
+    m_inputManager = MakeScope<InputManager>();
 }
 
 MainLoop::~MainLoop()
@@ -23,32 +25,37 @@ MainLoop::~MainLoop()
 
 void MainLoop::Init()
 {
-    TESTING_INIT_BEGIN();
+    //TESTING_INIT_BEGIN();
     m_app->Init();
     m_renderer->Init();
     m_renderer->CreateContext(m_app->GetWindowHandle());
-    m_sence->Init();
+    m_senceManager->Init();
     m_frameManager->Init();
-    TESTING_INIT_END();
+    m_inputManager->Init();
+    //TESTING_INIT_END();
+    std::cout << File::AbsolutePath("./");
 }
 
 void MainLoop::Tick()
 {  
-    TESTING_TICK_BEGIN();
+    //TESTING_TICK_BEGIN();
+    
+    // 帧开始
     m_frameManager->TickStart();
-
-    m_app->Tick();
+    m_senceManager->Tick();
+    m_inputManager->Tick();
     m_renderer->Tick();
-  
+    m_app->Tick();
     m_frameManager->TickEnd();
-    TESTING_TICK_END();
+
+    //TESTING_TICK_END();
 }
 
 void MainLoop::Exit()
 {
-    TESTING_EXIT_BEGIN();
+    //TESTING_EXIT_BEGIN();
     m_app->Exit();
-    TESTING_EXIT_END();
+    //TESTING_EXIT_END();
 }
 
 bool MainLoop::IsQuit()

@@ -1,102 +1,31 @@
 #include "starpch.h"
 #include "VertexBuffer.h"
-
-#include"glad/glad.h"
+#include "OpenGLCommon.h"
 
 namespace Star
 {
+VertexBuffer::VertexBuffer(const void* data, uint32 count, VertexType type)
+    : m_count(count)
+    , m_type(type)
+{
+    GLCall(glGenBuffers(1, &m_handle));
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_handle));
+    GLCall(glBufferData(GL_ARRAY_BUFFER, m_count * GetAttributeSize(), data, GL_STATIC_DRAW));
+}
+
 VertexBuffer::~VertexBuffer()
 {
-	glDeleteBuffers(1, &m_handle);
+    GLCall(glDeleteBuffers(1, &m_handle));
 }
 
-VertexBuffer::VertexBuffer(VertexBuffer&& other) noexcept
-	: m_index(other.m_index)
-	, m_handle(other.m_handle)
-	, m_count(other.m_count)
-	, m_type(other.m_type)
+void VertexBuffer::Bind() const
 {
-	other.m_index = 0;
-	other.m_handle = 0;
-	other.m_count = 0;
-	other.m_type = VertexType::None;
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, m_handle));
 }
 
-VertexBuffer& VertexBuffer::operator=(VertexBuffer&& other) noexcept
+void VertexBuffer::Unbind() const
 {
-	if (this == &other) [[unlikely]]
-	{
-		return *this;
-	}
-
-	m_index = other.m_index;
-	m_handle = other.m_handle;
-	m_count = other.m_count;
-	m_type = other.m_type;
-
-	other.m_index = 0;
-	other.m_handle = 0;
-	other.m_count = 0;
-	other.m_type = VertexType::None;
-
-	return *this;
-
-}
-
-VertexBuffer::VertexBuffer(int32 index)
-	: m_index(index)
-{
-
-}
-
-VertexBuffer::VertexBuffer(int32 index, void* data, uint32 count, VertexType type)
-	: m_index(index)
-{
-	UploadData(data, count, type);
-}
-
-void VertexBuffer::UploadData(void* data, uint32 count, VertexType type)
-{
-	m_count = count;
-	m_type = type;
-	uint64 size = GetVertexSize(type) * count;
-	glGenBuffers(1, &m_handle);
-	glBindBuffer(GL_ARRAY_BUFFER, m_handle);
-	glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW);
-	glEnableVertexAttribArray(m_index);
-
-	switch (type)
-	{
-	case VertexType::None:
-	{
-		Assert(false);
-		break;
-	}
-	case VertexType::Position :		// 位置
-	{
-		glVertexAttribPointer(m_index, 3, GL_FLOAT, false, 0, 0);
-		break;
-	}
-	case VertexType::Texcoord :		// 纹理
-	{
-		glVertexAttribPointer(m_index, 2, GL_FLOAT, false, 0, 0);
-		break;
-	}
-	case VertexType::Normal :		// 法线
-	{
-		glVertexAttribPointer(m_index, 3, GL_FLOAT, false, 0, 0);
-		break;
-	}
-	case VertexType::Color :			// 颜色
-	{
-		glVertexAttribPointer(m_index, 4, GL_FLOAT, false, 0, 0);
-		break;
-	}
-	default:
-		Assert(false);
-	}
-
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+    GLCall(glBindBuffer(GL_ARRAY_BUFFER, 0));
 }
 
 uint32 VertexBuffer::Count() const
@@ -104,13 +33,18 @@ uint32 VertexBuffer::Count() const
 	return m_count;
 }
 
-uint32 VertexBuffer::GetVertexSize(VertexType type)
+VertexType VertexBuffer::Type() const
 {
-	switch (type)
+	return m_type;
+}
+
+uint32 VertexBuffer::GetAttributeSize() const
+{
+	switch (m_type)
 	{
-	case VertexType::Position :		// 位置
+	case VertexType::Position:		// 位置
 		return sizeof(float) * 3;
-	case VertexType::Texcoord :		// 纹理
+	case VertexType::Texcoord:		// 纹理
 		return sizeof(float) * 2;
 	case VertexType::Normal:		// 法线
 		return sizeof(float) * 3;
@@ -123,6 +57,5 @@ uint32 VertexBuffer::GetVertexSize(VertexType type)
 	default:
 		return 0;
 	}
-	
 }
 }// namespace Star
