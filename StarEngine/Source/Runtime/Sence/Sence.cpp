@@ -5,7 +5,10 @@ namespace Star
 {
 void Sence::Init()
 {
-    
+    for (auto& entity : m_entities)
+    {
+        entity.Init();
+    }
 }
 
 void Sence::Tick()
@@ -18,6 +21,10 @@ void Sence::Tick()
 
 void Sence::Exit()
 {
+    for (auto& entity : m_entities)
+    {
+        entity.Exit();
+    }
 }
 
 void Sence::Load(const String& senceUrl)

@@ -25,10 +25,12 @@ IncludeDir["GLFW"] = "StarEngine/Dependencies/GLFW/include"
 IncludeDir["Glad"] = "StarEngine/Dependencies/GLAD/include"
 IncludeDir["ICU4C"] = "StarEngine/Dependencies/ICU4C/include"
 IncludeDir["Stb"] = "StarEngine/Dependencies/Stb/include"
+IncludeDir["NlohmannJson"] = "StarEngine/Dependencies/NlohmannJson/include"
 
 include "StarEngine/Dependencies/GLFW"
 include "StarEngine/Dependencies/Glad"
 include "StarEngine/Dependencies/Stb"
+include "StarEngine/Dependencies/NlohmannJson"
 
 project "StarEngine" --项目
     location "StarEngine" --项目文件的目录
@@ -56,7 +58,8 @@ project "StarEngine" --项目
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
         "%{IncludeDir.ICU4C}",
-        "%{IncludeDir.Stb}"
+        "%{IncludeDir.Stb}",
+        "%{IncludeDir.NlohmannJson}"
     }
 
     libdirs 
@@ -116,6 +119,7 @@ project "StarEngine" --项目
     include "StarEngine/Source/Runtime/Platform/PlatformMake.lua" --平台模块
     include "StarEngine/Source/Runtime/OpenGL/OpenGLMake.lua" --OpenGL模块
     include "StarEngine/Source/Runtime/Test/TestMake.lua" --Test模块
+    include "StarEngine/Source/Runtime/Manager/ManagerMake.lua" --Test模块
 project "TestGame"
     location "TestGame"
     kind "windowedapp"

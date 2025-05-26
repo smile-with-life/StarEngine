@@ -31,8 +31,8 @@
     <Filter Include="Runtime\Core\Image">
       <UniqueIdentifier>{F3FD2A77-DFE1-EBCC-4842-E61F3445D64E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Runtime\Core\Log">
-      <UniqueIdentifier>{923F54D1-7E38-7323-A76A-58A893C2522F}</UniqueIdentifier>
+    <Filter Include="Runtime\Core\Json">
+      <UniqueIdentifier>{8A2BDBFB-F641-D991-3FB9-64B3AB0EAA19}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Core\Math">
       <UniqueIdentifier>{BA84DCFB-269B-DA91-6F12-66B3DB67AB19}</UniqueIdentifier>
@@ -60,6 +60,24 @@
     </Filter>
     <Filter Include="Runtime\Launch\Windows">
       <UniqueIdentifier>{EDDFBFA9-D9D9-E8FB-C246-7F0CAEDF4E68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Manager">
+      <UniqueIdentifier>{730AB815-DF95-25DA-E8A6-A8CE54B181DA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Manager\AssetManager">
+      <UniqueIdentifier>{DD71E78E-C92C-D73A-72E4-4F855E7E21CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Manager\FrameManager">
+      <UniqueIdentifier>{086A9581-F424-852D-9DDC-FD778976CFBD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Manager\InputManager">
+      <UniqueIdentifier>{4D2F5AB7-39EA-4963-E2A1-C2ADCE3B94F3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Manager\LogManager">
+      <UniqueIdentifier>{1FE6D0E2-0BF6-7CB3-74AF-E1D160DE6B4C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Manager\SenceManager">
+      <UniqueIdentifier>{4BE8E8DF-37A3-D88B-E05A-51D6CCF4221C}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\OpenGL">
       <UniqueIdentifier>{5D52A31D-4920-9723-32B4-074A1E217388}</UniqueIdentifier>
@@ -120,8 +138,8 @@
     <ClInclude Include="Source\Runtime\Core\Image\Image.h">
       <Filter>Runtime\Core\Image</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\Log\Log.h">
-      <Filter>Runtime\Core\Log</Filter>
+    <ClInclude Include="Source\Runtime\Core\Json\Json.h">
+      <Filter>Runtime\Core\Json</Filter>
     </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Math\Math.h">
       <Filter>Runtime\Core\Math</Filter>
@@ -195,6 +213,21 @@
     <ClInclude Include="Source\Runtime\Launch\MainLoop.h">
       <Filter>Runtime\Launch</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Runtime\Manager\AssetManager\AssetManager.h">
+      <Filter>Runtime\Manager\AssetManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Manager\FrameManager\FrameManager.h">
+      <Filter>Runtime\Manager\FrameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Manager\InputManager\InputManager.h">
+      <Filter>Runtime\Manager\InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Manager\LogManager\LogManager.h">
+      <Filter>Runtime\Manager\LogManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Manager\SenceManager\SenceManager.h">
+      <Filter>Runtime\Manager\SenceManager</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Runtime\OpenGL\IndexBuffer.h">
       <Filter>Runtime\OpenGL</Filter>
     </ClInclude>
@@ -256,8 +289,8 @@
     <ClCompile Include="Source\Runtime\Core\Image\Image.cpp">
       <Filter>Runtime\Core\Image</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Runtime\Core\Log\Log.cpp">
-      <Filter>Runtime\Core\Log</Filter>
+    <ClCompile Include="Source\Runtime\Core\Json\Json.cpp">
+      <Filter>Runtime\Core\Json</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\Math\Radian.cpp">
       <Filter>Runtime\Core\Math</Filter>
@@ -285,6 +318,21 @@
     </ClCompile>
     <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp">
       <Filter>Runtime\Launch\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Manager\AssetManager\AssetManager.cpp">
+      <Filter>Runtime\Manager\AssetManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Manager\FrameManager\FrameManager.cpp">
+      <Filter>Runtime\Manager\FrameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Manager\InputManager\InputManager.cpp">
+      <Filter>Runtime\Manager\InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Manager\LogManager\LogManager.cpp">
+      <Filter>Runtime\Manager\LogManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Manager\SenceManager\SenceManager.cpp">
+      <Filter>Runtime\Manager\SenceManager</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\OpenGL\IndexBuffer.cpp">
       <Filter>Runtime\OpenGL</Filter>
@@ -335,6 +383,9 @@
       <Filter>Runtime\Test\Core</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Test\Core\TestFile.cpp">
+      <Filter>Runtime\Test\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Test\Core\TestJson.cpp">
       <Filter>Runtime\Test\Core</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Test\Core\TestMath.cpp">

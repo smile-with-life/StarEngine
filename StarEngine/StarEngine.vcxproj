@@ -100,7 +100,7 @@
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STAR_TEST;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -129,7 +129,7 @@ copy /B /Y ..\Bin\Test-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Test-wind
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STAR_DEBUG;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -158,7 +158,7 @@ copy /B /Y ..\Bin\Debug-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Debug-wi
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STAR_RELEASE;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -190,7 +190,7 @@ copy /B /Y ..\Bin\Release-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Releas
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>STAR_DIST;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -230,7 +230,7 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\File\File.h" />
     <ClInclude Include="Source\Runtime\Core\GUID\GUID.h" />
     <ClInclude Include="Source\Runtime\Core\Image\Image.h" />
-    <ClInclude Include="Source\Runtime\Core\Log\Log.h" />
+    <ClInclude Include="Source\Runtime\Core\Json\Json.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Math.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Matrix3.h" />
     <ClInclude Include="Source\Runtime\Core\Math\Matrix4.h" />
@@ -255,6 +255,11 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Time\TimePoint.h" />
     <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h" />
     <ClInclude Include="Source\Runtime\Launch\MainLoop.h" />
+    <ClInclude Include="Source\Runtime\Manager\AssetManager\AssetManager.h" />
+    <ClInclude Include="Source\Runtime\Manager\FrameManager\FrameManager.h" />
+    <ClInclude Include="Source\Runtime\Manager\InputManager\InputManager.h" />
+    <ClInclude Include="Source\Runtime\Manager\LogManager\LogManager.h" />
+    <ClInclude Include="Source\Runtime\Manager\SenceManager\SenceManager.h" />
     <ClInclude Include="Source\Runtime\OpenGL\IndexBuffer.h" />
     <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h" />
     <ClInclude Include="Source\Runtime\OpenGL\Shader.h" />
@@ -278,7 +283,7 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\Core\File\File.cpp" />
     <ClCompile Include="Source\Runtime\Core\GUID\GUID.cpp" />
     <ClCompile Include="Source\Runtime\Core\Image\Image.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Log\Log.cpp" />
+    <ClCompile Include="Source\Runtime\Core\Json\Json.cpp" />
     <ClCompile Include="Source\Runtime\Core\Math\Radian.cpp" />
     <ClCompile Include="Source\Runtime\Core\Memory\ByteBuffer.cpp" />
     <ClCompile Include="Source\Runtime\Core\Memory\RAII.cpp" />
@@ -288,6 +293,11 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\Core\Time\Time.cpp" />
     <ClCompile Include="Source\Runtime\Launch\MainLoop.cpp" />
     <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp" />
+    <ClCompile Include="Source\Runtime\Manager\AssetManager\AssetManager.cpp" />
+    <ClCompile Include="Source\Runtime\Manager\FrameManager\FrameManager.cpp" />
+    <ClCompile Include="Source\Runtime\Manager\InputManager\InputManager.cpp" />
+    <ClCompile Include="Source\Runtime\Manager\LogManager\LogManager.cpp" />
+    <ClCompile Include="Source\Runtime\Manager\SenceManager\SenceManager.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\IndexBuffer.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp" />
     <ClCompile Include="Source\Runtime\OpenGL\Shader.cpp" />
@@ -305,6 +315,7 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClCompile Include="Source\Runtime\Test\Core\TestConfig.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestContainer.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestFile.cpp" />
+    <ClCompile Include="Source\Runtime\Test\Core\TestJson.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestMath.cpp" />
     <ClCompile Include="Source\Runtime\Test\Core\TestRAII.cpp" />
     <ClCompile Include="Source\Runtime\Test\Test.cpp" />

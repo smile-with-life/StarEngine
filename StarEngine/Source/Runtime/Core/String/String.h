@@ -47,6 +47,8 @@ public:
     // 隐式转化为 std::string
     operator std::string() const;
 
+    operator const std::string() const;
+
     operator const char* () const;
 public:
     // 将 str 附加到字符串的末尾

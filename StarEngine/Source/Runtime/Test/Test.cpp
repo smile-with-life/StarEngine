@@ -15,6 +15,7 @@ void UnitTestingInitEnd()
     Test_File();
     Test_Config();
     Test_RAII();
+    Test_Json();
 }
 
 void UnitTestingTickBegin()

@@ -24,19 +24,19 @@ public:
     bool IsQuit();
 private:
     // 应用程序模块
-    Scope<Application> m_app;
+    ScopePtr<Application> m_app;
 
     // 渲染模块
-    Scope<OpenGL> m_renderer;
+    ScopePtr<OpenGL> m_renderer;
 
     // 场景管理器
-    Scope<SenceManager> m_senceManager;
+    ScopePtr<SenceManager> m_senceManager;
 
     // 输入管理器
-    Scope<InputManager> m_inputManager;
+    ScopePtr<InputManager> m_inputManager;
 
     // 帧管理器
-    Scope<FrameManager> m_frameManager;
+    ScopePtr<FrameManager> m_frameManager;
 };
 
 inline MainLoop GMainLoop;

@@ -41,6 +41,7 @@ void Test_Array();
 void Test_File();
 void Test_Config();
 void Test_RAII();
+void Test_Json();
 
 // 标准测试类
 class Test_Standard_Class

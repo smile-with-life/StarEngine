@@ -21,9 +21,9 @@ public:
     void LoadSence(const String& senceUrl);
 private:
     // 场景列表
-    Array<Shared<Sence>> m_sences;
+    Array<SharedPtr<Sence>> m_sences;
 
     // 当前活动的场景
-    Shared<Sence> m_activeSence;
+    SharedPtr<Sence> m_activeSence;
 };
 }// namespace Star

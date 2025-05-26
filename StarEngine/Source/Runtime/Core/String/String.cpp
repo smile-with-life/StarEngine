@@ -159,6 +159,11 @@ String::operator std::string() const
     return m_data;
 }
 
+String::operator const std::string() const
+{
+    return m_data;
+}
+
 String::operator const char* () const
 {
     return m_data.c_str();
