@@ -18,6 +18,7 @@
     // 取消宏定义
     #undef min
     #undef max
+    #undef GetObject
 #endif
 
 #ifdef STAR_PLATFORM_WINDOWS

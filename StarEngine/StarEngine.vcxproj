@@ -221,7 +221,9 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     <ClInclude Include="Source\Runtime\Core\Concept\Concept.h" />
     <ClInclude Include="Source\Runtime\Core\Config\Config.h" />
     <ClInclude Include="Source\Runtime\Core\Container\Array.h" />
+    <ClInclude Include="Source\Runtime\Core\Container\Deque.h" />
     <ClInclude Include="Source\Runtime\Core\Container\Hash.h" />
+    <ClInclude Include="Source\Runtime\Core\Container\HashSet.h" />
     <ClInclude Include="Source\Runtime\Core\Container\List.h" />
     <ClInclude Include="Source\Runtime\Core\Container\Map.h" />
     <ClInclude Include="Source\Runtime\Core\Container\Set.h" />

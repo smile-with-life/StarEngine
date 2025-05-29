@@ -702,6 +702,12 @@ String& String::operator+=(const String& str)
     return *this;
 }
 
+String& String::operator+=(const char ch)
+{
+    m_data += ch;
+    return *this;
+}
+
 /* friend */
 String operator+(const String& left, const String& right)
 {

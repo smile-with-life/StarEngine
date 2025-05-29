@@ -42,7 +42,7 @@ concept SortComparableType = requires(const Type & left, const Type & right)
     { left >= right } -> std::convertible_to<bool>;
 };
 
-//可比较类型
+// 可比较类型
 template<class Type>
 concept ComparableType = EqualComparableType<Type> && SortComparableType<Type>;
 }// namespace Concept

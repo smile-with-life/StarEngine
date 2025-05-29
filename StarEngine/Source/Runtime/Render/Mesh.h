@@ -10,7 +10,10 @@ class VertexBuffer;
 class IndexBuffer;
 enum class PrimitiveType
 {
-	None
+	None,
+	Points,
+	Lines,
+	Triangles
 };
 
 class Mesh

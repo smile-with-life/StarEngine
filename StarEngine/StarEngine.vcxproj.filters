@@ -275,6 +275,8 @@
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
+    <ClInclude Include="Source\Runtime\Core\Container\Deque.h" />
+    <ClInclude Include="Source\Runtime\Core\Container\HashSet.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\Core\Config\Config.cpp">

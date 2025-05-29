@@ -8,6 +8,11 @@ namespace Star
 class String
 {
 public:
+    using iterator = std::string::iterator;
+    using const_iterator = std::string::const_iterator;
+    using reverse_iterator = std::string::reverse_iterator;
+    using const_reverse_iterator = std::string::const_reverse_iterator;
+public:
     // 默认构造函数
     String() = default;
 
@@ -227,6 +232,8 @@ public:
 public:
     String& operator+=(const String& str);
 
+    String& operator+=(char ch);
+
     friend String operator+(const String& left, const String& right);
 
     friend bool operator==(const String& left, const String& right);
@@ -266,6 +273,66 @@ public:
     friend bool operator<=(const char* left, const String& right);
 
     friend std::ostream& operator<<(std::ostream& os, const String& str);
+public:
+    [[nodiscard]] constexpr iterator begin() noexcept
+    {
+        return m_data.begin();
+    }
+
+    [[nodiscard]] constexpr const_iterator begin() const noexcept
+    {
+        return m_data.begin();
+    }
+
+    [[nodiscard]] constexpr iterator end() noexcept
+    {
+        return m_data.end();
+    }
+
+    [[nodiscard]] constexpr const_iterator end() const noexcept
+    {
+        return m_data.end();
+    }
+
+    [[nodiscard]] constexpr const_iterator cbegin() const noexcept
+    {
+        return m_data.cbegin();
+    }
+
+    [[nodiscard]] constexpr const_iterator cend() const noexcept
+    {
+        return m_data.cend();
+    }
+
+    [[nodiscard]] constexpr reverse_iterator rbegin() noexcept
+    {
+        return m_data.rbegin();
+    }
+
+    [[nodiscard]] constexpr const_reverse_iterator rbegin() const noexcept
+    {
+        return m_data.rbegin();
+    }
+
+    [[nodiscard]] constexpr reverse_iterator rend() noexcept
+    {
+        return m_data.rend();
+    }
+
+    [[nodiscard]] constexpr const_reverse_iterator rend() const noexcept
+    {
+        return m_data.rend();
+    }
+
+    [[nodiscard]] constexpr const_reverse_iterator crbegin() const noexcept
+    {
+        return m_data.crbegin();
+    }
+
+    [[nodiscard]] constexpr const_reverse_iterator crend() const noexcept
+    {
+        return m_data.crend();
+    }
 public:
     static String FromStdString(const std::string& str);
     static String FromCString(const char* str);
