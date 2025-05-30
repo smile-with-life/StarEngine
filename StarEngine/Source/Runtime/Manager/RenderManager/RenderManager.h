@@ -2,6 +2,7 @@
 #include "Runtime/Core/Core.h"
 #include "Runtime/Core/Memory/RAII.h"
 #include "Runtime/GraphicsAPI/GraphicsAPI.h"
+#include "Runtime/Render/Viewport.h"
 
 namespace Star
 {
@@ -17,7 +18,15 @@ public:
     void Tick();
 
     void Exit();
+
+   void SetViewport();
 private:
+    // 图形API
     SharedPtr<GraphicsAPI> m_api;
+
+    // 视口属性
+    Viewport m_viewport;
+
+    // 交换链
 };
 }// namespace Star

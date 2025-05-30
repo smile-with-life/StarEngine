@@ -277,6 +277,12 @@
     <ClInclude Include="Source\starpch.h" />
     <ClInclude Include="Source\Runtime\Core\Container\Deque.h" />
     <ClInclude Include="Source\Runtime\Core\Container\HashSet.h" />
+    <ClInclude Include="Source\Runtime\GraphicsAPI\GraphicsAPI.h" />
+    <ClInclude Include="Source\Runtime\Manager\RenderManager\RenderManager.h" />
+    <ClInclude Include="Source\Runtime\GraphicsAPI\OpenGL\OpenGLAPI.h" />
+    <ClInclude Include="Source\Runtime\Render\Viewport.h" />
+    <ClInclude Include="Source\Runtime\GraphicsAPI\SwapChain.h" />
+    <ClInclude Include="Source\Runtime\GraphicsAPI\CommandList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\Core\Config\Config.cpp">
@@ -400,6 +406,12 @@
       <Filter>Runtime\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
+    <ClCompile Include="Source\Runtime\GraphicsAPI\GraphicsAPI.cpp" />
+    <ClCompile Include="Source\Runtime\Manager\RenderManager\RenderManager.cpp" />
+    <ClCompile Include="Source\Runtime\GraphicsAPI\OpenGL\OpenGLAPI.cpp" />
+    <ClCompile Include="Source\Runtime\Render\Viewport.cpp" />
+    <ClCompile Include="Source\Runtime\GraphicsAPI\SwapChain.cpp" />
+    <ClCompile Include="Source\Runtime\GraphicsAPI\CommandList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

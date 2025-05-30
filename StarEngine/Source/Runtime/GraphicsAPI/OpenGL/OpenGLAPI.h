@@ -4,7 +4,7 @@
 
 namespace Star
 {
-// 图形API
+// OpenGL
 class OpenGLAPI:public GraphicsAPI
 {
 public:
