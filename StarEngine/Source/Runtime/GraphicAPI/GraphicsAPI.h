@@ -22,6 +22,6 @@ public:
 
     }
 
-    //
+    // 创建缓冲区资源
 };
 }// namespace Star

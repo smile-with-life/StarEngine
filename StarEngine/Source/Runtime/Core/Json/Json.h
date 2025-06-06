@@ -100,6 +100,8 @@ public:
     void Erase(const string& key);
 
     String Serialize() const;
+
+    String ToString() const;
 public:
     // 隐式转换 bool
     operator bool();   
@@ -178,7 +180,7 @@ private:
     }
 
     void SerializeHelper(std::ostream& os, const Json& json) const;
-
+private:
     static void SkipWhitespace(const char*& ptr);
 
     static String ParseString(const char*& ptr);

@@ -185,6 +185,11 @@ String Json::Serialize() const
     return String(ss.str());
 }
 
+String Json::ToString() const
+{
+    return String();
+}
+
 Json::operator bool()
 {
     return Get<bool>();
@@ -484,6 +489,7 @@ void Json::SkipWhitespace(const char*& ptr)
     }
 }
 
+/* static */
 String Json::ParseString(const char*& ptr)
 {
     ++ptr; // 跳过开始的引号
@@ -682,7 +688,6 @@ Json Json::ParseValue(const char*& ptr)
     }
 }
 
-/* static */
 Json Json::Parse(const string& jsonString)
 {
     const char* ptr = jsonString.ToCString();
