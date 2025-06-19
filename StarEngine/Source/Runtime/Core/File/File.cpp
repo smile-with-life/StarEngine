@@ -270,7 +270,7 @@ void File::Close()
     m_file.close();
 }
 
-bool File::Read(ByteArray& buffer, int64 size)
+bool File::Read(ByteBuffer& buffer, int64 size)
 {
     if (size)
     {
@@ -283,7 +283,7 @@ bool File::Read(ByteArray& buffer, int64 size)
     
 }
 
-bool File::ReadAll(ByteArray& buffer)
+bool File::ReadAll(ByteBuffer& buffer)
 {
     int64 size = Size();
 
@@ -298,7 +298,7 @@ bool File::ReadAll(ByteArray& buffer)
 
 }
 
-bool File::ReadLine(ByteArray& buffer)
+bool File::ReadLine(ByteBuffer& buffer)
 {
     char ch = '\0';
     buffer.Clear();
@@ -313,7 +313,7 @@ bool File::ReadLine(ByteArray& buffer)
     return !m_file.fail();
 }
 
-bool File::Write(ByteArray& buffer, int64 size)
+bool File::Write(ByteBuffer& buffer, int64 size)
 {
     if (size)
     {
@@ -326,7 +326,7 @@ bool File::Write(ByteArray& buffer, int64 size)
     return true;
 }
 
-bool File::WriteAll(ByteArray& buffer)
+bool File::WriteAll(ByteBuffer& buffer)
 {
     int64 size = buffer.Size();
 

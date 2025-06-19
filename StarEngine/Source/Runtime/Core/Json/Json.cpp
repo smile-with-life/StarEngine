@@ -187,7 +187,7 @@ String Json::Serialize() const
 
 String Json::ToString() const
 {
-    return String();
+    return Serialize();
 }
 
 Json::operator bool()

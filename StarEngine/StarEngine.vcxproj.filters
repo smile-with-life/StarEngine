@@ -55,6 +55,9 @@
     <Filter Include="Runtime\Core\TypeDefinition">
       <UniqueIdentifier>{DBE17DB2-47EF-AB98-D0D5-A7833CE2774F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Runtime\GraphicAPI">
+      <UniqueIdentifier>{D0235F0A-BC07-2060-2568-1AB3116B0AE2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Runtime\Launch">
       <UniqueIdentifier>{B3329D15-9F00-911B-8894-014274016D80}</UniqueIdentifier>
     </Filter>
@@ -90,6 +93,15 @@
     </Filter>
     <Filter Include="Runtime\Platform\Windows">
       <UniqueIdentifier>{F7EA536D-E30F-A3ED-0C5B-887DF8DEA10B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Render">
+      <UniqueIdentifier>{9887E023-8455-D429-6DE9-44505956B08E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Render\Entity">
+      <UniqueIdentifier>{E41826D1-5085-E1CB-1979-792985A40334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Render\Sence">
+      <UniqueIdentifier>{558437AA-4113-C173-EA31-D56ED69FD119}</UniqueIdentifier>
     </Filter>
     <Filter Include="Runtime\Test">
       <UniqueIdentifier>{58978A1B-44FA-19C0-ED7F-5276D9C1E542}</UniqueIdentifier>
@@ -210,6 +222,21 @@
     <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h">
       <Filter>Runtime\Core\TypeDefinition</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Runtime\GraphicAPI\Buffer.h">
+      <Filter>Runtime\GraphicAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\GraphicAPI\CommandList.h">
+      <Filter>Runtime\GraphicAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\GraphicAPI\Common.h">
+      <Filter>Runtime\GraphicAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\GraphicAPI\Device.h">
+      <Filter>Runtime\GraphicAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\GraphicAPI\SwapChain.h">
+      <Filter>Runtime\GraphicAPI</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Runtime\Launch\MainLoop.h">
       <Filter>Runtime\Launch</Filter>
     </ClInclude>
@@ -270,23 +297,17 @@
     <ClInclude Include="Source\Runtime\Platform\Windows\WindowsWindow.h">
       <Filter>Runtime\Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Runtime\Render\Entity\Entity.h">
+      <Filter>Runtime\Render\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Runtime\Render\Sence\Sence.h">
+      <Filter>Runtime\Render\Sence</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Runtime\Test\Test.h">
       <Filter>Runtime\Test</Filter>
     </ClInclude>
     <ClInclude Include="Source\Starengine.h" />
     <ClInclude Include="Source\starpch.h" />
-    <ClInclude Include="Source\Runtime\Core\Container\Deque.h" />
-    <ClInclude Include="Source\Runtime\Core\Container\HashSet.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\GraphicsAPI.h" />
-    <ClInclude Include="Source\Runtime\Manager\RenderManager\RenderManager.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\OpenGL\OpenGLAPI.h" />
-    <ClInclude Include="Source\Runtime\Render\Viewport.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\SwapChain.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\CommandList.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\Common.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\Buffer.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\Device.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\OpenGL\OpenGLBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Runtime\Core\Config\Config.cpp">
@@ -324,6 +345,18 @@
     </ClCompile>
     <ClCompile Include="Source\Runtime\Core\Time\Time.cpp">
       <Filter>Runtime\Core\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\GraphicAPI\Buffer.cpp">
+      <Filter>Runtime\GraphicAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\GraphicAPI\CommandList.cpp">
+      <Filter>Runtime\GraphicAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\GraphicAPI\Device.cpp">
+      <Filter>Runtime\GraphicAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\GraphicAPI\SwapChain.cpp">
+      <Filter>Runtime\GraphicAPI</Filter>
     </ClCompile>
     <ClCompile Include="Source\Runtime\Launch\MainLoop.cpp">
       <Filter>Runtime\Launch</Filter>
@@ -388,6 +421,12 @@
     <ClCompile Include="Source\Runtime\Platform\Windows\WindowsWindow.cpp">
       <Filter>Runtime\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Runtime\Render\Entity\Entity.cpp">
+      <Filter>Runtime\Render\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Runtime\Render\Sence\Sence.cpp">
+      <Filter>Runtime\Render\Sence</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Runtime\Test\Core\TestConfig.cpp">
       <Filter>Runtime\Test\Core</Filter>
     </ClCompile>
@@ -410,13 +449,6 @@
       <Filter>Runtime\Test</Filter>
     </ClCompile>
     <ClCompile Include="Source\starpch.cpp" />
-    <ClCompile Include="Source\Runtime\GraphicAPI\GraphicsAPI.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\RenderManager\RenderManager.cpp" />
-    <ClCompile Include="Source\Runtime\GraphicAPI\OpenGL\OpenGLAPI.cpp" />
-    <ClCompile Include="Source\Runtime\Render\Viewport.cpp" />
-    <ClCompile Include="Source\Runtime\GraphicAPI\SwapChain.cpp" />
-    <ClCompile Include="Source\Runtime\GraphicAPI\CommandList.cpp" />
-    <ClCompile Include="Source\Runtime\GraphicAPI\OpenGL\OpenGLBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Runtime\Launch\Windows\WindowsExport.def">

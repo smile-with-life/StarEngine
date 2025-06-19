@@ -3,7 +3,7 @@
 #include "Runtime/Core/Object/Object.h"
 #include "Runtime/Core/GUID/GUID.h"
 #include "Runtime/Core/Container/Map.h"
-#include "Runtime/Sence/Entity.h"
+#include "Runtime/Render/Entity/Entity.h"
 #include "Runtime/Sence/System/MeshSystem.h"
 
 namespace Star

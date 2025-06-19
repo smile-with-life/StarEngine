@@ -119,7 +119,9 @@ project "StarEngine" --项目
     include "StarEngine/Source/Runtime/Platform/PlatformMake.lua" --平台模块
     include "StarEngine/Source/Runtime/OpenGL/OpenGLMake.lua" --OpenGL模块
     include "StarEngine/Source/Runtime/Test/TestMake.lua" --Test模块
-    include "StarEngine/Source/Runtime/Manager/ManagerMake.lua" --Test模块
+    include "StarEngine/Source/Runtime/Manager/ManagerMake.lua" --管理器模块
+    include "StarEngine/Source/Runtime/Render/RenderMake.lua" --渲染模块
+    include "StarEngine/Source/Runtime/GraphicAPI/GraphicAPIMake.lua" --图形API模块
 project "TestGame"
     location "TestGame"
     kind "windowedapp"

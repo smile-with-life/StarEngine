@@ -44,10 +44,10 @@ public:
     String& operator=(const std::string& str);
 
     // 字节数组构造
-    explicit String(const ByteArray& buffer);
+    String(const ByteBuffer& buffer);
 
     // 字节数组赋值
-    String& operator=(const ByteArray& buffer);
+    String& operator=(const ByteBuffer& buffer);
 
     // 隐式转化为 std::string
     operator std::string() const;
@@ -335,18 +335,33 @@ public:
     }
 public:
     static String FromStdString(const std::string& str);
+
     static String FromCString(const char* str);
+
     static String FromInt8(int8 value);
+
     static String FromInt16(int16 value);
+
     static String FromInt32(int32 value);
+
     static String FromInt64(int64 value);
+
     static String FromUInt8(uint8 value);
+
     static String FromUInt16(uint16 value);
+
     static String FromUInt32(uint32 value);
+
     static String FromUInt64(uint64 value);
+
     static String FromFloat(float value);
+
     static String FromDouble(double value);
+
     static String FromBool(bool value);
+public:
+    // 空字符串
+    inline static const char* Empty = "";
 private:
     // UTF-8 字符串
     std::string m_data;

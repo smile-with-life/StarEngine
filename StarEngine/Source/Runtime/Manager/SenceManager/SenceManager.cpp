@@ -20,14 +20,17 @@ void SenceManager::Exit()
 
 }
 
+void SenceManager::LoadWorld(const String& worldUrl)
+{
+    m_world.Load(worldUrl);
+
+    LoadSence(m_world.defaultSenceUrl);
+}
+
 void SenceManager::LoadSence(const String& senceUrl)
 {
-    /*SharedPtr<Sence> sence = MakeShared<Sence>();    
+    SharedPtr<Sence> sence = MakeShared<Sence>();
     m_activeSence = sence;
-
-    sence->Load(senceUrl);
-
-    m_sences.PushBack(sence);*/
-
+    m_activeSence->Load(senceUrl);
 }
 }// namespace Star

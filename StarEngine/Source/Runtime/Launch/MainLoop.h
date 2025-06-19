@@ -5,7 +5,6 @@
 #include "Runtime/Platform/Application.h"
 #include "Runtime/Core/Time/Time.h"
 #include "Runtime/OpenGL/OpenGL.h"
-#include "Runtime/Sence/Sence.h"
 #include "Runtime/Manager/FrameManager/FrameManager.h"
 #include "Runtime/Manager/SenceManager/SenceManager.h"
 #include "Runtime/Manager/InputManager/InputManager.h"

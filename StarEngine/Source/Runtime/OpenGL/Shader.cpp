@@ -8,7 +8,7 @@ namespace Star
 Shader::Shader(const String& vsPath, const String fsPath)
 {
     File file;
-    ByteArray buffer;
+    ByteBuffer buffer;
     String vsSource;
     String fsSource;
     int  success;

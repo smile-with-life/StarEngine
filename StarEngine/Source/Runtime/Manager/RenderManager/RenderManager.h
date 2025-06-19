@@ -1,7 +1,7 @@
 #pragma once
 #include "Runtime/Core/Core.h"
 #include "Runtime/Core/Memory/RAII.h"
-#include "Runtime/GraphicsAPI/GraphicsAPI.h"
+#include "Runtime/GraphicAPI/Device.h"
 #include "Runtime/Render/Viewport.h"
 
 namespace Star
@@ -22,7 +22,7 @@ public:
    void SetViewport();
 private:
     // 图形API
-    SharedPtr<GraphicsAPI> m_api;
+    SharedPtr<Device> m_api;
 
     // 视口属性
     Viewport m_viewport;

@@ -131,7 +131,7 @@ String& String::operator=(const std::string& str)
     return *this;
 }
 
-String::String(const ByteArray& buffer)
+String::String(const ByteBuffer& buffer)
 {
     m_data.clear();
 
@@ -142,7 +142,7 @@ String::String(const ByteArray& buffer)
     }
 }
 
-String& String::operator=(const ByteArray& buffer)
+String& String::operator=(const ByteBuffer& buffer)
 {
     m_data.clear();
 
