@@ -217,6 +217,10 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Runtime\A.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Source\Runtime\Core\Algo\Alog.h" />
     <ClInclude Include="Source\Runtime\Core\Concept\Concept.h" />
     <ClInclude Include="Source\Runtime\Core\Config\Config.h" />
