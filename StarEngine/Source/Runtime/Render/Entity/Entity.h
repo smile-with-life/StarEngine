@@ -37,15 +37,41 @@ public:
     void Exit();
 
     template <class T, class... Args> 
-    Shared<T> AddComponent(Args... args)
+    SharedPtr<T> AddComponent(Args... args)
     {
-        Shared<T> component = MakeShared<T>(args...);       
+        SharedPtr<T> component = MakeShared<T>(args...);
         m_components.PushBack(component);
         return component;
     }
-private:
-    String m_name = "Undefined";
 
-    Array<Shared<Component>> m_components;
+    template <class T>
+    SharedPtr<T> GetComponent()
+    {
+       
+      
+    }
+
+    template <class T>
+    void RemoveComponent()
+    {
+
+    }
+
+    void AddChild(SharedPtr<Entity> child);
+
+    void RemoveChild(SharedPtr<Entity> child);
+
+    void SetParent(Entity* parent);
+
+    Entity* GetParent();
+    
+private:
+    String m_name = "Undefined";   
+
+    Array<SharedPtr<Component>> m_components;
+
+    Entity* m_parent;
+
+    Array<SharedPtr<Entity>> m_children;
 };
 }// namespace Star

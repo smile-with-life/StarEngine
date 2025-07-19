@@ -1,0 +1,11 @@
+{
+    "Name":"TestWorld",
+    "Senceurls":[
+        "Asset/Sence/test-sence-1.gltf",
+        "Asset/Sence/test-sence-2.gltf",
+        "Asset/Sence/test-sence-3.gltf",
+        "Asset/Sence/test-sence-4.gltf",
+        "Asset/Sence/test-sence-5.gltf"
+    ],
+    "DefaultSenceUrl":"Asset/Sence/test-sence-1.gltf"
+}

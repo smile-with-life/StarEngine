@@ -7,4 +7,5 @@ files  --要编译的源文件
     "Core/TestFile.cpp",
     "Core/TestMath.cpp",
     "Core/TestRAII.cpp",
+    "Core/TestJson.cpp",
 }

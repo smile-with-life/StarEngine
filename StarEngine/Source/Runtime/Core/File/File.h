@@ -38,19 +38,19 @@ public:
     void Close();
 
     // 读取文件，指定字节数
-    bool Read(ByteArray& buffer, int64 size);
+    bool Read(ByteBuffer& buffer, int64 size);
 
     // 读取全部文件
-    bool ReadAll(ByteArray& buffer);
+    bool ReadAll(ByteBuffer& buffer);
 
     // 按行读取文件
-    bool ReadLine(ByteArray& buffer);
+    bool ReadLine(ByteBuffer& buffer);
 
     // 写入文件，指定字节数
-    bool Write(ByteArray& buffer, int64 size);
+    bool Write(ByteBuffer& buffer, int64 size);
     
     // 全部写入文件
-    bool WriteAll(ByteArray& buffer);
+    bool WriteAll(ByteBuffer& buffer);
 
     // 刷新缓冲区
     void Flush();

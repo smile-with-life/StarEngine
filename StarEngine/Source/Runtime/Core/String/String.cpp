@@ -131,7 +131,7 @@ String& String::operator=(const std::string& str)
     return *this;
 }
 
-String::String(const ByteArray& buffer)
+String::String(const ByteBuffer& buffer)
 {
     m_data.clear();
 
@@ -142,7 +142,7 @@ String::String(const ByteArray& buffer)
     }
 }
 
-String& String::operator=(const ByteArray& buffer)
+String& String::operator=(const ByteBuffer& buffer)
 {
     m_data.clear();
 
@@ -155,6 +155,11 @@ String& String::operator=(const ByteArray& buffer)
 }
 
 String::operator std::string() const
+{
+    return m_data;
+}
+
+String::operator const std::string() const
 {
     return m_data;
 }
@@ -694,6 +699,12 @@ const char* String::ToCString() const
 String& String::operator+=(const String& str)
 {
     m_data += str.m_data;
+    return *this;
+}
+
+String& String::operator+=(const char ch)
+{
+    m_data += ch;
     return *this;
 }
 

@@ -54,10 +54,10 @@ private:
 	//Array<InputDevice> m_inputDevices;
 
 	// 主窗口
-	Scope<Window> m_window;
+	ScopePtr<Window> m_window;
 
 	// 控制台
-	Scope<Console> m_console;
+	ScopePtr<Console> m_console;
 
 	// 应用程序句柄
 	HINSTANCE m_hInstance;

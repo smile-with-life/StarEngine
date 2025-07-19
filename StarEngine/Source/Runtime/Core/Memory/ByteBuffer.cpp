@@ -5,7 +5,7 @@
 
 namespace Star
 {
-ByteArray::ByteArray(const char* data)
+ByteBuffer::ByteBuffer(const char* data)
 {
     int64 size = strlen(data);
     for (int64 i = 0; i < size; ++i)
@@ -14,43 +14,43 @@ ByteArray::ByteArray(const char* data)
     }
 }
 
-ByteArray::ByteArray(const ByteArray& other)
+ByteBuffer::ByteBuffer(const ByteBuffer& other)
     : m_data(other.m_data)
 {
 
 }
 
-ByteArray& ByteArray::operator=(const ByteArray& other)
+ByteBuffer& ByteBuffer::operator=(const ByteBuffer& other)
 {
     if (&other == this) [[unlikely]] return *this;
     m_data = other.m_data;
     return *this;
 }
 
-ByteArray::ByteArray(ByteArray&& other) noexcept
+ByteBuffer::ByteBuffer(ByteBuffer&& other) noexcept
     : m_data(std::move(other.m_data))
 {
 
 }
 
-ByteArray& ByteArray::operator=(ByteArray&& other) noexcept
+ByteBuffer& ByteBuffer::operator=(ByteBuffer&& other) noexcept
 {
     if (&other == this) [[unlikely]] return *this;
     m_data = std::move(other.m_data);
     return *this;
 }
 
-char& ByteArray::operator[](int64 index)
+char& ByteBuffer::operator[](int64 index)
 {
     return m_data[index];
 }
 
-const char& ByteArray::operator[](int64 index) const
+const char& ByteBuffer::operator[](int64 index) const
 {
     return m_data[index];
 }
 
-void ByteArray::Add(const char* data, int64 size)
+void ByteBuffer::Add(const char* data, int64 size)
 {
     for (int i = 0; i < size; ++i)
     {
@@ -58,48 +58,48 @@ void ByteArray::Add(const char* data, int64 size)
     }
 }
 
-ByteArray& ByteArray::operator<<(char ch)
+ByteBuffer& ByteBuffer::operator<<(char ch)
 {
     m_data.Insert(m_data.end(), ch);
     return *this;
 }
 
-char* ByteArray::Data()
+char* ByteBuffer::Data()
 {
     return m_data.Data();
 }
 
-const char* ByteArray::Data() const
+const char* ByteBuffer::Data() const
 {
     return m_data.Data();
 }
 
-int64 ByteArray::Size() const
+int64 ByteBuffer::Size() const
 {
     return m_data.Size();
 }
 
-int64 ByteArray::Max() const
+int64 ByteBuffer::Max() const
 {
     return std::numeric_limits<int64>::max();
 }
 
-bool ByteArray::IsEmpty()
+bool ByteBuffer::IsEmpty()
 {
     return m_data.IsEmpty();
 }
 
-void ByteArray::Resize(int64 size)
+void ByteBuffer::Resize(int64 size)
 {
     m_data.Resize(size);
 }
 
-void ByteArray::Clear()
+void ByteBuffer::Clear()
 {
     m_data.Clear();
 }
 
-void ByteArray::Swap(ByteArray& other)
+void ByteBuffer::Swap(ByteBuffer& other)
 {
     m_data.Swap(other.m_data);
 }

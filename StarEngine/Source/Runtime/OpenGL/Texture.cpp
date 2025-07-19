@@ -1,7 +1,7 @@
 #include "starpch.h"
 #include "Texture.h"
 #include "OpenGLCommon.h"
-#include "stb_image.h"
+#include <stb/stb_image.h>
 
 namespace Star
 {

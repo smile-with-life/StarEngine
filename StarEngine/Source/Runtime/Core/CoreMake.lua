@@ -26,8 +26,8 @@ files  --要编译的源文件
     "Image/Image.h",
     "Image/Image.cpp",
 
-    "Log/Log.h",
-    "Log/Log.cpp",
+    "Json/Json.h",
+    "Json/Json.cpp",
 
     "Math/Math.h",
     "Math/Matrix3.h",

@@ -38,7 +38,7 @@ void Test_File()
     Assert(File::Exists("Asset/Test/test.txt") == true);
     Assert(file.Open(OpenMode::ReadWrite) == true);
     std::cout << "###文件写入...###" << std::endl;
-    ByteArray buffer("测试文件");
+    ByteBuffer buffer("测试文件");
     Assert(file.WriteAll(buffer) == true);
     std::cout << "缓冲未刷新的文件大小:" << file.Size() << std::endl;
     file.Flush();

@@ -24,7 +24,7 @@ bool ConfigFile::Load(const String& path_)
     {
         // @实现 ini文件语法检查器
 
-        ByteArray buffer;
+        ByteBuffer buffer;
         String line;
         String header;
         String key;
@@ -74,7 +74,7 @@ bool ConfigFile::Save()
 bool ConfigFile::SaveAs(const String& path_)
 {
     File file(path_);
-    ByteArray buffer;
+    ByteBuffer buffer;
     String config;
 
     if (file.Open(OpenMode::ReadWrite)) 

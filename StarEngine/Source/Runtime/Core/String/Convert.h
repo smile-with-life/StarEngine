@@ -28,5 +28,8 @@ namespace Star::Convert
         return result;
     }
 
-
+    void Star()
+    {
+        String str = String::Empty;
+    }
 }// namespace Star

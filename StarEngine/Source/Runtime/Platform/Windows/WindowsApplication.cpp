@@ -26,8 +26,8 @@ WindowsApplication::WindowsApplication(const HINSTANCE hInstance, const HICON hI
 {
     RegisterWindowClassInfo(m_hInstance, hIcon);
 
-    m_console = Scope<Console>(Console::Create());
-    m_window = Scope<Window>(Window::Create());
+    m_console = ScopePtr<Console>(Console::Create());
+    m_window = ScopePtr<Window>(Window::Create());
 
     // 初始化了 OLE 库，以支持拖放功能
     // CA_SUPPRESS(6031);

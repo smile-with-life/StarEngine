@@ -8,6 +8,11 @@ namespace Star
 class String
 {
 public:
+    using iterator = std::string::iterator;
+    using const_iterator = std::string::const_iterator;
+    using reverse_iterator = std::string::reverse_iterator;
+    using const_reverse_iterator = std::string::const_reverse_iterator;
+public:
     // 默认构造函数
     String() = default;
 
@@ -39,13 +44,15 @@ public:
     String& operator=(const std::string& str);
 
     // 字节数组构造
-    explicit String(const ByteArray& buffer);
+    String(const ByteBuffer& buffer);
 
     // 字节数组赋值
-    String& operator=(const ByteArray& buffer);
+    String& operator=(const ByteBuffer& buffer);
 
     // 隐式转化为 std::string
     operator std::string() const;
+
+    operator const std::string() const;
 
     operator const char* () const;
 public:
@@ -225,6 +232,8 @@ public:
 public:
     String& operator+=(const String& str);
 
+    String& operator+=(char ch);
+
     friend String operator+(const String& left, const String& right);
 
     friend bool operator==(const String& left, const String& right);
@@ -265,19 +274,94 @@ public:
 
     friend std::ostream& operator<<(std::ostream& os, const String& str);
 public:
+    [[nodiscard]] constexpr iterator begin() noexcept
+    {
+        return m_data.begin();
+    }
+
+    [[nodiscard]] constexpr const_iterator begin() const noexcept
+    {
+        return m_data.begin();
+    }
+
+    [[nodiscard]] constexpr iterator end() noexcept
+    {
+        return m_data.end();
+    }
+
+    [[nodiscard]] constexpr const_iterator end() const noexcept
+    {
+        return m_data.end();
+    }
+
+    [[nodiscard]] constexpr const_iterator cbegin() const noexcept
+    {
+        return m_data.cbegin();
+    }
+
+    [[nodiscard]] constexpr const_iterator cend() const noexcept
+    {
+        return m_data.cend();
+    }
+
+    [[nodiscard]] constexpr reverse_iterator rbegin() noexcept
+    {
+        return m_data.rbegin();
+    }
+
+    [[nodiscard]] constexpr const_reverse_iterator rbegin() const noexcept
+    {
+        return m_data.rbegin();
+    }
+
+    [[nodiscard]] constexpr reverse_iterator rend() noexcept
+    {
+        return m_data.rend();
+    }
+
+    [[nodiscard]] constexpr const_reverse_iterator rend() const noexcept
+    {
+        return m_data.rend();
+    }
+
+    [[nodiscard]] constexpr const_reverse_iterator crbegin() const noexcept
+    {
+        return m_data.crbegin();
+    }
+
+    [[nodiscard]] constexpr const_reverse_iterator crend() const noexcept
+    {
+        return m_data.crend();
+    }
+public:
     static String FromStdString(const std::string& str);
+
     static String FromCString(const char* str);
+
     static String FromInt8(int8 value);
+
     static String FromInt16(int16 value);
+
     static String FromInt32(int32 value);
+
     static String FromInt64(int64 value);
+
     static String FromUInt8(uint8 value);
+
     static String FromUInt16(uint16 value);
+
     static String FromUInt32(uint32 value);
+
     static String FromUInt64(uint64 value);
+
     static String FromFloat(float value);
+
     static String FromDouble(double value);
+
     static String FromBool(bool value);
+public:
+    // 空字符串
+    inline static const char* Empty = "";
 private:
     // UTF-8 字符串
     std::string m_data;

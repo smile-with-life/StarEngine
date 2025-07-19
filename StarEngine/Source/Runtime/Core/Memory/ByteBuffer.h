@@ -6,22 +6,22 @@
 
 namespace Star
 {
-class ByteArray
+class ByteBuffer
 {
 public:
-    ByteArray() = default;
+    ByteBuffer() = default;
 
-    ~ByteArray() = default;
+    ~ByteBuffer() = default;
 
-    ByteArray(const char* data);
+    ByteBuffer(const char* data);
 
-    ByteArray(const ByteArray& other);
+    ByteBuffer(const ByteBuffer& other);
 
-    ByteArray& operator=(const ByteArray& other);
+    ByteBuffer& operator=(const ByteBuffer& other);
 
-    ByteArray(ByteArray&& other) noexcept;
+    ByteBuffer(ByteBuffer&& other) noexcept;
 
-    ByteArray& operator=(ByteArray&& other) noexcept;
+    ByteBuffer& operator=(ByteBuffer&& other) noexcept;
 public:
     // 访问指定元素,不进行边界检查
     char& operator[](int64 index);
@@ -32,7 +32,7 @@ public:
     // 向字节数组中写入数据
     void Add(const char* data, int64 size);
 
-    ByteArray& operator<<(char ch);
+    ByteBuffer& operator<<(char ch);
 
     char* Data();
 
@@ -54,7 +54,7 @@ public:
     void Clear();
 
     // 交换内容
-    void Swap(ByteArray& other);
+    void Swap(ByteBuffer& other);
 private:
     Array<char> m_data;
 };
