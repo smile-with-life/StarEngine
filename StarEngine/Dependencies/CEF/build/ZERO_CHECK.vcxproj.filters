@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Project\StarEngine\StarEngine\Dependencies\CEF\build\CMakeFiles\85cf223bff20f821bff65c9f195b041d\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{79D4D184-8B6D-3A0A-9D03-E7216B6BD189}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

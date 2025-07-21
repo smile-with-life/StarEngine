@@ -26,6 +26,8 @@ IncludeDir["Glad"] = "StarEngine/Dependencies/GLAD/include"
 IncludeDir["ICU4C"] = "StarEngine/Dependencies/ICU4C/include"
 IncludeDir["Stb"] = "StarEngine/Dependencies/Stb/include"
 IncludeDir["NlohmannJson"] = "StarEngine/Dependencies/NlohmannJson/include"
+IncludeDir["Sciter"] = "StarEngine/Dependencies/Sciter/include"
+IncludeDir["Ultralight"] = "StarEngine/Dependencies/Ultralight/include"
 
 include "StarEngine/Dependencies/GLFW"
 include "StarEngine/Dependencies/Glad"
@@ -59,12 +61,14 @@ project "StarEngine" --项目
         "%{IncludeDir.Glad}",
         "%{IncludeDir.ICU4C}",
         "%{IncludeDir.Stb}",
-        "%{IncludeDir.NlohmannJson}"
+        "%{IncludeDir.NlohmannJson}",
+        "%{IncludeDir.Ultralight}",
     }
 
     libdirs 
     {
-        "%{prj.name}/Dependencies/ICU4C/lib64"
+        "%{prj.name}/Dependencies/ICU4C/lib64",
+        "%{prj.name}/Dependencies/Ultralight/lib"
     }
 
     links --链接库
@@ -73,7 +77,11 @@ project "StarEngine" --项目
         "Glad",
         "opengl32.lib",
         "icuuc",
-        "Stb"
+        "Stb",
+        "Ultralight",
+        "UltralightCore",
+        "WebCore",
+        "AppCore"
     }
 
     filter "configurations:Test" --Test模式
@@ -103,8 +111,8 @@ project "StarEngine" --项目
 
 		defines --预定义宏
 		{
-			"STAR_PLATFORM_WINDOWS",
-			"STAR_BUILD_DLL"
+			"PLATFORM_WINDOWS",
+			"BUILD_EXPORT_DLL"
 		}
 
 		postbuildcommands --编译完成后执行
@@ -114,14 +122,11 @@ project "StarEngine" --项目
 		}
     
     -- 模块构建
-    include "StarEngine/Source/Runtime/Core/CoreMake.lua" --核心模块
-    include "StarEngine/Source/Runtime/Launch/LaunchMake.lua" --启动模块
-    include "StarEngine/Source/Runtime/Platform/PlatformMake.lua" --平台模块
-    include "StarEngine/Source/Runtime/OpenGL/OpenGLMake.lua" --OpenGL模块
-    include "StarEngine/Source/Runtime/Test/TestMake.lua" --Test模块
-    include "StarEngine/Source/Runtime/Manager/ManagerMake.lua" --管理器模块
-    include "StarEngine/Source/Runtime/Render/RenderMake.lua" --渲染模块
-    include "StarEngine/Source/Runtime/GraphicAPI/GraphicAPIMake.lua" --图形API模块
+    include "StarEngine/Source/Core/CoreMake.lua" --核心模块
+    include "StarEngine/Source/Launch/LaunchMake.lua" --启动模块
+    include "StarEngine/Source/Platform/PlatformMake.lua" --平台模块   
+    include "StarEngine/Source/Manager/ManagerMake.lua" --管理器模块
+    include "StarEngine/Source/UI/UIMake.lua" --管理器模块
 project "TestGame"
     location "TestGame"
     kind "windowedapp"
@@ -182,8 +187,7 @@ project "TestGame"
             
         defines
         {
-            "STAR_PLATFORM_WINDOWS",
-            "STAR_BUILD_DLL"
+            "PLATFORM_WINDOWS"
         }
     
     

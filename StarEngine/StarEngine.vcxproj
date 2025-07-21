@@ -99,8 +99,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STAR_TEST;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STAR_TEST;PLATFORM_WINDOWS;BUILD_EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;Dependencies\Ultralight\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -113,10 +113,10 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;icuuc.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib;AppCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;Dependencies\Ultralight\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\Bin\Test-windows-x86_64\StarEngine\StarEngine.lib</ImportLibrary>
-      <ModuleDefinitionFile>Source/Runtime/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Source/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
       <Command>IF NOT EXIST "..\bin\Test-windows-x86_64\TestGame" (mkdir "..\bin\Test-windows-x86_64\TestGame")
@@ -128,8 +128,8 @@ copy /B /Y ..\Bin\Test-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Test-wind
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STAR_DEBUG;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STAR_DEBUG;PLATFORM_WINDOWS;BUILD_EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;Dependencies\Ultralight\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -142,10 +142,10 @@ copy /B /Y ..\Bin\Test-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Test-wind
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;icuuc.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib;AppCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;Dependencies\Ultralight\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\Bin\Debug-windows-x86_64\StarEngine\StarEngine.lib</ImportLibrary>
-      <ModuleDefinitionFile>Source/Runtime/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Source/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
       <Command>IF NOT EXIST "..\bin\Debug-windows-x86_64\TestGame" (mkdir "..\bin\Debug-windows-x86_64\TestGame")
@@ -157,8 +157,8 @@ copy /B /Y ..\Bin\Debug-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Debug-wi
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STAR_RELEASE;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STAR_RELEASE;PLATFORM_WINDOWS;BUILD_EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;Dependencies\Ultralight\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -174,10 +174,10 @@ copy /B /Y ..\Bin\Debug-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Debug-wi
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;icuuc.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib;AppCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;Dependencies\Ultralight\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\Bin\Release-windows-x86_64\StarEngine\StarEngine.lib</ImportLibrary>
-      <ModuleDefinitionFile>Source/Runtime/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Source/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
       <Command>IF NOT EXIST "..\bin\Release-windows-x86_64\TestGame" (mkdir "..\bin\Release-windows-x86_64\TestGame")
@@ -189,8 +189,8 @@ copy /B /Y ..\Bin\Release-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Releas
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>starpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STAR_DIST;STAR_PLATFORM_WINDOWS;STAR_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STAR_DIST;PLATFORM_WINDOWS;BUILD_EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Source;Dependencies\GLFW\include;Dependencies\GLAD\include;Dependencies\ICU4C\include;Dependencies\Stb\include;Dependencies\NlohmannJson\include;Dependencies\Ultralight\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -206,10 +206,10 @@ copy /B /Y ..\Bin\Release-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Releas
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;icuuc.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;icuuc.lib;Ultralight.lib;UltralightCore.lib;WebCore.lib;AppCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>Dependencies\ICU4C\lib64;Dependencies\Ultralight\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.lib</ImportLibrary>
-      <ModuleDefinitionFile>Source/Runtime/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Source/Launch/Windows/WindowsExport.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
       <Command>IF NOT EXIST "..\bin\Dist-windows-x86_64\TestGame" (mkdir "..\bin\Dist-windows-x86_64\TestGame")
@@ -217,131 +217,93 @@ copy /B /Y ..\Bin\Dist-windows-x86_64\StarEngine\StarEngine.dll ..\bin\Dist-wind
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Runtime\A.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="Source\Runtime\Core\Algo\Alog.h" />
-    <ClInclude Include="Source\Runtime\Core\Concept\Concept.h" />
-    <ClInclude Include="Source\Runtime\Core\Config\Config.h" />
-    <ClInclude Include="Source\Runtime\Core\Container\Array.h" />
-    <ClInclude Include="Source\Runtime\Core\Container\Hash.h" />
-    <ClInclude Include="Source\Runtime\Core\Container\List.h" />
-    <ClInclude Include="Source\Runtime\Core\Container\Map.h" />
-    <ClInclude Include="Source\Runtime\Core\Container\Set.h" />
-    <ClInclude Include="Source\Runtime\Core\Core.h" />
-    <ClInclude Include="Source\Runtime\Core\Debug\Debug.h" />
-    <ClInclude Include="Source\Runtime\Core\File\File.h" />
-    <ClInclude Include="Source\Runtime\Core\GUID\GUID.h" />
-    <ClInclude Include="Source\Runtime\Core\Image\Image.h" />
-    <ClInclude Include="Source\Runtime\Core\Json\Json.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Math.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Matrix3.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Matrix4.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Radian.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Vector2.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Vector3.h" />
-    <ClInclude Include="Source\Runtime\Core\Math\Vector4.h" />
-    <ClInclude Include="Source\Runtime\Core\Memory\ByteBuffer.h" />
-    <ClInclude Include="Source\Runtime\Core\Memory\RAII.h" />
-    <ClInclude Include="Source\Runtime\Core\Platform\Platform.h" />
-    <ClInclude Include="Source\Runtime\Core\String\Convert.h" />
-    <ClInclude Include="Source\Runtime\Core\String\String.h" />
-    <ClInclude Include="Source\Runtime\Core\Thread\Atomic.h" />
-    <ClInclude Include="Source\Runtime\Core\Thread\Mutex.h" />
-    <ClInclude Include="Source\Runtime\Core\Thread\Semaphore.h" />
-    <ClInclude Include="Source\Runtime\Core\Thread\Thread.h" />
-    <ClInclude Include="Source\Runtime\Core\Thread\WaitCondition.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Clock.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\DateTime.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Duration.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\Time.h" />
-    <ClInclude Include="Source\Runtime\Core\Time\TimePoint.h" />
-    <ClInclude Include="Source\Runtime\Core\TypeDefinition\Type.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\Buffer.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\CommandList.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\Common.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\Device.h" />
-    <ClInclude Include="Source\Runtime\GraphicAPI\SwapChain.h" />
-    <ClInclude Include="Source\Runtime\Launch\MainLoop.h" />
-    <ClInclude Include="Source\Runtime\Manager\AssetManager\AssetManager.h" />
-    <ClInclude Include="Source\Runtime\Manager\FrameManager\FrameManager.h" />
-    <ClInclude Include="Source\Runtime\Manager\InputManager\InputManager.h" />
-    <ClInclude Include="Source\Runtime\Manager\LogManager\LogManager.h" />
-    <ClInclude Include="Source\Runtime\Manager\SenceManager\SenceManager.h" />
-    <ClInclude Include="Source\Runtime\OpenGL\IndexBuffer.h" />
-    <ClInclude Include="Source\Runtime\OpenGL\OpenGL.h" />
-    <ClInclude Include="Source\Runtime\OpenGL\Shader.h" />
-    <ClInclude Include="Source\Runtime\OpenGL\Texture.h" />
-    <ClInclude Include="Source\Runtime\OpenGL\VertexBuffer.h" />
-    <ClInclude Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.h" />
-    <ClInclude Include="Source\Runtime\Platform\Application.h" />
-    <ClInclude Include="Source\Runtime\Platform\Console.h" />
-    <ClInclude Include="Source\Runtime\Platform\Platform.h" />
-    <ClInclude Include="Source\Runtime\Platform\Window.h" />
-    <ClInclude Include="Source\Runtime\Platform\Windows\WindowsApplication.h" />
-    <ClInclude Include="Source\Runtime\Platform\Windows\WindowsConsole.h" />
-    <ClInclude Include="Source\Runtime\Platform\Windows\WindowsPlatform.h" />
-    <ClInclude Include="Source\Runtime\Platform\Windows\WindowsWindow.h" />
-    <ClInclude Include="Source\Runtime\Render\Entity\Entity.h" />
-    <ClInclude Include="Source\Runtime\Render\Sence\Sence.h" />
-    <ClInclude Include="Source\Runtime\Test\Test.h" />
+    <ClInclude Include="Source\Core\Algo\Alog.h" />
+    <ClInclude Include="Source\Core\Concept\Concept.h" />
+    <ClInclude Include="Source\Core\Config\Config.h" />
+    <ClInclude Include="Source\Core\Container\Array.h" />
+    <ClInclude Include="Source\Core\Container\Hash.h" />
+    <ClInclude Include="Source\Core\Container\List.h" />
+    <ClInclude Include="Source\Core\Container\Map.h" />
+    <ClInclude Include="Source\Core\Container\Set.h" />
+    <ClInclude Include="Source\Core\Core.h" />
+    <ClInclude Include="Source\Core\Debug\Debug.h" />
+    <ClInclude Include="Source\Core\File\File.h" />
+    <ClInclude Include="Source\Core\GUID\GUID.h" />
+    <ClInclude Include="Source\Core\Image\Image.h" />
+    <ClInclude Include="Source\Core\Json\Json.h" />
+    <ClInclude Include="Source\Core\Math\Math.h" />
+    <ClInclude Include="Source\Core\Math\Matrix3.h" />
+    <ClInclude Include="Source\Core\Math\Matrix4.h" />
+    <ClInclude Include="Source\Core\Math\Radian.h" />
+    <ClInclude Include="Source\Core\Math\Vector2.h" />
+    <ClInclude Include="Source\Core\Math\Vector3.h" />
+    <ClInclude Include="Source\Core\Math\Vector4.h" />
+    <ClInclude Include="Source\Core\Memory\ByteBuffer.h" />
+    <ClInclude Include="Source\Core\Memory\RAII.h" />
+    <ClInclude Include="Source\Core\Platform\Platform.h" />
+    <ClInclude Include="Source\Core\String\Convert.h" />
+    <ClInclude Include="Source\Core\String\String.h" />
+    <ClInclude Include="Source\Core\Thread\Atomic.h" />
+    <ClInclude Include="Source\Core\Thread\Mutex.h" />
+    <ClInclude Include="Source\Core\Thread\Semaphore.h" />
+    <ClInclude Include="Source\Core\Thread\Thread.h" />
+    <ClInclude Include="Source\Core\Thread\WaitCondition.h" />
+    <ClInclude Include="Source\Core\Time\Clock.h" />
+    <ClInclude Include="Source\Core\Time\DateTime.h" />
+    <ClInclude Include="Source\Core\Time\Duration.h" />
+    <ClInclude Include="Source\Core\Time\Time.h" />
+    <ClInclude Include="Source\Core\Time\TimePoint.h" />
+    <ClInclude Include="Source\Launch\MainLoop.h" />
+    <ClInclude Include="Source\Manager\AssetManager\AssetManager.h" />
+    <ClInclude Include="Source\Manager\FrameManager\FrameManager.h" />
+    <ClInclude Include="Source\Manager\InputManager\InputManager.h" />
+    <ClInclude Include="Source\Manager\LogManager\LogManager.h" />
+    <ClInclude Include="Source\Platform\Application.h" />
+    <ClInclude Include="Source\Platform\Console.h" />
+    <ClInclude Include="Source\Platform\Platform.h" />
+    <ClInclude Include="Source\Platform\Window.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsApplication.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsConsole.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsPlatform.h" />
+    <ClInclude Include="Source\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="Source\Starengine.h" />
+    <ClInclude Include="Source\UI\UIEngine.h" />
     <ClInclude Include="Source\starpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Runtime\Core\Config\Config.cpp" />
-    <ClCompile Include="Source\Runtime\Core\File\File.cpp" />
-    <ClCompile Include="Source\Runtime\Core\GUID\GUID.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Image\Image.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Json\Json.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Math\Radian.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Memory\ByteBuffer.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Memory\RAII.cpp" />
-    <ClCompile Include="Source\Runtime\Core\String\String.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Clock.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\DateTime.cpp" />
-    <ClCompile Include="Source\Runtime\Core\Time\Time.cpp" />
-    <ClCompile Include="Source\Runtime\GraphicAPI\Buffer.cpp" />
-    <ClCompile Include="Source\Runtime\GraphicAPI\CommandList.cpp" />
-    <ClCompile Include="Source\Runtime\GraphicAPI\Device.cpp" />
-    <ClCompile Include="Source\Runtime\GraphicAPI\SwapChain.cpp" />
-    <ClCompile Include="Source\Runtime\Launch\MainLoop.cpp" />
-    <ClCompile Include="Source\Runtime\Launch\Windows\WindowsLaunch.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\AssetManager\AssetManager.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\FrameManager\FrameManager.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\InputManager\InputManager.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\LogManager\LogManager.cpp" />
-    <ClCompile Include="Source\Runtime\Manager\SenceManager\SenceManager.cpp" />
-    <ClCompile Include="Source\Runtime\OpenGL\IndexBuffer.cpp" />
-    <ClCompile Include="Source\Runtime\OpenGL\OpenGL.cpp" />
-    <ClCompile Include="Source\Runtime\OpenGL\Shader.cpp" />
-    <ClCompile Include="Source\Runtime\OpenGL\Texture.cpp" />
-    <ClCompile Include="Source\Runtime\OpenGL\VertexBuffer.cpp" />
-    <ClCompile Include="Source\Runtime\OpenGL\Windows\WindowsOpenGL.cpp" />
-    <ClCompile Include="Source\Runtime\Platform\Application.cpp" />
-    <ClCompile Include="Source\Runtime\Platform\Console.cpp" />
-    <ClCompile Include="Source\Runtime\Platform\Platform.cpp" />
-    <ClCompile Include="Source\Runtime\Platform\Window.cpp" />
-    <ClCompile Include="Source\Runtime\Platform\Windows\WindowsApplication.cpp" />
-    <ClCompile Include="Source\Runtime\Platform\Windows\WindowsConsole.cpp" />
-    <ClCompile Include="Source\Runtime\Platform\Windows\WindowsPlatform.cpp" />
-    <ClCompile Include="Source\Runtime\Platform\Windows\WindowsWindow.cpp" />
-    <ClCompile Include="Source\Runtime\Render\Entity\Entity.cpp" />
-    <ClCompile Include="Source\Runtime\Render\Sence\Sence.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Core\TestConfig.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Core\TestContainer.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Core\TestFile.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Core\TestJson.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Core\TestMath.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Core\TestRAII.cpp" />
-    <ClCompile Include="Source\Runtime\Test\Test.cpp" />
+    <ClCompile Include="Source\Core\Config\Config.cpp" />
+    <ClCompile Include="Source\Core\File\File.cpp" />
+    <ClCompile Include="Source\Core\GUID\GUID.cpp" />
+    <ClCompile Include="Source\Core\Image\Image.cpp" />
+    <ClCompile Include="Source\Core\Json\Json.cpp" />
+    <ClCompile Include="Source\Core\Math\Radian.cpp" />
+    <ClCompile Include="Source\Core\Memory\ByteBuffer.cpp" />
+    <ClCompile Include="Source\Core\Memory\RAII.cpp" />
+    <ClCompile Include="Source\Core\String\String.cpp" />
+    <ClCompile Include="Source\Core\Time\Clock.cpp" />
+    <ClCompile Include="Source\Core\Time\DateTime.cpp" />
+    <ClCompile Include="Source\Core\Time\Time.cpp" />
+    <ClCompile Include="Source\Launch\MainLoop.cpp" />
+    <ClCompile Include="Source\Launch\Windows\WindowsLaunch.cpp" />
+    <ClCompile Include="Source\Manager\AssetManager\AssetManager.cpp" />
+    <ClCompile Include="Source\Manager\FrameManager\FrameManager.cpp" />
+    <ClCompile Include="Source\Manager\InputManager\InputManager.cpp" />
+    <ClCompile Include="Source\Manager\LogManager\LogManager.cpp" />
+    <ClCompile Include="Source\Platform\Application.cpp" />
+    <ClCompile Include="Source\Platform\Console.cpp" />
+    <ClCompile Include="Source\Platform\Platform.cpp" />
+    <ClCompile Include="Source\Platform\Window.cpp" />
+    <ClCompile Include="Source\Platform\Windows\WindowsApplication.cpp" />
+    <ClCompile Include="Source\Platform\Windows\WindowsConsole.cpp" />
+    <ClCompile Include="Source\Platform\Windows\WindowsPlatform.cpp" />
+    <ClCompile Include="Source\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="Source\UI\UIEngine.cpp" />
     <ClCompile Include="Source\starpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Source\Runtime\Launch\Windows\WindowsExport.def" />
+    <None Include="Source\Launch\Windows\WindowsExport.def" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Dependencies\GLFW\GLFW.vcxproj">

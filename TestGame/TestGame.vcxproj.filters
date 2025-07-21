@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\StarEngine\Source\Runtime\Launch\Windows\WindowsLaunch.cpp">
-      <Filter>StarEngine\Source\Runtime\Launch\Windows</Filter>
-    </ClCompile>
     <ClCompile Include="Source\game.cpp">
       <Filter>Source</Filter>
     </ClCompile>
